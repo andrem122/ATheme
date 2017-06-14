@@ -1,0 +1,93 @@
+//Mixins
+@mixin background-cc($size, $position, $attach: scroll, $repeat: no-repeat)
+  -webkit-background-size: $size
+  -moz-background-size: $size
+  -o-background-size: $size
+  -ms-background-size: $size
+  background-size: $size
+  background-position: $position $position
+  background-repeat: $repeat
+  background-attachment: $attach
+
+@mixin overlay($color)
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  z-index: 10
+  background-color: $color
+
+@mixin overflow($value)
+  -webkit-overflow: $value
+  -moz-overflow: $value
+  -o-overflow: $value
+  -ms-overflow: $value
+  overflow: $value
+
+@mixin transition($property, $time, $easing)
+  -webkit-transition: $property $time $easing
+  -moz-transition: $property $time $easing
+  -ms-transition: $property $time $easing
+  -o-transition: $property $time $easing
+  transition: $property $time $easing
+
+@mixin transform($property, $value)
+  -webkit-transform: $property + '(' + $value + ')'
+  -moz-transform: $property + '(' + $value + ')'
+  -ms-transform: $property + '(' + $value + ')'
+  -o-transform: $property + '(' + $value + ')'
+  transform: $property + '(' + $value + ')'
+
+@mixin border($size, $type, $color)
+  -webkit-border: $size $type $color
+  -moz-border: $size $type $color
+  -ms-border: $size $type $color
+  -o-border: $size $type $color
+  border: $size $type $color
+
+@mixin accent($percentage, $height, $color, $left: none, $right: none)
+  content: ''
+  display: block
+  position: absolute
+  top: 50%
+  width: 99999px
+  height: $height
+  border-top: 2px solid $color
+  border-bottom: 2px solid $color
+  left: $left
+  right: $right
+
+@mixin hover-border($color: $body-c)
+  content: ''
+  display: block
+  border-bottom: 1px solid $color
+  width: 0
+
+@mixin clearfix
+  content: ''
+  display: block
+  height: 0
+  visibility: hidden
+  clear: both
+
+@mixin icon($f-color, $b-color, $size, $f-size)
+  color: $f-color
+  background-color: $b-color
+  height: $size
+  width: $size
+  font-size: $f-size
+  border-radius: 50%
+  text-align: center
+  &::before
+    line-height: $size
+@mixin icon-square($f-color, $b-color, $size, $f-size)
+  color: $f-color
+  background-color: $b-color
+  height: $size
+  width: $size
+  font-size: $f-size
+  text-align: center
+  &::before
+    line-height: $size

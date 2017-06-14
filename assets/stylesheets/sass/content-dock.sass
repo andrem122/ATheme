@@ -1,0 +1,21 @@
+.content-dock
+  width: 420px
+  position: fixed
+  left: -425px
+  bottom: 0
+  box-shadow: 0 0.085em 0.5em 0 rgba(0, 0, 0, 0.165)
+  padding: 30px
+  z-index: 99999999
+  background-color: $wh !important
+  .close-content-dock
+    font-size: 20px
+    height: 30px
+    width: 30px
+    position: absolute
+    right: 10px
+    top: 20px
+  .button
+    width: 100%
+@media all and (max-width: 850px)
+  div.content-dock
+    display: none

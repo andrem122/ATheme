@@ -1,0 +1,97 @@
+// Row & Columns
+@function columnWidth($col, $margin)
+  @return ($col / 12 * 100%) - $margin + ($col / 12 * $margin)
+.row
+  width: 100%
+  display: block
+  //clearfixes for all rows so that it doesn't collapse
+  &::after
+    @include clearfix
+//make columns
+$grid-columns: 12
+$column-sizes: xs sm md lg
+@each $size in $column-sizes
+  @for $i from 1 through $grid-columns
+    .col-#{$size}-#{$i}
+      float: left
+      margin-right: 5%
+      margin-bottom: 50px
+      width: columnWidth($i, 5%)
+      &.marginless
+        margin-right: 0
+        width: columnWidth($i, 0%)
+      &.no-margin-bottom
+        margin-bottom: 0
+      &:last-child
+        margin-right: 0
+      &::after
+        @include clearfix
+
+@media all and (max-width: 993px)
+  @for $i from 1 through 12
+    .row
+      .col-lg-#{$i}
+        float: none
+        margin-right: 0
+        width: 100%
+        margin-bottom: 14%
+        &.marginless
+          width: 100%
+        &.no-margin-bottom
+          margin-bottom: 0
+        &:last-child
+          margin-bottom: 0
+  $heading-size: 275% 245% 215% 185% 155% 125%
+  @for $i from 1 through 6
+    h#{$i}
+      font-size: nth($heading-size, $i)
+@media all and (max-width: 769px)
+  @for $i from 1 through 12
+    .row
+      .col-md-#{$i}
+        float: none
+        margin-right: 0
+        width: 100%
+        margin-bottom: 14%
+        &.marginless
+          width: 100%
+        &.no-margin-bottom
+          margin-bottom: 0
+        &:last-child
+          margin-bottom: 0
+  $heading-size: 260% 230% 200% 170% 140% 110%
+  @for $i from 1 through 6
+    h#{$i}
+      font-size: nth($heading-size, $i)
+@media all and (max-width: 577px)
+  @for $i from 1 through 12
+    .row
+      .col-sm-#{$i}
+        float: none
+        margin-right: 0
+        width: 100%
+        margin-bottom: 14%
+        &.marginless
+          width: 100%
+        &.no-margin-bottom
+          margin-bottom: 0
+        &:last-child
+          margin-bottom: 0
+  $heading-size: 230% 200% 170% 140% 110% 100%
+  @for $i from 1 through 6
+    h#{$i}
+      font-size: nth($heading-size, $i)
+@media all and (max-width: 430px)
+  @for $i from 1 through 12
+    .row
+      .col-xs-#{$i}
+        float: none
+        margin-right: 0
+        width: 100%
+        margin-bottom: 14%
+        &.marginless
+          width: 100%
+        &.no-margin-bottom
+          margin-bottom: 0
+        &:last-child
+          margin-bottom: 0

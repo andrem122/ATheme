@@ -1,0 +1,42 @@
+form
+  label
+    font-size: 18px
+    color: $button
+  input
+    &[type="submit"]
+      background-color: transparent
+    $types: text email tel time url week search range file month
+    @each $type in $types
+      &[type="#{$type}"]
+        display: block
+        width: 100%
+        font-size: 100%
+        margin-bottom: 20px
+        padding: 10px
+        border: 1px solid #ccc
+        &:focus
+          border-color: $button
+        @include transition(all, 300ms, ease-in-out)
+  textarea
+    display: block
+    width: 100%
+    font-size: 100%
+    margin-bottom: 20px
+    padding: 10px
+    border: 1px solid #ccc
+    font-family: $body-f
+    &:focus
+      border-color: $button
+#form-messages
+  &.success, &.error
+    padding: 10px
+    margin-bottom: 10px
+    @include transition(all, 0.3s, ease-in-out)
+  &.success
+    background-color: #dff0d8
+    border-left: 4px solid #8ab763
+    color: #468847
+  &.error
+    background-color: #edaaaa
+    border-left: 4px solid #f44b4b
+    color: #e21b1b

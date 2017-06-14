@@ -1,0 +1,123 @@
+.navbar-top, .navbar-top.sticky
+  overflow: hidden
+.navbar-top
+  padding-top: 10px
+  min-height: 60px
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  transition: 0.3s ease-in-out
+  background-color: $wh
+  z-index: 9999
+  .logo
+    float: left
+    margin-top: 7.5px
+    svg
+      fill: $logo
+//sticky nav bar when scrolling through page
+.navbar-top.sticky
+  position: fixed
+  background-color: $wh
+  z-index: 9999
+  box-shadow: rgba(0,0,0,.117647) 0 1px 3px
+  a
+    color: $body-c
+    &::after
+      border-color: $body-c
+    &:hover
+      color: $logo
+      &::after
+        color: $logo
+  .logo
+    float: left
+    margin-top: 7.5px
+    svg
+      fill: $logo
+  .mobile-button
+    color: $logo
+.menu-left
+  float: left
+  margin-left: 70px
+.menu-right
+  float: right
+.main-menu
+  > ul > li
+    display: inline-block
+    list-style: none
+    > a
+      display: inline-block
+      color: $body-c
+      text-decoration: none
+      line-height: 60px
+      margin-right: 50px
+      &:hover
+        color: $logo
+      &::after
+        content: ''
+        color: $logo
+        display: block
+        border-bottom: 1px solid $logo
+        width: 0
+        @include transition(all, 150ms, ease-in-out)
+        @include transform(translateY, -13px)
+      &:hover::after
+        width: 130%
+
+/* Mobile Navigation
+
+.mobile-button
+  font-size: 2.2em
+  color: $logo
+  float: right
+  padding: 3px 30px
+  margin-top: 6px
+  display: none
+  &:hover
+    color: $logo
+
+.icon-close-div
+  height: 60px
+  font-size: 2.2em
+  color: #211f1f
+  cursor: pointer
+
+.icon-close
+  float: right
+  margin:
+    top: 13px
+    right: 25px
+
+.mobile-menu
+  position: fixed
+  right: -280px
+  bottom: 0
+  top: 0
+  width: 270px
+  background-color: $wh
+  box-shadow: (-2px) 0 10px rgba(0, 0, 0, 0.75)
+  z-index: 999
+  opacity: 1
+  display: none
+  overflow-x: hidden
+  > ul > li
+    list-style: none
+    border-bottom: 1px solid #ddd
+    &:first-child
+      border-top: 1px solid #ddd
+    > a
+      display: block
+      padding: 1em
+      color: #2d2323
+@media all and (max-width: 993px)
+  // When mobile button is clicked, overflow hidden added to
+  // body and html container to prevent scrolling
+  .b-h-overflow-hidden
+    @include overflow(hidden)
+    width: 100%
+    height: 100%
+    min-height: 100%
+  .mobile-menu, .mobile-trigger
+    display: block
+  .main-menu
+    display: none

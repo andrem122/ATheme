@@ -1,0 +1,72 @@
+#recent-posts
+  padding: 40px 0
+  background-color: #edeeef
+  .recent-post
+    @include transition(all, 150ms, linear)
+  .recent-post-img
+    &::after
+      content: ''
+      display: block
+      padding-top: 100%
+    @include background-cc(cover, center)
+  .recent-post-top
+    display: block
+    position: relative
+    &:hover
+      > i
+        opacity: 1
+      &::after
+        opacity: 1
+    i
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      opacity: 0
+      z-index: 15
+      @include transition(all, 0.3s, ease-in-out)
+      @include icon($wh, rgba(90, 216, 163, 0.6), 50px, 25px)
+    &::after
+      opacity: 0
+      @include transition(all, 0.3s, ease-in-out)
+      @include overlay(rgba(0, 0, 0, 0.6))
+  .recent-post-bottom
+    background-color: $wh
+    padding: 20px
+    border-top: 0
+    h3
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      margin-bottom: 0
+      font-size: 130%
+      &:hover
+        color: #5AD8A3
+      @include transition(all, 0.3s, ease-in-out)
+    span
+      display: block
+      margin:
+        bottom: 10px
+    i
+      font-size: 130%
+      margin:
+        left: 5px
+@media all and (max-width: 1195px)
+  .recent-post-bottom
+    h3
+      font-size: 135%
+@media all and (max-width: 959px)
+  .recent-post:hover
+    transform: none
+@media all and (max-width: 915px)
+  .recent-post-bottom
+    h3
+      font-size: 125%
+@media all and (max-width: 769px)
+  .recent-post-bottom
+    h3
+      font-size: 150%
+@media all and (max-width: 430px)
+  .recent-post-bottom
+    h3
+      font-size: 130%
