@@ -1,2 +1,2 @@
 1. cd C:\Apache24\htdocs\wordpress\wp-content\themes\A Theme\assets\stylesheets
-2. sass --watch sass/index.sass:css/index.css
+2. sass --watch sass/index.sass:../../style.css

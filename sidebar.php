@@ -7,6 +7,6 @@ if(!is_active_sidebar('sidebar-main')) {
   return;
 }
 ?>
-<aside class="widget-area col-sm-4">
+<aside id="sidebar-main" class="widget-area col-sm-4">
   <?php dynamic_sidebar('sidebar-main'); ?>
 </aside>

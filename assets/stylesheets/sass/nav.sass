@@ -1,22 +1,42 @@
-.navbar-top, .navbar-top.sticky
-  overflow: hidden
-.navbar-top
+#menu-top
+  float: right
   padding-top: 10px
   min-height: 60px
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
   transition: 0.3s ease-in-out
   background-color: $wh
   z-index: 9999
+  > li
+    display: inline-block
+    list-style: none
+    > a
+      font-size: 14px
+      display: inline-block
+      color: $body-c
+      text:
+        decoration: none
+        transform: uppercase
+      letter-spacing: 2px
+      line-height: 60px
+      margin-right: 50px
+      &:hover
+        color: $logo
+      &::after
+        content: ''
+        color: $logo
+        display: block
+        border-bottom: 1px solid $logo
+        width: 0
+        @include transition(all, 150ms, ease-in-out)
+        @include transform(translateY, -13px)
+      &:hover::after
+        width: 130%
   .logo
     float: left
     margin-top: 7.5px
     svg
       fill: $logo
 //sticky nav bar when scrolling through page
-.navbar-top.sticky
+#menu-top.sticky
   position: fixed
   background-color: $wh
   z-index: 9999
@@ -41,31 +61,7 @@
   margin-left: 70px
 .menu-right
   float: right
-.main-menu
-  > ul > li
-    display: inline-block
-    list-style: none
-    > a
-      display: inline-block
-      color: $body-c
-      text-decoration: none
-      line-height: 60px
-      margin-right: 50px
-      &:hover
-        color: $logo
-      &::after
-        content: ''
-        color: $logo
-        display: block
-        border-bottom: 1px solid $logo
-        width: 0
-        @include transition(all, 150ms, ease-in-out)
-        @include transform(translateY, -13px)
-      &:hover::after
-        width: 130%
-
-/* Mobile Navigation
-
+//mobile navigation
 .mobile-button
   font-size: 2.2em
   color: $logo

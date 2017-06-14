@@ -2,8 +2,10 @@
 <main id="main" class="site-main" role="main">
   <?php
     if(is_active_sidebar('sidebar-main')):
-      echo '<div class="row">
-              <div class="col-sm-8">';
+      echo '<div class="row">';
+      //get the default sidebar, 'sidebar.php'
+      get_sidebar();
+      echo '<div class="col-sm-8">';
     endif;
     if(have_posts()):
       while(have_posts()):
@@ -15,10 +17,8 @@
       get_template_part('templates/post/content', 'none');
     endif;
     if(is_active_sidebar('sidebar-main')):
-      echo '</div>'; //close col-sm-8
-      //get the default sidebar, 'sidebar.php'
-      get_sidebar();
-      echo '</div>'; // close row
+      echo '</div>
+          </div>'; //close row and col-sm-8
     endif;
   ?>
 </main>
