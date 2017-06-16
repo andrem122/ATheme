@@ -2,6 +2,8 @@
 function a_theme_scripts() {
   //stylesheets
   wp_enqueue_style('a-theme', get_stylesheet_uri());
+  //fonts
+  wp_enqueue_style('g-font-libre-franklin', 'https://fonts.googleapis.com/css?family=Libre+Franklin:400,600');
   //scripts
   wp_enqueue_script('a-theme', get_template_directory_uri() . '/assets/js/a-theme.js', array('jquery'), 1.0, true);
   wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/995faad108.js');

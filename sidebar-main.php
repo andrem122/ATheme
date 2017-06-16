@@ -7,6 +7,10 @@ if(!is_active_sidebar('sidebar-main')) {
   return;
 }
 ?>
-<aside id="sidebar-main" class="widget-area col-sm-4">
-  <?php dynamic_sidebar('sidebar-main'); ?>
+<aside id="sidebar-main" class="widget-area col-md-4 right">
+  <?php
+  //pulls and adds all the widgets that have been added to the sidebar
+  //through the admin screen to here 
+  dynamic_sidebar('sidebar-main');
+  ?>
 </aside>

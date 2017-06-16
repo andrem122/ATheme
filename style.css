@@ -1672,10 +1672,10 @@ a {
   margin-bottom: 30px; }
 
 .left {
-  float: left; }
+  float: left !important; }
 
 .right {
-  float: right; }
+  float: right !important; }
 
 #menu-top {
   float: right;
@@ -1809,15 +1809,11 @@ a {
 
   .main-menu {
     display: none; } }
-#sidebar-main {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  bottom: 0px;
+#sidebar-main, #sidebar-blog {
   z-index: 100;
-  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
   padding: 20px 20px; }
-  #sidebar-main h2.widget-title {
+  #sidebar-main h2.widget-title, #sidebar-blog h2.widget-title {
     font-size: 200%; }
 
 .button, .jumbo-btn {
