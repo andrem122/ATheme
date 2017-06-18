@@ -6,7 +6,7 @@
  * Version: 1.0
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: A Theme */
+ * Text Domain: atheme */
 .row {
   width: 100%;
   display: block; }
@@ -1637,7 +1637,7 @@ img {
   height: auto;
   vertical-align: middle; }
 
-section::after, div::after {
+section::after, div::after, header::after, footer::after {
   content: "";
   display: block;
   height: 0;
@@ -1656,6 +1656,9 @@ a {
     color: #20C47F; }
   a:focus {
     outline: 0; }
+
+.clear {
+  clear: both; }
 
 .center-content {
   max-width: 1400px;
@@ -1677,10 +1680,20 @@ a {
 .right {
   float: right !important; }
 
+header.top {
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc; }
+  header.top .logo {
+    margin-left: 35px; }
+    header.top .logo h1 {
+      margin: 0;
+        margin-top: 10px;
+      font-size: 220%; }
+
 #menu-top {
   float: right;
-  padding-top: 10px;
   min-height: 60px;
+  padding-top: 10px;
   transition: 0.3s ease-in-out;
   background-color: #fff;
   z-index: 9999; }
@@ -1813,6 +1826,8 @@ a {
   z-index: 100;
   border-left: 1px solid #ccc;
   padding: 20px 20px; }
+  #sidebar-main .widget ul, #sidebar-blog .widget ul {
+    list-style: none; }
   #sidebar-main h2.widget-title, #sidebar-blog h2.widget-title {
     font-size: 200%; }
 

@@ -9,14 +9,32 @@
   </head>
   <body <?php body_class(); ?>>
     <div class="body-container">
-      <header>
-        <!--top menu-->
-        <nav><?php wp_nav_menu(array('theme_location'=>'top')); ?></nav>
+      <header class="top">
+        <!-- logo -->
+        <div class="logo left">
+          <a href="<?php echo home_url(); ?>">
+            <?php
+              if(function_exists('the_custom_logo')):
+                if(has_custom_logo()):
+                  the_custom_logo();
+                else:
+                  echo '<h1 class="site-title">' . get_bloginfo('name') . '</h1>';
+                endif;
+              endif;
+            ?>
+          </a>
+        </div>
+        <!-- top menu -->
+        <nav class="right"><?php wp_nav_menu(array('theme_location'=>'top')); ?></nav>
       </header>
       <div class="page">
-        <div class="center-content">
-          <?php
-          if(is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')):
-            echo '<div class="row">';
+        <?php
+          if(!is_page_template('template-parts/content-full-width.php')):
+            echo '<div class="center-content">';
           endif;
+        ?>
+          <?php
+            if(is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')):
+              echo '<div class="row">';
+            endif;
           ?>

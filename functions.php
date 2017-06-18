@@ -14,12 +14,11 @@ add_action('wp_enqueue_scripts', 'a_theme_scripts');
 //theme supports
 function a_theme_setup() {
   //theme supports
-  //menus
   add_theme_support('menus');
   //title tag
-  add_theme_support( 'title-tag' );
+  add_theme_support('title-tag');
   //post thumbnails
-  add_theme_support( 'post-thumbnails' );
+  add_theme_support('post-thumbnails');
   //post formats
   add_theme_support('post-formats', array(
     'aside',
@@ -30,6 +29,14 @@ function a_theme_setup() {
     'gallery',
     'audio'
   ));
+  //custom logo
+  add_theme_support( 'custom-logo', array(
+  	'height'      => 75,
+  	'width'       => 150,
+  	'flex-height' => true,
+  	'flex-width'  => true,
+  	'header-text' => array( 'site-title', 'site-description')
+  ));
   //menus
   register_nav_menus(array(
     'top' => 'Top Menu',
@@ -37,7 +44,7 @@ function a_theme_setup() {
   ));
 }
 
-//call function agangster_theme_setup() after initilization of the theme
+//call function a_theme_setup after setup of the theme
 add_action('after_setup_theme', 'a_theme_setup');
 
 function a_theme_widget_init() {

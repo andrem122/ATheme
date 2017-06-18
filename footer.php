@@ -1,10 +1,16 @@
-          <?php
-          //close the div with class row if sidebar-main is active
-          if(is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')):
-            echo '</div>';
-          endif;
-          ?>
-      </div><!-- .center-content -->
+      <?php
+      //close the div with .row if sidebar-main is active
+      if(is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')):
+        echo '</div>';
+      endif;
+      ?>
+      <?php
+      //close the div with .center-content if the full page template is
+      //NOT used
+      if(!is_page_template('template-parts/content-full-width.php')):
+        echo '</div>'; //.center-content
+      endif;
+      ?>
     </div><!-- .page -->
     <footer>
       <div class="content-center">
