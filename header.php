@@ -10,22 +10,47 @@
   <body <?php body_class(); ?>>
     <div class="body-container">
       <header class="top">
-        <!-- logo -->
-        <div class="logo left">
-          <a href="<?php echo home_url(); ?>">
+        <div class="center-content">
+          <!-- logo -->
+          <div class="header-inner-left left">
+            <div class="logo">
+              <a href="<?php echo home_url(); ?>">
+                <?php
+                  if(function_exists('the_custom_logo')):
+                    if(has_custom_logo()):
+                      the_custom_logo();
+                    else:
+                      echo '<h1 class="site-title">' . get_bloginfo('name') . '</h1>';
+                    endif;
+                  endif;
+                ?>
+              </a>
+            </div>
+          </div>
+          <div class="header-inner-right right">
+            <!-- top menu -->
+            <nav class="main-menu">
+              <?php
+                wp_nav_menu(array(
+                  'theme_location' => 'top',
+                  'container'      => false,
+                  'menu' => __( 'The Top Menu', 'atheme' ),
+                ));
+              ?>
+            </nav>
+            <!-- mobile menu button -->
+            <button class="mobile-menu-button" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+          </div>
+          <nav style="display: none" class="mobile-menu">
             <?php
-              if(function_exists('the_custom_logo')):
-                if(has_custom_logo()):
-                  the_custom_logo();
-                else:
-                  echo '<h1 class="site-title">' . get_bloginfo('name') . '</h1>';
-                endif;
-              endif;
+              wp_nav_menu(array(
+                'theme_location' => 'top',
+                'container'      => false,
+                'menu' => __( 'The Top Menu', 'atheme' ),
+              ));
             ?>
-          </a>
+          </nav>
         </div>
-        <!-- top menu -->
-        <nav class="right"><?php wp_nav_menu(array('theme_location'=>'top')); ?></nav>
       </header>
       <div class="page">
         <?php

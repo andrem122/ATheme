@@ -1,13 +1,9 @@
 header.top
-  padding: 15px 0
-  border-bottom: 1px solid #ccc
-  .logo
-    margin:
-      left: 35px
-    h1
-      margin: 0
-        top: 10px
-      font-size: 220%
+  padding: 20px 0
+  h1
+    margin: 0
+      top: 10px
+    font-size: 220%
 #menu-top
   float: right
   min-height: 60px
@@ -40,11 +36,6 @@ header.top
         @include transform(translateY, -13px)
       &:hover::after
         width: 130%
-  .logo
-    float: left
-    margin-top: 7.5px
-    svg
-      fill: $logo
 //sticky nav bar when scrolling through page
 #menu-top.sticky
   position: fixed
@@ -59,71 +50,50 @@ header.top
       color: $logo
       &::after
         color: $logo
-  .logo
-    float: left
-    margin-top: 7.5px
-    svg
-      fill: $logo
   .mobile-button
     color: $logo
-.menu-left
-  float: left
-  margin-left: 70px
-.menu-right
-  float: right
 //mobile navigation
-.mobile-button
-  font-size: 2.2em
+.mobile-menu-button
+  font-size: 1.5em
+  font-weight: 100
   color: $logo
   float: right
-  padding: 3px 30px
+  padding: 10px 20px
   margin-top: 6px
+  background-color: transparent
+  border: none
+  cursor: pointer
   display: none
   &:hover
     color: $logo
-
-.icon-close-div
-  height: 60px
-  font-size: 2.2em
-  color: #211f1f
-  cursor: pointer
-
-.icon-close
-  float: right
-  margin:
-    top: 13px
-    right: 25px
-
-.mobile-menu
-  position: fixed
-  right: -280px
-  bottom: 0
-  top: 0
-  width: 270px
+nav.mobile-menu
+  width: 100%
   background-color: $wh
-  box-shadow: (-2px) 0 10px rgba(0, 0, 0, 0.75)
+  position: relative
+  float: left
   z-index: 999
-  opacity: 1
-  display: none
-  overflow-x: hidden
-  > ul > li
-    list-style: none
-    border-bottom: 1px solid #ddd
-    &:first-child
-      border-top: 1px solid #ddd
-    > a
-      display: block
-      padding: 1em
-      color: #2d2323
-@media all and (max-width: 993px)
-  // When mobile button is clicked, overflow hidden added to
-  // body and html container to prevent scrolling
-  .b-h-overflow-hidden
-    @include overflow(hidden)
-    width: 100%
-    height: 100%
-    min-height: 100%
-  .mobile-menu, .mobile-trigger
-    display: block
-  .main-menu
+  > ul
     display: none
+    > li
+      list-style: none
+      border-bottom: 1px solid #ddd
+      &:last-child
+        border-bottom: none
+      > a
+        display: block
+        padding: 1em
+        color: #2d2323
+        text-transform: uppercase
+        font-size: 75%
+        font-weight: 600
+        letter-spacing: 1px
+@media all and (max-width: 993px)
+  nav.mobile-menu
+    padding-top: 20px
+    > ul
+      display: block
+  .mobile-menu-button
+    display: block
+  nav.main-menu
+    #menu-top
+      display: none

@@ -13,13 +13,21 @@
       ?>
     </div><!-- .page -->
     <footer>
-      <div class="content-center">
-        <div class="row">
-          <!-- bottom menu -->
-          <nav>
-            <?php wp_nav_menu(array('theme_location'=>'bottom')); ?>
-          </nav>
-          <?php get_template_part('template-parts/footer/site', 'info'); ?>
+      <div class="wrap">
+        <div class="center-content">
+          <div class="row">
+            <!-- bottom menu -->
+            <nav>
+              <?php
+              wp_nav_menu(array(
+                'theme_location' => 'bottom',
+                'container'      =>  false,
+                'menu' => __( 'The Bottom Menu', 'atheme' ),  
+              ));
+              ?>
+            </nav>
+            <?php get_template_part('template-parts/footer/site', 'info'); ?>
+          </div>
         </div>
       </div>
     </footer>

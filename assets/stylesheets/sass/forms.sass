@@ -1,10 +1,19 @@
 form
+  margin-bottom: 30px
   label
     font-size: 18px
     color: $button
   input
     &[type="submit"]
       background-color: transparent
+      padding: 15px 30px
+      box-shadow: none
+      border: 1px solid $button
+      letter-spacing: 1px
+      &:hover
+        border-color: $button-hover
+      text-transform: uppercase
+      color: $button
     $types: text email tel time url week search range file month
     @each $type in $types
       &[type="#{$type}"]
