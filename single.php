@@ -3,7 +3,8 @@
 get_header();
 ?>
 
-<div class="wrap">
+<div class="wrap clear <?php
+$class = (is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; echo $class; ?>">
   <main id="main" class="site-main" role="main">
     <?php
     //dont need if(have_posts()) because if we are on this page,
@@ -19,5 +20,10 @@ get_header();
   </main><!-- #main -->
 </div><!-- .wrap -->
 <?php
+if(is_home() || is_page()):
+  get_sidebar('main');
+else:
+  get_sidebar('blog');
+endif;
 get_footer();
 ?>

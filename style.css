@@ -1740,8 +1740,6 @@ header.top {
       color: #211f1f; }
       #menu-top.sticky a:hover::after {
         color: #211f1f; }
-  #menu-top.sticky .mobile-button {
-    color: #211f1f; }
 
 .mobile-menu-button {
   font-size: 1.5em;
@@ -1756,6 +1754,8 @@ header.top {
   display: none; }
   .mobile-menu-button:hover {
     color: #211f1f; }
+  .mobile-menu-button:focus {
+    outline: none; }
 
 nav.mobile-menu {
   width: 100%;
@@ -1796,7 +1796,11 @@ nav.mobile-menu {
   padding: 20px 20px; }
   #sidebar-main .widget ul, #sidebar-blog .widget ul {
     list-style: none; }
-  #sidebar-main h2.widget-title, #sidebar-blog h2.widget-title {
+  #sidebar-main .widget_recent_comments, #sidebar-blog .widget_recent_comments {
+    border: 1px solid #ccc;
+    padding: 20px; }
+  #sidebar-main h2.widgettitle, #sidebar-blog h2.widgettitle {
+    margin-bottom: 0;
     font-size: 200%; }
 
 .button, .jumbo-btn {

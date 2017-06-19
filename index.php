@@ -1,7 +1,8 @@
 <?php
 get_header();
 ?>
-<div class="wrap clear <?php $class = (is_active_sidebar('sidebar-main')) ? 'col-md-8' : ''; echo $class; ?>">
+<div class="wrap clear <?php
+$class = (is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; echo $class; ?>">
   <main id="main" class="site-main" role="main">
     <?php
       if(have_posts()):

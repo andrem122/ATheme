@@ -37,6 +37,12 @@ function a_theme_setup() {
   	'flex-width'  => true,
   	'header-text' => array( 'site-title', 'site-description')
   ));
+  add_theme_support('html5', array(
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	));
   //menus
   register_nav_menus(array(
     'top' => 'Top Menu',
