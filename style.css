@@ -2244,11 +2244,25 @@ footer {
   border-top: 1px solid #ccc;
   padding: 50px 0; }
   footer #menu-bottom {
-    list-style: none; }
+    text-align: center;
+    list-style: none;
+    margin-bottom: 8px; }
     footer #menu-bottom > li {
       display: inline-block;
       margin-right: 20px;
       text-transform: uppercase; }
+      footer #menu-bottom > li > a {
+        font-size: 85%;
+        letter-spacing: 1px; }
+  footer .social-media-links {
+    display: flex;
+    justify-content: center; }
+  footer .site-info {
+    text-align: center;
+    text-transform: uppercase; }
+    footer .site-info > a {
+      font-size: 85%;
+      letter-spacing: 1px; }
   footer .footer-content-wrapper::after {
     content: "";
     display: block;

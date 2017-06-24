@@ -16,16 +16,30 @@
       <div class="wrap">
         <div class="center-content">
           <div class="row">
+            <?php get_template_part('template-parts/footer/footer', 'widgets') ?>
             <!-- bottom menu -->
+            <?php
+              if(!is_active_sidebar('sidebar-footer-1') ||
+              !is_active_sidebar('sidebar-footer-2') ||
+              !is_active_sidebar('sidebar-footer-3')):
+            ?>
             <nav>
               <?php
               wp_nav_menu(array(
                 'theme_location' => 'bottom',
                 'container'      =>  false,
-                'menu' => __( 'The Bottom Menu', 'atheme' ),  
+                'menu' => __( 'The Bottom Menu', 'atheme' ),
               ));
               ?>
+              <div class="social-media-links">
+                <?php
+                if(is_active_sidebar('sidebar-footer-social')):
+                  dynamic_sidebar('sidebar-footer-social');
+                endif;
+                ?>
+              </div>
             </nav>
+            <?php endif; ?>
             <?php get_template_part('template-parts/footer/site', 'info'); ?>
           </div>
         </div>

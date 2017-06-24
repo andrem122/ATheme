@@ -13,6 +13,7 @@ add_action('wp_enqueue_scripts', 'a_theme_scripts');
 
 //theme supports
 function a_theme_setup() {
+  load_theme_textdomain('atheme');
   //theme supports
   add_theme_support('menus');
   //title tag
@@ -74,7 +75,54 @@ function a_theme_widget_init() {
       'description' => __('Add widgets here to appear on your blog and archive pages.', 'atheme'),
       'before_widget' => '<section id="%1$s" class="widget %2$s">',
       'after_widget'  => '</section>',
-      'before_title'  => '<h2 class="widgettitle">',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>'
+    )
+  );
+  //footer 1 sidebar
+  register_sidebar(
+    array(
+      'name'  => 'Footer 1',
+      'id'    => 'sidebar-footer-1',
+      'description' => __('Add widgets here to appear in the left of your footer', 'atheme'),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>'
+    )
+  );
+  //footer 2 sidebar
+  register_sidebar(
+    array(
+      'name'  => 'Footer 2',
+      'id'    => 'sidebar-footer-2',
+      'description' => __('Add widgets here to appear in the middle of your footer', 'atheme'),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>'
+    )
+  );
+  //footer 3 sidebar
+  register_sidebar(
+    array(
+      'name'  => 'Footer 3',
+      'id'    => 'sidebar-footer-3',
+      'description' => __('Add widgets here to appear in the right of your footer', 'atheme'),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>'
+    )
+  );
+  register_sidebar(
+    array(
+      'name'  => 'Social Media Links',
+      'id'    => 'sidebar-footer-social',
+      'description' => __('Add your social media links here', 'atheme'),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
       'after_title'   => '</h2>'
     )
   );
