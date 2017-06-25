@@ -1,28 +1,38 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <header class="entry-header">
-    <div class="post-image">
-      <a href="<?php esc_url(the_permalink()); ?>" title="Permalink to: <?php the_title(); ?>">
-        <?php
-          if(has_post_thumbnail()):
-            the_post_thumbnail();
-          endif;
-        ?>
-      </a>
-    </div>
+  <div class="post-image">
+    <?php if(is_single()):
+            if(has_post_thumbnail()):
+              the_post_thumbnail();
+            endif;
+          else: ?>
+            <a href="<?php esc_url(the_permalink()); ?>" title="Permalink to: <?php the_title(); ?>">
+              <?php
+                if(has_post_thumbnail()):
+                  the_post_thumbnail();
+                endif;
+              ?>
+            </a>
+    <?php endif; ?>
+  </div>
+  <div class="post-text">
     <div class="post-title">
-      <h1 class="entry-title">
-        <a href="<?php esc_url(the_permalink()); ?>">
-          <?php the_title(); ?>
-        </a>
-      </h1>
+      <h2 class="entry-title">
+        <p class="p-meta left">
+          <span>
+            <time datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('d M'); ?></time>
+          </span>
+        </p>
+        <?php if(is_single()):
+                the_title();
+              else: ?>
+                <a href="<?php esc_url(the_permalink()); ?>" title="Permalink to: <?php the_title(); ?>">
+                  <?php
+                    the_title();
+                  ?>
+                </a>
+        <?php endif; ?>
+      </h2>
     </div>
-    <p class="p-meta">
-      <span>
-        <time><?php the_time('F j, Y'); ?></time>
-      </span>
-    </p>
-  </header><!-- .entry-header -->
-  <div class="entry-content">
     <?php
     //if it's a single page, display the whole text
       if(is_single()):
@@ -32,5 +42,5 @@
         the_excerpt();
       endif;
     ?>
-  </div><!-- .entry-content -->
+  </div>
 </article><!-- #post-## -->

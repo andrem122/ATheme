@@ -1838,6 +1838,16 @@ nav.mobile-menu {
     font-size: 100%; } }
 body.blog .page {
   background-color: #f6f6f6; }
+  body.blog .page article.post {
+    margin-bottom: 60px; }
+    body.blog .page article.post h2.entry-title {
+      text-transform: uppercase;
+      font-size: 180%; }
+    body.blog .page article.post .p-meta {
+      margin-right: 8px; }
+    body.blog .page article.post .post-text {
+      padding: 23px 23px 35px 23px;
+      background-color: #fff; }
 
 .social-icon {
   color: rgba(255, 255, 255, 0.8);
