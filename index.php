@@ -4,6 +4,7 @@ get_header();
 <div class="wrap clear <?php
 $class = (is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; echo $class; ?>">
   <main id="main" class="site-main" role="main">
+    <div class="title-holder"><?php esc_html(get_the_title()); ?></div>
     <?php
       if(have_posts()):
         while(have_posts()): the_post();

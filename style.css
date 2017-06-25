@@ -1792,16 +1792,15 @@ nav.mobile-menu {
     display: none; } }
 #sidebar-main, #sidebar-blog {
   z-index: 100;
-  border-left: 1px solid #ccc;
   padding: 20px 20px; }
-  #sidebar-main .widget ul, #sidebar-blog .widget ul {
-    list-style: none; }
-  #sidebar-main .widget_recent_comments, #sidebar-blog .widget_recent_comments {
-    border: 1px solid #ccc;
-    padding: 20px; }
-  #sidebar-main h2.widgettitle, #sidebar-blog h2.widgettitle {
-    margin-bottom: 0;
-    font-size: 200%; }
+  #sidebar-main .widget, #sidebar-blog .widget {
+    margin-bottom: 40px; }
+    #sidebar-main .widget ul, #sidebar-blog .widget ul {
+      list-style: none; }
+  #sidebar-main h2.widget-title, #sidebar-blog h2.widget-title {
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    font-size: 140%; }
 
 .button, .jumbo-btn {
   display: inline-block;
@@ -1837,6 +1836,9 @@ nav.mobile-menu {
 @media all and (max-width: 430px) {
   .button, .jumbo-btn {
     font-size: 100%; } }
+body.blog .page {
+  background-color: #f6f6f6; }
+
 .social-icon {
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;

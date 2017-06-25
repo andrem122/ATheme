@@ -20,6 +20,8 @@ function a_theme_setup() {
   add_theme_support('title-tag');
   //post thumbnails
   add_theme_support('post-thumbnails');
+  //sets recent posts thumbnails
+  add_image_size('atheme-recent-posts-thumbnail', 180, 9999, true);
   //post formats
   add_theme_support('post-formats', array(
     'aside',
@@ -129,3 +131,48 @@ function a_theme_widget_init() {
 }
 
 add_action('widgets_init', 'a_theme_widget_init');
+
+?>
+
+
+<?php
+function atheme_recent_posts() {
+  $atheme_recent_posts = new WP_Query();
+  $atheme_recent_posts->query('showposts=3');
+  if($atheme_recent_posts->have_posts()): ?>
+    <section class="widget">
+      <ul class="atheme-recent-posts">
+        <?php while($atheme_recent_posts->have_posts()): $atheme_recent_posts->the_post(); ?>
+          <li>
+            <article class="atheme-recent-post">
+              <div class="atheme-recent-posts-top">
+                <a href="<?php esc_url(the_permalink()); ?>">
+                  <?php
+                    if(has_post_thumbnail()):
+                      the_post_thumbnail();
+                    endif;
+                  ?>
+                </a>
+              </div>
+              <div class="atheme-recent-posts-bottom">
+                <h4>
+                  <a href="<?php esc_url(the_permalink()); ?>">
+                    <?php esc_html(the_title()); ?>
+                  </a>
+                </h4>
+              </div>
+            </article>
+          </li>
+        <?php endwhile;
+        wp_reset_postdata();
+        ?>
+      </ul>
+    </section>
+<?php
+  endif;
+}
+?>
+
+</ul>
+
+<?php
