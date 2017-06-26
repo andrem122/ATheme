@@ -1842,9 +1842,13 @@ body.blog .page {
     margin-bottom: 60px; }
     body.blog .page article.post h2.entry-title {
       text-transform: uppercase;
-      font-size: 180%; }
+      font-size: 180%;
+      margin-bottom: 0; }
     body.blog .page article.post .p-meta {
-      margin-right: 8px; }
+      margin-right: 8px;
+      margin-bottom: 0; }
+    body.blog .page article.post .post-info {
+      margin-bottom: 10px; }
     body.blog .page article.post .post-text {
       padding: 23px 23px 35px 23px;
       background-color: #fff; }
@@ -2148,36 +2152,16 @@ form {
   border-left: 4px solid #f44b4b;
   color: #e21b1b; }
 
-#recent-posts {
-  padding: 40px 0;
-  background-color: #edeeef; }
-  #recent-posts .recent-post {
-    -webkit-transition: all 150ms linear;
-    -moz-transition: all 150ms linear;
-    -ms-transition: all 150ms linear;
-    -o-transition: all 150ms linear;
-    transition: all 150ms linear; }
-  #recent-posts .recent-post-img {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: scroll; }
-    #recent-posts .recent-post-img::after {
-      content: "";
-      display: block;
-      padding-top: 100%; }
-  #recent-posts .recent-post-top {
+.widget-recent-posts .atheme-recent-post {
+  margin-bottom: 20px; }
+  .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top {
     display: block;
     position: relative; }
-    #recent-posts .recent-post-top:hover > i {
+    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top:hover > i {
       opacity: 1; }
-    #recent-posts .recent-post-top:hover::after {
+    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top:hover::after {
       opacity: 1; }
-    #recent-posts .recent-post-top i {
+    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top i {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -2196,9 +2180,9 @@ form {
       font-size: 25px;
       border-radius: 50%;
       text-align: center; }
-      #recent-posts .recent-post-top i::before {
+      .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top i::before {
         line-height: 50px; }
-    #recent-posts .recent-post-top::after {
+    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top::after {
       opacity: 0;
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
@@ -2213,29 +2197,31 @@ form {
       width: 100%;
       z-index: 10;
       background-color: rgba(0, 0, 0, 0.6); }
-  #recent-posts .recent-post-bottom {
-    background-color: #fff;
-    padding: 20px;
-    border-top: 0; }
-    #recent-posts .recent-post-bottom h3 {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-bottom: 0;
-      font-size: 130%;
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -ms-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out; }
-      #recent-posts .recent-post-bottom h3:hover {
-        color: #5AD8A3; }
-    #recent-posts .recent-post-bottom span {
-      display: block;
-      margin-bottom: 10px; }
-    #recent-posts .recent-post-bottom i {
-      font-size: 130%;
-      margin-left: 5px; }
+.widget-recent-posts .atheme-recent-posts-bottom {
+  background-color: #fff;
+  padding: 20px;
+  border-top: 0; }
+  .widget-recent-posts .atheme-recent-posts-bottom .p-meta {
+    margin-bottom: 0; }
+  .widget-recent-posts .atheme-recent-posts-bottom h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+    font-size: 130%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .widget-recent-posts .atheme-recent-posts-bottom h4:hover {
+      color: #5AD8A3; }
+  .widget-recent-posts .atheme-recent-posts-bottom span {
+    display: block;
+    margin-bottom: 10px; }
+  .widget-recent-posts .atheme-recent-posts-bottom i {
+    font-size: 130%;
+    margin-left: 5px; }
 
 @media all and (max-width: 1195px) {
   .recent-post-bottom h3 {

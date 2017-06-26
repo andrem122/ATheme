@@ -136,11 +136,13 @@ add_action('widgets_init', 'a_theme_widget_init');
 
 
 <?php
+//displays 3 recent posts with featured images
+
 function atheme_recent_posts() {
   $atheme_recent_posts = new WP_Query();
   $atheme_recent_posts->query('showposts=3');
   if($atheme_recent_posts->have_posts()): ?>
-    <section class="widget">
+    <section class="widget widget-recent-posts">
       <ul class="atheme-recent-posts">
         <?php while($atheme_recent_posts->have_posts()): $atheme_recent_posts->the_post(); ?>
           <li>
@@ -155,11 +157,18 @@ function atheme_recent_posts() {
                 </a>
               </div>
               <div class="atheme-recent-posts-bottom">
-                <h4>
-                  <a href="<?php esc_url(the_permalink()); ?>">
-                    <?php esc_html(the_title()); ?>
-                  </a>
-                </h4>
+                <div class="post-title">
+                  <h4>
+                    <a href="<?php esc_url(the_permalink()); ?>">
+                      <?php esc_html(the_title()); ?>
+                    </a>
+                  </h4>
+                </div>
+                <div class="post-info">
+                  <p class="p-meta">
+                    <span><time datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('F j, Y'); ?></time></span>
+                  </p>
+                </div>
               </div>
             </article>
           </li>
