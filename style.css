@@ -1570,6 +1570,7 @@ body {
   font-family: "Libre Franklin", sans-serif;
   font-size: 100%;
   color: #787f8c;
+  background-color: #f6f6f6;
   line-height: 1.7;
   overflow-x: hidden; }
 
@@ -1807,7 +1808,7 @@ nav.mobile-menu {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
-  padding: 15px 30px;
+  padding: 10px 20px;
   font-size: 100%;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -1852,6 +1853,26 @@ body.blog .page {
     body.blog .page article.post .post-text {
       padding: 23px 23px 35px 23px;
       background-color: #fff; }
+
+body.single-post article .entry-title .p-meta {
+  margin-bottom: 0;
+  margin-right: 8px; }
+body.single-post .post-image > img {
+  width: 100%; }
+
+body.single-post ol.comment-list {
+  list-style: none; }
+  body.single-post ol.comment-list li.comment {
+    background-color: #fff;
+    padding: 23px;
+    margin-bottom: 15px; }
+    body.single-post ol.comment-list li.comment .image {
+      float: left; }
+    body.single-post ol.comment-list li.comment .text {
+      min-height: 80px;
+      padding-left: 100px; }
+    body.single-post ol.comment-list li.comment h5.name {
+      margin-bottom: 0; }
 
 .social-icon {
   color: rgba(255, 255, 255, 0.8);

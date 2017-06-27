@@ -21,7 +21,7 @@ function a_theme_setup() {
   //post thumbnails
   add_theme_support('post-thumbnails');
   //sets recent posts thumbnails
-  add_image_size('atheme-recent-posts-thumbnail', 180, 9999, true);
+  add_image_size('atheme-recent-posts-thumbnail', 287, 187, true);
   //post formats
   add_theme_support('post-formats', array(
     'aside',
@@ -46,6 +46,10 @@ function a_theme_setup() {
 		'gallery',
 		'caption',
 	));
+  //custom background color
+  add_theme_support( 'custom-background', array(
+  	'default-color' => '#f6f6f6',
+  ));
   //menus
   register_nav_menus(array(
     'top' => 'Top Menu',
@@ -182,6 +186,26 @@ function atheme_recent_posts() {
 }
 ?>
 
-</ul>
-
 <?php
+//custom comment markup
+function atheme_comments($comment, $args, $depth) {
+  $GLOBALS['comment'] = $comment;
+  $comment_id = $comment->comment_ID;
+  $user_id = get_the_author_meta('ID', true);
+  ?>
+  <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+    <div class="comment">
+      <div class="image">
+        <?php echo get_avatar(get_the_author_meta('ID'), 75); ?>
+      </div>
+      <div class="text">
+        <h5 class="name"><?php esc_html_e(get_comment_author($comment_id)); ?></h5>
+        <span class="comment-date">Posted at <?php esc_html_e(get_comment_date('h:i A, d M', $comment_id)); ?></span>
+        <?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply', 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+        <div class="comment-content">
+          <?php comment_text(); ?>
+        </div>
+      </div>
+    </div>
+
+<?php } ?>

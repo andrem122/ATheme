@@ -18,19 +18,16 @@
       //if there is only one comment on the post, output this
       if('1' === $comments_number) {
         /* translators: %s: post title */
-        printf(_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'atheme' ), get_the_title());
+        printf(_x( '%s Comment', 'comments title', 'atheme' ), number_format_i18n($comments_number));
       } else {
         printf(
           /* translators: 1: number of comments, 2: post title */
-          _nx(
-            '%1$s Reply to &ldquo;%2$s&rdquo;',
-            '%1$s Replies to &ldquo;%2$s&rdquo;',
-            $comments_number,
+          _x(
+            '%s Comments',
             'comments title',
             'atheme'
           ),
-          number_format_i18n($comments_number),
-          get_the_title()
+          number_format_i18n($comments_number)
         );
       }
     ?>
@@ -43,7 +40,8 @@
         'style'       => 'ol',
         'reply_text'  => __('Reply', 'atheme'),
         'short_ping'  => true,
-        'per_page'    => 25
+        'per_page'    => 25,
+        'callback'    => 'atheme_comments',
       ));
     ?>
   </ol>

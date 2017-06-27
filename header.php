@@ -31,15 +31,19 @@
             <!-- top menu -->
             <nav class="main-menu">
               <?php
-                wp_nav_menu(array(
-                  'theme_location' => 'top',
-                  'container'      => false,
-                  'menu' => __( 'The Top Menu', 'atheme' ),
-                ));
+                if(has_nav_menu('top')):
+                  wp_nav_menu(array(
+                    'theme_location' => 'top',
+                    'container'      => false,
+                    'menu' => __( 'The Top Menu', 'atheme' ),
+                  ));
+                endif;
               ?>
             </nav>
             <!-- mobile menu button -->
-            <button class="mobile-menu-button" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            <?php if(has_nav_menu('top')): ?>
+              <button class="mobile-menu-button" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            <?php endif; ?>
           </div>
           <nav style="display: none" class="mobile-menu">
             <?php

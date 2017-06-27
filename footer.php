@@ -25,11 +25,13 @@
             ?>
             <nav>
               <?php
-              wp_nav_menu(array(
-                'theme_location' => 'bottom',
-                'container'      =>  false,
-                'menu' => __( 'The Bottom Menu', 'atheme' ),
-              ));
+                if(has_nav_menu('bottom')):
+                  wp_nav_menu(array(
+                    'theme_location' => 'bottom',
+                    'container'      =>  false,
+                    'menu' => __( 'The Bottom Menu', 'atheme' ),
+                  ));
+                endif;
               ?>
               <div class="social-media-links">
                 <?php
