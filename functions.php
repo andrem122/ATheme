@@ -196,11 +196,11 @@ function atheme_comments($comment, $args, $depth) {
   <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
     <div class="comment">
       <div class="image">
-        <?php echo get_avatar(get_the_author_meta('ID'), 75); ?>
+        <?php echo get_avatar(get_the_author_meta('ID'), 83); ?>
       </div>
       <div class="text">
         <h5 class="name"><?php esc_html_e(get_comment_author($comment_id)); ?></h5>
-        <span class="comment-date">Posted at <?php esc_html_e(get_comment_date('h:i A, d M', $comment_id)); ?></span>
+        <span class="comment-date"><?php esc_html_e(get_comment_date('m.d.Y \a\t h:i A', $comment_id)); ?></span>
         <?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply', 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
         <div class="comment-content">
           <?php comment_text(); ?>

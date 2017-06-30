@@ -1,21 +1,16 @@
 <?php
-//default template for post content
+//template for excerpts of posts
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  Excerpt
   <div class="post-image">
-    <?php if(is_single()):
-            if(has_post_thumbnail()):
-              the_post_thumbnail();
-            endif;
-          else: ?>
-            <a href="<?php esc_url(the_permalink()); ?>" title="Permalink to: <?php the_title(); ?>">
-              <?php
-                if(has_post_thumbnail()):
-                  the_post_thumbnail();
-                endif;
-              ?>
-            </a>
-    <?php endif; ?>
+    <a href="<?php esc_url(the_permalink()); ?>" title="Permalink to: <?php the_title(); ?>">
+      <?php
+        if(has_post_thumbnail()):
+          the_post_thumbnail();
+        endif;
+      ?>
+    </a>
   </div><!-- .post-image -->
   <div class="post-text">
     <div class="post-title">
@@ -25,15 +20,11 @@
             <time datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('d M'); ?></time>
           </span>
         </p>
-        <?php if(is_single()):
-                the_title();
-              else: ?>
-                <a href="<?php esc_url(the_permalink()); ?>" title="Permalink to: <?php the_title(); ?>">
-                  <?php
-                    the_title();
-                  ?>
-                </a>
-        <?php endif; ?>
+        <a href="<?php esc_url(the_permalink()); ?>" title="Permalink to: <?php the_title(); ?>">
+          <?php
+            the_title();
+          ?>
+        </a>
       </h2>
     </div>
     <div class="post-info">
@@ -59,15 +50,7 @@
         <?php endif; ?>
       </p>
     </div>
-    <?php
-    //if it's a single page, display the whole text
-      if(is_single()):
-        the_content();
-      //if it's not a single page, display an excerpt
-    else: ?>
       <?php the_excerpt(); ?>
       <a class="button" href="<?php esc_url(the_permalink()); ?>">Read More</a>
-    <?php
-      endif; ?>
   </div><!-- .post-text -->
 </article><!-- #post-## -->

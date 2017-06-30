@@ -2,6 +2,13 @@
 body.blog
   .page
     background-color: #f6f6f6
+    article.post.format-quote
+      .post-text
+        @include transition(all, 0.3s, ease-in-out)
+        &:hover
+          background-color: $button
+          span, a, p
+            color: $wh
     article.post
       margin-bottom: 60px
       h2.entry-title

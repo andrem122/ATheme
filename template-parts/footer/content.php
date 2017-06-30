@@ -2,6 +2,7 @@
 //default template for post content
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  Content.php
   <div class="post-image">
     <?php if(is_single()):
             if(has_post_thumbnail()):

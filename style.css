@@ -1684,8 +1684,6 @@ a {
 header.top {
   padding: 20px 0; }
   header.top h1 {
-    margin: 0;
-      margin-top: 10px;
     font-size: 220%; }
 
 #menu-top {
@@ -1693,7 +1691,6 @@ header.top {
   min-height: 60px;
   padding-top: 10px;
   transition: 0.3s ease-in-out;
-  background-color: #fff;
   z-index: 9999; }
   #menu-top > li {
     display: inline-block;
@@ -1839,6 +1836,16 @@ nav.mobile-menu {
     font-size: 100%; } }
 body.blog .page {
   background-color: #f6f6f6; }
+  body.blog .page article.post.format-quote .post-text {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    body.blog .page article.post.format-quote .post-text:hover {
+      background-color: #5AD8A3; }
+      body.blog .page article.post.format-quote .post-text:hover span, body.blog .page article.post.format-quote .post-text:hover a, body.blog .page article.post.format-quote .post-text:hover p {
+        color: #fff; }
   body.blog .page article.post {
     margin-bottom: 60px; }
     body.blog .page article.post h2.entry-title {
@@ -1854,6 +1861,11 @@ body.blog .page {
       padding: 23px 23px 35px 23px;
       background-color: #fff; }
 
+article.format-quote .post-text {
+  background-color: #fff;
+  padding: 23px 23px 35px 23px;
+  font-size: 21px; }
+
 body.single-post article .entry-title .p-meta {
   margin-bottom: 0;
   margin-right: 8px; }
@@ -1862,18 +1874,30 @@ body.single-post .post-image > img {
 
 body.single-post ol.comment-list {
   list-style: none; }
+  body.single-post ol.comment-list ol.children {
+    list-style: none; }
   body.single-post ol.comment-list li.comment {
+    padding-left: 40px; }
+  body.single-post ol.comment-list li.comment.depth-1 {
     background-color: #fff;
     padding: 23px;
-    margin-bottom: 15px; }
-    body.single-post ol.comment-list li.comment .image {
+    margin-bottom: 18px; }
+    body.single-post ol.comment-list li.comment.depth-1 .image {
       float: left; }
-    body.single-post ol.comment-list li.comment .text {
+    body.single-post ol.comment-list li.comment.depth-1 .text {
       min-height: 80px;
       padding-left: 100px; }
-    body.single-post ol.comment-list li.comment h5.name {
+    body.single-post ol.comment-list li.comment.depth-1 h5.name {
       margin-bottom: 0; }
+    body.single-post ol.comment-list li.comment.depth-1 a.comment-reply-link {
+      text-transform: uppercase; }
+    body.single-post ol.comment-list li.comment.depth-1 .comment-date {
+      text-transform: uppercase; }
 
+@media all and (max-width: 550px) {
+  body.single-post ol.comment-list li.comment {
+    padding-left: 40px;
+    font-size: 14px; } }
 .social-icon {
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
@@ -2260,8 +2284,8 @@ form {
   .recent-post-bottom h3 {
     font-size: 130%; } }
 footer {
-  border-top: 1px solid #ccc;
-  padding: 50px 0; }
+  padding: 50px 0;
+  background-color: #2e2e2e; }
   footer #menu-bottom {
     text-align: center;
     list-style: none;

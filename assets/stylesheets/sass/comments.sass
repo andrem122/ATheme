@@ -1,10 +1,14 @@
 body.single-post
   ol.comment-list
     list-style: none
+    ol.children
+      list-style: none
     li.comment
+      padding-left: 40px
+    li.comment.depth-1
       background-color: $wh
       padding: 23px
-      margin-bottom: 15px
+      margin-bottom: 18px
       .image
         float: left
       .text
@@ -12,3 +16,13 @@ body.single-post
         padding-left: 100px
       h5.name
         margin-bottom: 0
+      a.comment-reply-link
+        text-transform: uppercase
+      .comment-date
+        text-transform: uppercase
+@media all and (max-width: 550px)
+  body.single-post
+    ol.comment-list
+      li.comment
+        padding-left: 40px
+        font-size: 14px
