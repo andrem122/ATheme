@@ -2,6 +2,16 @@
 //default template for post content
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <div class="post-title-holder">
+    <h1 class="header-title">
+      <?php
+      if(is_single()):
+        the_title();
+      endif;
+      ?>
+    </h1>
+    <span class="underline left"></span>
+  </div>
   <div class="post-image">
     <?php if(is_single()):
             if(has_post_thumbnail()):
@@ -59,15 +69,17 @@
         <?php endif; ?>
       </p>
     </div>
-    <?php
-    //if it's a single page, display the whole text
-      if(is_single()):
-        the_content();
-      //if it's not a single page, display an excerpt
-    else: ?>
-      <?php the_excerpt(); ?>
-      <a class="button" href="<?php esc_url(the_permalink()); ?>">Read More</a>
-    <?php
-      endif; ?>
+    <div class="post-content">
+      <?php
+      //if it's a single page, display the whole text
+        if(is_single()):
+          the_content();
+        //if it's not a single page, display an excerpt
+      else: ?>
+        <?php the_excerpt(); ?>
+        <a class="button" href="<?php esc_url(the_permalink()); ?>">Read More</a>
+      <?php
+        endif; ?>
+    </div><!-- .post-content -->
   </div><!-- .post-text -->
 </article><!-- #post-## -->
