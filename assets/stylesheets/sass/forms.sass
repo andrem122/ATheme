@@ -14,17 +14,17 @@ form
         border-color: $button-hover
       text-transform: uppercase
       color: $button
-    $types: text email tel time url week search range file month
-    @each $type in $types
-      &[type="#{$type}"]
+    $inputs: text email tel time url week search range file month
+    @each $input in $inputs
+      &[type="#{$input}"]
         display: block
         width: 100%
         font-size: 100%
         margin-bottom: 20px
         padding: 10px
-        border: 1px solid #ccc
+        border: none
         &:focus
-          border-color: $button
+          outline: 0
         @include transition(all, 300ms, ease-in-out)
   textarea
     display: block
@@ -34,8 +34,9 @@ form
     padding: 10px
     border: 1px solid #ccc
     font-family: $body-f
+    border: none
     &:focus
-      border-color: $button
+      outline: 0
 #form-messages
   &.success, &.error
     padding: 10px

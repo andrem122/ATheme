@@ -209,3 +209,55 @@ function atheme_comments($comment, $args, $depth) {
     </div>
 
 <?php } ?>
+
+<?php
+  //alters the default comment form
+  function atheme_comment_form($fields) {
+    //author
+    $fields['author'] = str_replace(
+      '<input id="author" name="author" type="text" value="John Dillinger"',
+        '<input placeholder="'
+            . _x('Your full name',
+                'comment form website placeholder',
+                'atheme'
+                )
+            . '"' . 'id="author" name="author" type="text"',
+        $fields['author']
+    );
+    //email
+    $fields['email'] = str_replace(
+      '<input id="email" name="email" type="email" value="genuwine12@gmail.com"',
+        '<input placeholder="'
+            . _x('Email address',
+                'comment form email placeholder',
+                'atheme'
+                )
+            . '"' . 'id="email" name="email" type="email"',
+        $fields['email']
+    );
+    //website
+    $fields['url'] = str_replace(
+      '<input id="url" name="url" type="url" value="http://www.bob.com"',
+        '<input placeholder="'
+            . _x('Website',
+                'comment form website placeholder',
+                'atheme'
+                )
+            . '"' . 'id="url" name="url" type="url"',
+        $fields['url']
+    );
+
+    return $fields;
+  }
+
+  add_filter('comment_form_default_fields', 'atheme_comment_form');
+
+  function atheme_placeholder_comment_form_field($fields) {
+    $replace_comment = _x('Write your comment here...', 'comment form textarea placeholder' ,'atheme');
+
+    $fields['comment_field'] = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) .
+    '</label><textarea id="comment" name="comment" cols="45" rows="8" placeholder="' . $replace_comment . '" aria-required="true"></textarea></p>';
+
+    return $fields;
+ }
+ add_filter( 'comment_form_defaults', 'atheme_placeholder_comment_form_field' );

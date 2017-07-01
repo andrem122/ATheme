@@ -1568,7 +1568,7 @@
 
 body {
   font-family: "Libre Franklin", sans-serif;
-  font-size: 100%;
+  font-size: 87.5%;
   color: #787f8c;
   background-color: #f6f6f6;
   line-height: 1.7;
@@ -1886,32 +1886,28 @@ body.single-post article .post-title .p-meta {
 body.single-post .post-image > img {
   width: 100%; }
 
-body.single-post ol.comment-list {
+#comments ol.comment-list {
   list-style: none; }
-  body.single-post ol.comment-list ol.children {
+  #comments ol.comment-list ol.children {
     list-style: none; }
-  body.single-post ol.comment-list li.comment {
+  #comments ol.comment-list li.comment {
     padding-left: 40px; }
-  body.single-post ol.comment-list li.comment.depth-1 {
+  #comments ol.comment-list li.comment.depth-1 {
     background-color: #fff;
     padding: 23px;
     margin-bottom: 18px; }
-    body.single-post ol.comment-list li.comment.depth-1 .image {
+    #comments ol.comment-list li.comment.depth-1 .image {
       float: left; }
-    body.single-post ol.comment-list li.comment.depth-1 .text {
+    #comments ol.comment-list li.comment.depth-1 .text {
       min-height: 80px;
       padding-left: 100px; }
-    body.single-post ol.comment-list li.comment.depth-1 h5.name {
+    #comments ol.comment-list li.comment.depth-1 h5.name {
       margin-bottom: 0; }
-    body.single-post ol.comment-list li.comment.depth-1 a.comment-reply-link {
+    #comments ol.comment-list li.comment.depth-1 a.comment-reply-link {
       text-transform: uppercase; }
-    body.single-post ol.comment-list li.comment.depth-1 .comment-date {
+    #comments ol.comment-list li.comment.depth-1 .comment-date {
       text-transform: uppercase; }
 
-@media all and (max-width: 550px) {
-  body.single-post ol.comment-list li.comment {
-    padding-left: 40px;
-    font-size: 14px; } }
 .social-icon {
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
@@ -2049,140 +2045,140 @@ form {
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="text"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form input[type="email"] {
     display: block;
     width: 100%;
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="email"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form input[type="tel"] {
     display: block;
     width: 100%;
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="tel"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form input[type="time"] {
     display: block;
     width: 100%;
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="time"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form input[type="url"] {
     display: block;
     width: 100%;
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="url"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form input[type="week"] {
     display: block;
     width: 100%;
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="week"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form input[type="search"] {
     display: block;
     width: 100%;
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="search"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form input[type="range"] {
     display: block;
     width: 100%;
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="range"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form input[type="file"] {
     display: block;
     width: 100%;
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="file"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form input[type="month"] {
     display: block;
     width: 100%;
     font-size: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out; }
     form input[type="month"]:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
   form textarea {
     display: block;
     width: 100%;
@@ -2190,9 +2186,10 @@ form {
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
-    font-family: "Libre Franklin", sans-serif; }
+    font-family: "Libre Franklin", sans-serif;
+    border: none; }
     form textarea:focus {
-      border-color: #5AD8A3; }
+      outline: 0; }
 
 #form-messages.success, #form-messages.error {
   padding: 10px;
