@@ -1886,27 +1886,29 @@ body.single-post article .post-title .p-meta {
 body.single-post .post-image > img {
   width: 100%; }
 
-#comments ol.comment-list {
-  list-style: none; }
-  #comments ol.comment-list ol.children {
+#comments {
+  margin-top: 30px; }
+  #comments ol.comment-list {
     list-style: none; }
-  #comments ol.comment-list li.comment {
-    padding-left: 40px; }
-  #comments ol.comment-list li.comment.depth-1 {
-    background-color: #fff;
-    padding: 23px;
-    margin-bottom: 18px; }
-    #comments ol.comment-list li.comment.depth-1 .image {
-      float: left; }
-    #comments ol.comment-list li.comment.depth-1 .text {
-      min-height: 80px;
-      padding-left: 100px; }
-    #comments ol.comment-list li.comment.depth-1 h5.name {
-      margin-bottom: 0; }
-    #comments ol.comment-list li.comment.depth-1 a.comment-reply-link {
-      text-transform: uppercase; }
-    #comments ol.comment-list li.comment.depth-1 .comment-date {
-      text-transform: uppercase; }
+    #comments ol.comment-list ol.children {
+      list-style: none; }
+    #comments ol.comment-list li.comment {
+      padding-left: 40px; }
+    #comments ol.comment-list li.comment.depth-1 {
+      background-color: #fff;
+      padding: 23px;
+      margin-bottom: 18px; }
+      #comments ol.comment-list li.comment.depth-1 .image {
+        float: left; }
+      #comments ol.comment-list li.comment.depth-1 .text {
+        min-height: 80px;
+        padding-left: 100px; }
+      #comments ol.comment-list li.comment.depth-1 h5.name {
+        margin-bottom: 0; }
+      #comments ol.comment-list li.comment.depth-1 a.comment-reply-link {
+        text-transform: uppercase; }
+      #comments ol.comment-list li.comment.depth-1 .comment-date {
+        text-transform: uppercase; }
 
 .social-icon {
   color: rgba(255, 255, 255, 0.8);
@@ -2043,7 +2045,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2057,7 +2058,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2071,7 +2071,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2085,7 +2084,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2099,7 +2097,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2113,7 +2110,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2127,7 +2123,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2141,7 +2136,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2155,7 +2149,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2169,7 +2162,6 @@ form {
     display: block;
     width: 100%;
     font-size: 100%;
-    margin-bottom: 20px;
     padding: 10px;
     border: none;
     -webkit-transition: all 300ms ease-in-out;
@@ -2191,22 +2183,10 @@ form {
     form textarea:focus {
       outline: 0; }
 
-#form-messages.success, #form-messages.error {
-  padding: 10px;
-  margin-bottom: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
-#form-messages.success {
-  background-color: #dff0d8;
-  border-left: 4px solid #8ab763;
-  color: #468847; }
-#form-messages.error {
-  background-color: #edaaaa;
-  border-left: 4px solid #f44b4b;
-  color: #e21b1b; }
+form#commentform .comment-form-url {
+  margin-right: 0; }
+form#commentform .col-sm-4 {
+  margin-bottom: 20px; }
 
 .widget-recent-posts .atheme-recent-post {
   margin-bottom: 20px; }

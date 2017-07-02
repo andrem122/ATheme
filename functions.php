@@ -215,10 +215,10 @@ function atheme_comments($comment, $args, $depth) {
   function atheme_comment_form($fields) {
     //author
     $fields['author'] = str_replace(
-      '<input id="author" name="author" type="text" value="John Dillinger"',
-        '<input placeholder="'
+      '<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="John Dillinger"',
+        '<p class="comment-form-author col-sm-4"><label for="author">Name <span class="required">*</span></label> <input placeholder="'
             . _x('Your full name',
-                'comment form website placeholder',
+                'comment form author placeholder',
                 'atheme'
                 )
             . '"' . 'id="author" name="author" type="text"',
@@ -226,9 +226,9 @@ function atheme_comments($comment, $args, $depth) {
     );
     //email
     $fields['email'] = str_replace(
-      '<input id="email" name="email" type="email" value="genuwine12@gmail.com"',
-        '<input placeholder="'
-            . _x('Email address',
+      '<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="genuwine12@gmail.com"',
+        '<p class="comment-form-email col-sm-4"><label for="email">Email <span class="required">*</span></label> <input placeholder="'
+            . _x('E-mail address',
                 'comment form email placeholder',
                 'atheme'
                 )
@@ -237,8 +237,8 @@ function atheme_comments($comment, $args, $depth) {
     );
     //website
     $fields['url'] = str_replace(
-      '<input id="url" name="url" type="url" value="http://www.bob.com"',
-        '<input placeholder="'
+      '<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="http://www.bob.com"',
+        '<p class="comment-form-url col-sm-4"><label for="url">Website</label> <input placeholder="'
             . _x('Website',
                 'comment form website placeholder',
                 'atheme'

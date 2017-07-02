@@ -47,8 +47,10 @@
           </span> by <span class="post-author"><?php the_author(); ?></span>
           <?php
           //if there is at least one comment, get the number of comments
-          if(get_comments_number()): ?>
-            <span> | <?php esc_html_e(get_comments_number()); ?> Comments</span>
+          if(get_comments_number()):
+            $comments_num = get_comments_number();
+          ?>
+            <span> | <?php $comment_message = ($comments_num > 1) ? ' Comments' : ' Comment'; echo esc_html($comments_num . $comment_message); ?></span>
           <?php endif; ?>
         </p>
       </div>
@@ -65,5 +67,14 @@
           endif;  ?>
       </div><!-- .quote-content -->
     </div><!-- .quote-wrap -->
+    <?php if(is_single()): ?>
+      <aside class="tags">
+        <?php
+          if(has_tag()):
+            the_tags();
+          endif;
+        ?>
+      </aside>
+    <?php endif; ?>
   </div><!-- .post-text -->
 </article><!-- #post-## -->

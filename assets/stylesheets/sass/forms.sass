@@ -20,7 +20,6 @@ form
         display: block
         width: 100%
         font-size: 100%
-        margin-bottom: 20px
         padding: 10px
         border: none
         &:focus
@@ -37,16 +36,8 @@ form
     border: none
     &:focus
       outline: 0
-#form-messages
-  &.success, &.error
-    padding: 10px
-    margin-bottom: 10px
-    @include transition(all, 0.3s, ease-in-out)
-  &.success
-    background-color: #dff0d8
-    border-left: 4px solid #8ab763
-    color: #468847
-  &.error
-    background-color: #edaaaa
-    border-left: 4px solid #f44b4b
-    color: #e21b1b
+form#commentform
+  .comment-form-url
+    margin-right: 0
+  .col-sm-4
+    margin-bottom: 20px
