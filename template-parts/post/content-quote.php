@@ -67,14 +67,9 @@
           endif;  ?>
       </div><!-- .quote-content -->
     </div><!-- .quote-wrap -->
-    <?php if(is_single()): ?>
-      <aside class="tags">
-        <?php
-          if(has_tag()):
-            the_tags();
-          endif;
-        ?>
-      </aside>
-    <?php endif; ?>
+    <?php
+      //display tags
+      get_template_part('template-parts/post/content', 'tags')
+    ?>
   </div><!-- .post-text -->
 </article><!-- #post-## -->

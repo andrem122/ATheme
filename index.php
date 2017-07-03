@@ -12,7 +12,7 @@ $class = (is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')
         endwhile;
       else:
         //if there are no posts, get the content-none.php page
-        get_template_part('templates/post/content', 'none');
+        get_template_part('template-parts/post/content', 'none');
       endif;
     ?>
   </main><!-- #main -->

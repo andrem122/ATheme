@@ -261,3 +261,7 @@ function atheme_comments($comment, $args, $depth) {
     return $fields;
  }
  add_filter( 'comment_form_defaults', 'atheme_placeholder_comment_form_field' );
+
+ function atheme_category_posts() {
+
+ }

@@ -1866,7 +1866,8 @@ body.blog .page {
 
 article.format-quote .quote-wrap {
   background-color: #fff;
-  padding: 23px 23px 35px 23px; }
+  padding: 23px 23px 35px 23px;
+  margin-bottom: 20px; }
   article.format-quote .quote-wrap .fa-quote-left {
     font-size: 36px; }
   article.format-quote .quote-wrap .quote-content {

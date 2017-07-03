@@ -68,7 +68,7 @@
           $comments_num = get_comments_number();
         ?>
           <span> | <?php $comment_message = ($comments_num > 1) ? ' Comments' : ' Comment'; echo esc_html($comments_num . $comment_message); ?></span>
-        <?php endif; ?>
+        <?php endif; ?>/
       </p>
     </div>
     <div class="post-content">
@@ -83,14 +83,9 @@
       <?php
         endif; ?>
     </div><!-- .post-content -->
-    <?php if(is_single()): ?>
-      <aside class="tags">
-        <?php
-          if(has_tag()):
-            the_tags();
-          endif;
-        ?>
-      </aside>
-    <?php endif; ?>
+    <?php
+      //display tags
+      get_template_part('template-parts/post/content', 'tags')
+    ?>
   </div><!-- .post-text -->
 </article><!-- #post-## -->
