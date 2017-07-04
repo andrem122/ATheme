@@ -2,7 +2,7 @@
   <aside class="tags">
     <?php
       if(has_tag()):
-        the_tags();
+        the_tags('', '');
       endif;
     ?>
   </aside>

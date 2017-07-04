@@ -19,7 +19,7 @@ body
     color: $headings-c
     margin-bottom: 20px
 //set heading size
-$heading-size: 300% 250% 200% 165% 135% 115%
+$heading-size: 240% 220% 190% 165% 135% 120%
 @for $i from 1 through 6
   h#{$i}
     font-size: nth($heading-size, $i)
@@ -30,6 +30,7 @@ p
   color: $body-c
 img
   max-width: 100%
+  width: 100%
   height: auto
   vertical-align: middle
 //prevents parent div with floated children from collapsing
@@ -38,11 +39,11 @@ section, div, header, footer, nav
     @include clearfix
 //Anchor Tags
 a
-  color: $button
+  color: $headings-c
   text-decoration: none
   @include transition(all, 0.2s, ease-in-out)
   &:hover
-    color: $button-hover
+    color: $button
   &:focus
     outline: 0
 //clear floats
@@ -53,6 +54,9 @@ a
   max-width: 1400px
   width: 85%
   margin: 0 auto
+//page
+.page
+  padding: 40px 0
 //max width
 .max-width
   max-width: 1400px
