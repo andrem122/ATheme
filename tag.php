@@ -1,18 +1,19 @@
 <?php
+//template for displaying tag posts
 get_header();
 ?>
 <div class="wrap clear <?php
-$class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; echo $class; ?>">
+$class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($class); ?>">
   <main id="main" class="site-main" role="main">
     <header class="category-header">
       <h1 class="header-title"><?php esc_html_e(single_tag_title('Tag: ')); ?></h1>
-      <span class="underline left"></span>
+      <span class="underline"></span>
       <?php
       //display tag description
       if(tag_description()):
       ?>
       <div class="archive-meta">
-        <?php esc_html_e(tag_description()); ?>
+        <?php echo tag_description(); ?>
       </div>
       <?php endif; ?>
     </header>
@@ -29,8 +30,9 @@ $class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; echo $class; ?>"
   </main><!-- #main -->
 </div><!-- .wrap -->
 <?php
+<?php
 //get the blog sidebar
-if(is_active_sidebar('blog')):
+if(is_active_sidebar('sidebar-blog')):
   get_sidebar('blog');
 endif;
 get_footer();

@@ -1,6 +1,11 @@
 body.tag
+  header
+    .archive-meta
+      max-width: 600px
   .page
     background-color: #f6f6f6
+  .archive-meta
+    max-width: 600px
     article.post.format-quote
       .post-text
         padding: 0
@@ -28,9 +33,13 @@ body.tag
       .post-text
         padding: 23px 23px 35px 23px
         background-color: $wh
-.tags
+.tags, .tagcloud
   > a
-    margin-right: 5px
+    font-size: 100% !important
+    display: inline-block
+    margin:
+      right: 5px
+      bottom: 5px
     padding: 7px 6px
     border: 1px solid #ccc
     color: $headings-c

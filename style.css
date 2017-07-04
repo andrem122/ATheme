@@ -1559,11 +1559,11 @@
       margin-bottom: 0; }
     .row .col-xs-12:last-child {
       margin-bottom: 0; } }
-.post-title-holder, .category-header {
+.post-title-holder, .category-header, .archive-header {
   margin-bottom: 16px; }
-  .post-title-holder h1.header-title, .category-header h1.header-title {
+  .post-title-holder h1.header-title, .category-header h1.header-title, .archive-header h1.header-title {
     margin-bottom: 10px; }
-  .post-title-holder span.underline, .category-header span.underline {
+  .post-title-holder span.underline, .category-header span.underline, .archive-header span.underline {
     display: block;
     background-color: #303030;
     margin: 0 0 20px 0;
@@ -1571,42 +1571,49 @@
     width: 30px;
     position: relative; }
 
+body.tag header .archive-meta {
+  max-width: 600px; }
 body.tag .page {
   background-color: #f6f6f6; }
-  body.tag .page article.post.format-quote .post-text {
+body.tag .archive-meta {
+  max-width: 600px; }
+  body.tag .archive-meta article.post.format-quote .post-text {
     padding: 0; }
-  body.tag .page article.post.format-quote .quote-wrap {
+  body.tag .archive-meta article.post.format-quote .quote-wrap {
     padding: 23px 23px 35px 23px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out; }
-    body.tag .page article.post.format-quote .quote-wrap:hover {
+    body.tag .archive-meta article.post.format-quote .quote-wrap:hover {
       background-color: #5AD8A3; }
-      body.tag .page article.post.format-quote .quote-wrap:hover span, body.tag .page article.post.format-quote .quote-wrap:hover a, body.tag .page article.post.format-quote .quote-wrap:hover p, body.tag .page article.post.format-quote .quote-wrap:hover i {
+      body.tag .archive-meta article.post.format-quote .quote-wrap:hover span, body.tag .archive-meta article.post.format-quote .quote-wrap:hover a, body.tag .archive-meta article.post.format-quote .quote-wrap:hover p, body.tag .archive-meta article.post.format-quote .quote-wrap:hover i {
         color: #fff; }
-  body.tag .page article.post {
+  body.tag .archive-meta article.post {
     margin-bottom: 60px; }
-    body.tag .page article.post h2.entry-title {
+    body.tag .archive-meta article.post h2.entry-title {
       text-transform: uppercase;
       font-size: 180%;
       margin-bottom: 0; }
-    body.tag .page article.post .p-meta {
+    body.tag .archive-meta article.post .p-meta {
       margin-right: 8px;
       margin-bottom: 0; }
-    body.tag .page article.post .post-info {
+    body.tag .archive-meta article.post .post-info {
       margin-bottom: 10px; }
-    body.tag .page article.post .post-text {
+    body.tag .archive-meta article.post .post-text {
       padding: 23px 23px 35px 23px;
       background-color: #fff; }
 
-.tags > a {
+.tags > a, .tagcloud > a {
+  font-size: 100% !important;
+  display: inline-block;
   margin-right: 5px;
+  margin-bottom: 5px;
   padding: 7px 6px;
   border: 1px solid #ccc;
   color: #303030; }
-  .tags > a:hover {
+  .tags > a:hover, .tagcloud > a:hover {
     color: #5AD8A3; }
 
 * {
@@ -1735,6 +1742,8 @@ a {
 .right {
   float: right !important; }
 
+body.category header .archive-meta {
+  max-width: 600px; }
 body.category .page {
   background-color: #f6f6f6; }
   body.category .page article.post.format-quote .post-text {
@@ -1762,6 +1771,36 @@ body.category .page {
     body.category .page article.post .post-info {
       margin-bottom: 10px; }
     body.category .page article.post .post-text {
+      padding: 23px 23px 35px 23px;
+      background-color: #fff; }
+
+body.archive .page {
+  background-color: #f6f6f6; }
+  body.archive .page article.post.format-quote .post-text {
+    padding: 0; }
+  body.archive .page article.post.format-quote .quote-wrap {
+    padding: 23px 23px 35px 23px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    body.archive .page article.post.format-quote .quote-wrap:hover {
+      background-color: #5AD8A3; }
+      body.archive .page article.post.format-quote .quote-wrap:hover span, body.archive .page article.post.format-quote .quote-wrap:hover a, body.archive .page article.post.format-quote .quote-wrap:hover p, body.archive .page article.post.format-quote .quote-wrap:hover i {
+        color: #fff; }
+  body.archive .page article.post {
+    margin-bottom: 60px; }
+    body.archive .page article.post h2.entry-title {
+      text-transform: uppercase;
+      font-size: 180%;
+      margin-bottom: 0; }
+    body.archive .page article.post .p-meta {
+      margin-right: 8px;
+      margin-bottom: 0; }
+    body.archive .page article.post .post-info {
+      margin-bottom: 10px; }
+    body.archive .page article.post .post-text {
       padding: 23px 23px 35px 23px;
       background-color: #fff; }
 
@@ -1950,8 +1989,6 @@ body.blog .page {
     body.blog .page article.post .post-text {
       padding: 23px 23px 35px 23px;
       background-color: #fff; }
-    body.blog .page article.post .post-image {
-      margin-bottom: 10px; }
 
 article.format-quote .quote-wrap {
   background-color: #fff;
@@ -1966,10 +2003,8 @@ article.format-quote .quote-wrap {
 body.single-post article .post-title .p-meta {
   margin-bottom: 0;
   margin-right: 8px; }
-body.single-post .post-image {
-  margin-bottom: 10px; }
-  body.single-post .post-image > img {
-    width: 100%; }
+body.single-post .post-image > img {
+  width: 100%; }
 
 #comments {
   margin-top: 30px; }
@@ -2132,6 +2167,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
@@ -2145,6 +2181,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
@@ -2158,6 +2195,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
@@ -2171,6 +2209,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
@@ -2184,6 +2223,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
@@ -2197,6 +2237,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
@@ -2210,6 +2251,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
@@ -2223,6 +2265,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
@@ -2236,6 +2279,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
@@ -2249,6 +2293,7 @@ form {
     font-size: 100%;
     padding: 10px;
     border: none;
+    margin-bottom: 15px;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;

@@ -4,7 +4,7 @@
       Posted at <time datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('H:i'); ?></time>
       in <?php
           $categories = get_the_category();
-          $separator = ' ';
+          $separator = ', ';
           $output = '';
           if (!empty( $categories ) ) {
             foreach($categories as $category) {
