@@ -1,4 +1,4 @@
-// Row & Columns
+//row & columns
 @function columnWidth($col, $margin)
   @return ($col / 12 * 100%) - $margin + ($col / 12 * $margin)
 .row
@@ -26,7 +26,11 @@ $column-sizes: xs sm md lg
         margin-right: 0
       &::after
         @include clearfix
-
+//set starting heading size
+$heading-size: 240% 180% 160% 150% 135% 120%
+@for $i from 1 through 6
+  h#{$i}
+    font-size: nth($heading-size, $i)
 @media all and (max-width: 993px)
   @for $i from 1 through 12
     .row
@@ -41,7 +45,7 @@ $column-sizes: xs sm md lg
           margin-bottom: 0
         &:last-child
           margin-bottom: 0
-  $heading-size: 260% 230% 210% 185% 155% 125%
+  $heading-size: 220% 170% 150% 140% 125% 110%
   @for $i from 1 through 6
     h#{$i}
       font-size: nth($heading-size, $i)
@@ -59,7 +63,7 @@ $column-sizes: xs sm md lg
           margin-bottom: 0
         &:last-child
           margin-bottom: 0
-  $heading-size: 240% 210% 180% 150% 120% 110%
+  $heading-size: 210% 160% 140% 130% 115% 108%
   @for $i from 1 through 6
     h#{$i}
       font-size: nth($heading-size, $i)
@@ -77,7 +81,7 @@ $column-sizes: xs sm md lg
           margin-bottom: 0
         &:last-child
           margin-bottom: 0
-  $heading-size: 230% 200% 170% 140% 110% 100%
+  $heading-size: 200% 150% 130% 120% 110% 105%
   @for $i from 1 through 6
     h#{$i}
       font-size: nth($heading-size, $i)

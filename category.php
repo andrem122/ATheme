@@ -22,6 +22,13 @@ $class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($clas
         while(have_posts()): the_post();
           get_template_part('template-parts/post/content', get_post_format());
         endwhile;
+
+        the_posts_pagination(array(
+          'mid_size' => 2,
+          'prev_text' => __('<i class="fa fa-angle-left" aria-hidden="true"></i>', 'atheme'),
+          'next_text' => __('<i class="fa fa-angle-right" aria-hidden="true"></i>', 'atheme')
+        ));
+
       else:
         //if there are no posts, get the content-none.php page
         get_template_part('template-parts/post/content', 'none');

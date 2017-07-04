@@ -147,6 +147,7 @@ function atheme_recent_posts() {
   $atheme_recent_posts->query('showposts=3');
   if($atheme_recent_posts->have_posts()): ?>
     <section class="widget widget-recent-posts">
+      <h2 class="widget-title">Recent Posts</h2>
       <ul class="atheme-recent-posts">
         <?php while($atheme_recent_posts->have_posts()): $atheme_recent_posts->the_post(); ?>
           <li>

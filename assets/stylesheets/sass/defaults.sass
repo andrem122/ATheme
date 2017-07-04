@@ -18,11 +18,7 @@ body
     font-weight: normal
     color: $headings-c
     margin-bottom: 20px
-//set heading size
-$heading-size: 240% 220% 190% 165% 135% 120%
-@for $i from 1 through 6
-  h#{$i}
-    font-size: nth($heading-size, $i)
+    text-transform: uppercase
 //paragraphs
 p
   font-size: 100%
@@ -66,6 +62,18 @@ a
 .pri-title
   text-align: center
   margin-bottom: 30px
+//screen reader
+.screen-reader-text
+  clip: rect(1px, 1px, 1px, 1px)
+  clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px)
+  position: absolute !important
+  white-space: nowrap
+  height: 1px
+  width: 1px
+  overflow: hidden
+.screen-reader-text
+  position: absolute !important
+  left: -999em
 //floats
 .left
   float: left !important

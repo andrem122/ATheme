@@ -6,9 +6,16 @@
     margin-bottom: 40px
     ul
       list-style: none
+      > li
+        margin:
+          bottom: 10px
   .widget_recent_comments
   h2.widget-title
-    margin-bottom: 14px
-    text-transform: uppercase
+    margin-bottom: 10px
     font:
       size: 140%
+@media all and (max-width: 769px)
+  #sidebar-main, #sidebar-blog
+    h2.widget-title
+      font:
+        size: 130%

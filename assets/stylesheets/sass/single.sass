@@ -1,10 +1,32 @@
 body.single-post
   article
+    .post-content
+      blockquote
+        padding: 14px 14px 14px 10px
+        &::before
+          content: '\f10d'
+          font-family: 'FontAwesome'
+          font-size: 165%
+          float: left
+        > p
+          font-size: 150%
+          padding-left: 40px
     .post-title
+      h2.entry-title
+        margin-bottom: 0
       .p-meta
         margin:
           bottom: 0
           right: 8px
   .post-image
+    margin:
+      bottom: 15px
     > img
       width: 100%
+@media all and (max-width: 835px)
+  body.single-post
+    article
+      .post-content
+        blockquote
+          > p
+            font-size: 135%
