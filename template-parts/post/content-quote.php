@@ -4,11 +4,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php if(is_single()): ?>
   <header class="post-title-holder">
-    <h1 class="header-title">
-      <?php
-        the_title();
-      ?>
-    </h1>
+    <?php the_title('<h1 class="header-title">', '</h1>'); ?>
     <span class="underline left"></span>
   </header>
   <?php endif; ?>

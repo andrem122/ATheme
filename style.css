@@ -1590,6 +1590,11 @@ h6 {
     width: 30px;
     position: relative; }
 
+.title-center {
+  text-align: center; }
+  .title-center span.underline {
+    margin: 0 auto 20px auto; }
+
 body.tag header .archive-meta {
   max-width: 600px; }
 body.tag .page {
@@ -1646,7 +1651,7 @@ body {
   font-family: "Libre Franklin", sans-serif;
   font-size: 87.5%;
   color: #787f8c;
-  background-color: #f6f6f6;
+  background-color: #f9f9f9;
   line-height: 1.7;
   overflow-x: hidden; }
 
@@ -1731,7 +1736,7 @@ a {
   width: 85%;
   margin: 0 auto; }
 
-.page {
+div.page {
   padding: 40px 0; }
 
 .max-width {
@@ -1803,6 +1808,45 @@ body.category .page {
     body.category .page article.post .post-info {
       margin-bottom: 10px; }
     body.category .page article.post .post-text {
+      padding: 23px 23px 35px 23px;
+      background-color: #fff; }
+
+body.front-page .page {
+  padding: 0; }
+
+.error-404.not-found .page-content {
+  text-align: center; }
+  .error-404.not-found .page-content #searchform #s {
+    max-width: 600px;
+    margin: 0 auto 15px auto; }
+
+body.search header .archive-meta {
+  max-width: 600px; }
+body.search .page {
+  background-color: #f6f6f6; }
+  body.search .page article.post.format-quote .post-text {
+    padding: 0; }
+  body.search .page article.post.format-quote .quote-wrap {
+    padding: 23px 23px 35px 23px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    body.search .page article.post.format-quote .quote-wrap:hover {
+      background-color: #5AD8A3; }
+      body.search .page article.post.format-quote .quote-wrap:hover span, body.search .page article.post.format-quote .quote-wrap:hover a, body.search .page article.post.format-quote .quote-wrap:hover p, body.search .page article.post.format-quote .quote-wrap:hover i {
+        color: #fff; }
+  body.search .page article.post {
+    margin-bottom: 60px; }
+    body.search .page article.post h2.entry-title {
+      margin-bottom: 0; }
+    body.search .page article.post .p-meta {
+      margin-right: 8px;
+      margin-bottom: 0; }
+    body.search .page article.post .post-info {
+      margin-bottom: 10px; }
+    body.search .page article.post .post-text {
       padding: 23px 23px 35px 23px;
       background-color: #fff; }
 
@@ -2060,10 +2104,14 @@ body.single-post .post-image {
   margin-top: 30px; }
   #comments ol.comment-list {
     list-style: none; }
+    #comments ol.comment-list .bypostauthor {
+      border-top: 3px solid #5AD8A3; }
     #comments ol.comment-list ol.children {
-      list-style: none; }
-    #comments ol.comment-list li.comment {
-      padding-left: 40px; }
+      list-style: none;
+      margin: 1rem 0 0 0.5rem; }
+      #comments ol.comment-list ol.children li.comment {
+        padding: 1rem;
+        background-color: #f9f9f9; }
     #comments ol.comment-list li.comment.depth-1 {
       background-color: #fff;
       padding: 23px;
@@ -2079,6 +2127,27 @@ body.single-post .post-image {
         text-transform: uppercase; }
       #comments ol.comment-list li.comment.depth-1 .comment-date {
         text-transform: uppercase; }
+
+.icon-square-lg, .icon-circle-lg {
+  padding: 30px;
+  border: 1px solid #303030; }
+
+.icon-circle-lg {
+  border-radius: 50%; }
+
+.icon-square-md, .icon-circle-md {
+  padding: 20px;
+  border: 1px solid #303030; }
+
+.icon-circle-md {
+  border-radius: 50%; }
+
+.icon-square-sm, .icon-circle-sm {
+  padding: 10px;
+  border: 1px solid #303030; }
+
+.icon-circle-sm {
+  border-radius: 50%; }
 
 .social-icon {
   color: rgba(255, 255, 255, 0.8);

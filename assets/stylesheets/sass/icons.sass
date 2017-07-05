@@ -1,4 +1,14 @@
 //Icons
+$sizes: lg md sm
+$paddings: 30px 20px 10px
+$n: 1
+@each $size in $sizes
+  .icon-square-#{$size}, .icon-circle-#{$size}
+    padding: nth($paddings, $n)
+    border: 1px solid #303030
+  .icon-circle-#{$size}
+    border-radius: 50%
+    $n: $n + 1
 .social-icon
   @include icon(rgba(255, 255, 255, 0.8), transparent, 50px, inherit)
   &::before

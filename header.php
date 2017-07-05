@@ -7,7 +7,8 @@
     <!-- all stylesheets, meta Tags, title etc. -->
     <?php wp_head(); ?>
   </head>
-  <body <?php body_class(); ?>>
+  <?php $front_page_class = (is_front_page()) ? 'front-page' : ''; ?>
+  <body <?php body_class($front_page_class); ?>>
     <div class="body-container">
       <header class="top">
         <div class="center-content">

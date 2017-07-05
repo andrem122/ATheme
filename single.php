@@ -21,9 +21,13 @@ $class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($clas
 </div><!-- .wrap -->
 <?php
 if(is_home() || is_page()):
-  get_sidebar('main');
+  if(is_active_sidebar('sidebar-main')):
+    get_sidebar('main');
+  endif;
 else:
-  get_sidebar('blog');
+  if(is_active_sidebar('sidebar-blog')):
+    get_sidebar('blog');
+  endif;
 endif;
 get_footer();
 ?>

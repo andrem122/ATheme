@@ -197,7 +197,9 @@ function atheme_comments($comment, $args, $depth) {
   <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
     <div class="comment">
       <div class="image">
-        <?php echo get_avatar(get_the_author_meta('ID'), 83); ?>
+        <?php
+          echo get_avatar(get_the_author_meta('email'), 83);
+        ?>
       </div>
       <div class="text">
         <h5 class="name"><?php esc_html_e(get_comment_author($comment_id)); ?></h5>
@@ -216,7 +218,7 @@ function atheme_comments($comment, $args, $depth) {
   function atheme_comment_form($fields) {
     //author
     $fields['author'] = str_replace(
-      '<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="John Dillinger"',
+      '<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text"',
         '<p class="comment-form-author col-sm-4"><label for="author">Name <span class="required">*</span></label> <input placeholder="'
             . _x('Your full name',
                 'comment form author placeholder',
@@ -227,7 +229,7 @@ function atheme_comments($comment, $args, $depth) {
     );
     //email
     $fields['email'] = str_replace(
-      '<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="genuwine12@gmail.com"',
+      '<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email"',
         '<p class="comment-form-email col-sm-4"><label for="email">Email <span class="required">*</span></label> <input placeholder="'
             . _x('E-mail address',
                 'comment form email placeholder',
@@ -238,7 +240,7 @@ function atheme_comments($comment, $args, $depth) {
     );
     //website
     $fields['url'] = str_replace(
-      '<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="http://www.bob.com"',
+      '<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url"',
         '<p class="comment-form-url col-sm-4"><label for="url">Website</label> <input placeholder="'
             . _x('Website',
                 'comment form website placeholder',

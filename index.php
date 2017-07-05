@@ -2,7 +2,7 @@
 get_header();
 ?>
 <div class="wrap clear <?php
-$class = (is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($class); ?>">
+$class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($class); ?>">
   <main id="main" class="site-main" role="main">
     <header class="title-holder">
       <h1 class="header-title"><?php wp_title(''); ?></h1>
@@ -28,10 +28,7 @@ $class = (is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')
   </main><!-- #main -->
 </div><!-- .wrap -->
 <?php
-//get different sidebars for different pages
-if(is_home() || is_page()):
-  get_sidebar('main');
-else:
+if(is_active_sidebar('sidebar-blog')):
   get_sidebar('blog');
 endif;
 get_footer();

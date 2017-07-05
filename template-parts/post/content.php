@@ -9,7 +9,7 @@
         the_title();
       ?>
     </h1>
-    <span class="underline left"></span>
+    <span class="underline"></span>
   </header>
 <?php endif; ?>
   <div class="post-image">
