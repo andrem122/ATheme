@@ -45,6 +45,7 @@ function a_theme_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
+    'search-form',
 	));
   //custom background color
   add_theme_support( 'custom-background', array(

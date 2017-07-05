@@ -2438,6 +2438,20 @@ form#commentform .comment-form-url {
 form#commentform .col-sm-4 {
   margin-bottom: 20px; }
 
+form.search-form {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative; }
+  form.search-form::before {
+    content: "";
+    font-family: "FontAwesome";
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 9px; }
+  form.search-form input.search-field {
+    padding-left: 35px; }
+
 .widget-recent-posts .atheme-recent-post {
   margin-bottom: 20px; }
   .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top {

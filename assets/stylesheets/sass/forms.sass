@@ -43,3 +43,16 @@ form#commentform
     margin-right: 0
   .col-sm-4
     margin-bottom: 20px
+form.search-form
+  max-width: 600px
+  margin: 0 auto
+  position: relative
+  &::before
+    content: "\f002"
+    font-family: 'FontAwesome'
+    display: inline-block
+    position: absolute
+    top: 6px
+    left: 9px
+  input.search-field
+    padding-left: 35px
