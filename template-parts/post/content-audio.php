@@ -1,5 +1,5 @@
 <?php
-//template part for standard post
+//template part for audio posts
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php if(is_single()): ?>
@@ -7,7 +7,7 @@
     <?php the_title('<h1 class="header-title">', '</h1>'); ?>
     <span class="underline"></span>
   </header>
-  <?php endif; ?>
+<?php endif; ?>
   <div class="post-image">
     <?php if(is_single()):
             if(has_post_thumbnail()):
@@ -23,6 +23,11 @@
             </a>
     <?php endif; ?>
   </div><!-- .post-image -->
+  <?php if(is_single()): ?>
+  <div class="audio-content">
+    <?php the_content(); ?>
+  </div><!-- .audio-content -->
+  <?php endif; ?>
   <div class="post-text">
     <div class="post-title">
       <h2 class="entry-title">
@@ -46,18 +51,12 @@
       //get the post information
       get_template_part('template-parts\post\content', 'post-info')
     ?>
-    <div class="post-content">
-      <?php
-      //if it's a single page, display the whole text
-        if(is_single()):
-          the_content();
-        //if it's not a single page, display an excerpt
-      else: ?>
-        <?php the_excerpt(); ?>
-        <a class="button" href="<?php esc_url(the_permalink()); ?>">Read More</a>
-      <?php
-        endif; ?>
-    </div><!-- .post-content -->
+    <?php if(!is_single()): ?>
+    <div class="audio-content">
+      <?php the_content(); ?>
+      <a class="button" href="<?php esc_url(the_permalink()); ?>"><?php _e('Read More', 'atheme')  ?></a>
+    </div><!-- .audio-content -->
+    <?php endif; ?>
     <?php
       //display tags
       get_template_part('template-parts/post/content', 'tags')

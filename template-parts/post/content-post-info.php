@@ -15,11 +15,9 @@
       ?>
     </span> by <span class="post-author"><?php the_author(); ?></span>
     <?php
-    //if there is at least one comment, get the number of comments
-    if(get_comments_number()):
+      //get the number of comments and display it
       $comments_num = get_comments_number();
     ?>
-      <span> | <?php $comment_message = ($comments_num > 1) ? ' Comments' : ' Comment'; echo esc_html($comments_num . $comment_message); ?></span>
-    <?php endif; ?>
+      <span> | <?php $comment_message = ($comments_num > 1 || $comments_num < 1) ? ' Comments' : ' Comment'; echo esc_html($comments_num . $comment_message); ?></span>
   </p>
 </div>

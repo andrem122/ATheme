@@ -55,10 +55,9 @@
   endif; // Check for have_comments()
   //if comments aren't open, there is at least 1 comment, and the current post you
   //are on supports the comment feature, display a message
-  if(!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')): ?>
-    <p class="no-comments"><?php _e('There are no comments to display', 'atheme'); ?></p>
-  <?php
-  endif;
+  if(comments_open() && !have_comments() && post_type_supports(get_post_type(), 'comments')): ?>
+    <h3 class="no-comments"><?php _e('No Comments', 'atheme'); ?></h3>
+  <?php endif;
   //form for replying to posts
   comment_form();
   ?>
