@@ -1,5 +1,5 @@
 //buttons
-.button, .jumbo-btn
+.button, .button-border-white
   display: inline-block
   text-decoration: none
   color: $wh
@@ -10,18 +10,19 @@
   margin-bottom: 20px
   @include transition(all, 150ms, linear)
 .button
-  border: 2px solid $button
+  border: 1px solid $button
   color: $button
   &:hover
     color: $button-hover
     border-color: $button-hover
-.jumbo-btn
-  border: 2px solid $wh
+.button-border-white
+  border: 1px solid $wh
   &:hover
-    color: $wh
-@media all and (max-width: 993px)
+    color: $headings-c
+    background-color: $wh
+@media all and (max-width: 769px)
   //buttons
-  .button, .jumbo-btn
+  .button, .button-border-white
     text-align: center
     display: block
 @media all and (max-width: 430px)

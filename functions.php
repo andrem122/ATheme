@@ -153,15 +153,11 @@ function atheme_recent_posts() {
         <?php while($atheme_recent_posts->have_posts()): $atheme_recent_posts->the_post(); ?>
           <li>
             <article class="atheme-recent-post">
-              <div class="atheme-recent-posts-top">
-                <a href="<?php esc_url(the_permalink()); ?>">
-                  <?php
-                    if(has_post_thumbnail()):
-                      the_post_thumbnail();
-                    endif;
-                  ?>
-                </a>
+              <?php if(has_post_thumbnail()): ?>
+              <div style="background-image: url('<?php esc_url(the_post_thumbnail_url()); ?>');" class="atheme-recent-posts-top">
+                <a href="<?php esc_url(the_permalink()); ?>"></a>
               </div>
+              <?php endif; ?>
               <div class="atheme-recent-posts-bottom">
                 <div class="post-title">
                   <h4>
@@ -265,7 +261,3 @@ function atheme_comments($comment, $args, $depth) {
     return $fields;
  }
  add_filter( 'comment_form_defaults', 'atheme_placeholder_comment_form_field' );
-
- function atheme_category_posts() {
-
- }

@@ -1,22 +1,30 @@
 //posts page
 body.blog
-  .page
-    background-color: #f6f6f6
-    article.post.format-quote
-      .post-text
-        padding: 0
-      .quote-wrap
-        padding: 23px 23px 35px 23px
-        @include transition(all, 0.3s, ease-in-out)
-        &:hover
-          background-color: $button
-          span, a, p, i
-            color: $wh
-    article.post
-      margin-bottom: 60px
-      .post-text
-        padding: 23px 23px 35px 23px
-        background-color: $wh
+  article.post.format-quote
+    .post-text
+      padding: 0
+    .quote-wrap
+      padding: 23px 23px 35px 23px
+      @include transition(all, 0.3s, ease-in-out)
+      &:hover
+        background-color: $button
+        span, a, p, i
+          color: $wh
+  article.post.format-link
+    .post-text
+      padding: 0
+    .link-wrap
+      padding: 23px 23px 35px 23px
+      @include transition(all, 0.3s, ease-in-out)
+      &:hover
+        background-color: $button
+        span, a, p, i
+          color: $wh
+  article.post
+    margin-bottom: 60px
+    .post-text
+      padding: 23px 23px 35px 23px
+      background-color: $wh
 article.post
   h2.entry-title
     text-transform: uppercase
@@ -28,4 +36,4 @@ article.post
       bottom: 0
   .post-info
     margin:
-      bottom: 10px
+      bottom: 20px

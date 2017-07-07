@@ -5,9 +5,8 @@ get_header();
 <div class="wrap clear <?php
 $class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($class); ?>">
   <main id="main" class="site-main" role="main">
-    <header class="category-header">
-      <h1 class="header-title"><?php esc_html_e(single_tag_title('Tag: ')); ?></h1>
-      <span class="underline"></span>
+    <header class="tag-header">
+      <?php single_tag_title('<h1 class="header-title">Tag: ','</h1><span class="underline"></span>'); ?></h1>
       <?php
       //display tag description
       if(tag_description()):

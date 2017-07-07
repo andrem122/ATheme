@@ -1578,55 +1578,58 @@ h6 {
       margin-bottom: 0; }
     .row .col-xs-12:last-child {
       margin-bottom: 0; } }
-.title-holder, .post-title-holder, .category-header, .archive-header {
-  margin-bottom: 16px; }
-  .title-holder h1.header-title, .post-title-holder h1.header-title, .category-header h1.header-title, .archive-header h1.header-title {
-    margin-bottom: 10px; }
-  .title-holder span.underline, .post-title-holder span.underline, .category-header span.underline, .archive-header span.underline {
-    display: block;
-    background-color: #303030;
-    margin: 0 0 20px 0;
-    height: 2px;
-    width: 30px;
-    position: relative; }
+.title-holder h1.header-title, .post-title-holder h1.header-title,
+.category-header h1.header-title, .archive-header h1.header-title,
+.tag-header h1.header-title, .page-title-holder h1.header-title {
+  margin-bottom: 10px; }
+
+span.underline {
+  display: inline-block;
+  background-color: #303030;
+  margin: 0 0 36px 0;
+  height: 2px;
+  width: 30px; }
 
 .title-center {
   text-align: center; }
   .title-center span.underline {
     margin: 0 auto 20px auto; }
 
-body.tag header .archive-meta {
+body.archive.tag header .archive-meta {
   max-width: 600px; }
-body.tag .page {
-  background-color: #f9f9f9; }
-body.tag .archive-meta {
+body.archive.tag .archive-meta {
   max-width: 600px; }
-  body.tag .archive-meta article.post.format-quote .post-text {
-    padding: 0; }
-  body.tag .archive-meta article.post.format-quote .quote-wrap {
+body.archive.tag article.post.format-quote .post-text {
+  padding: 0; }
+body.archive.tag article.post.format-quote .quote-wrap {
+  padding: 23px 23px 35px 23px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  body.archive.tag article.post.format-quote .quote-wrap:hover {
+    background-color: #5AD8A3; }
+    body.archive.tag article.post.format-quote .quote-wrap:hover span, body.archive.tag article.post.format-quote .quote-wrap:hover a, body.archive.tag article.post.format-quote .quote-wrap:hover p, body.archive.tag article.post.format-quote .quote-wrap:hover i {
+      color: #fff; }
+body.archive.tag article.post.format-link .post-text {
+  padding: 0; }
+body.archive.tag article.post.format-link .link-wrap {
+  padding: 23px 23px 35px 23px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  body.archive.tag article.post.format-link .link-wrap:hover {
+    background-color: #5AD8A3; }
+    body.archive.tag article.post.format-link .link-wrap:hover span, body.archive.tag article.post.format-link .link-wrap:hover a, body.archive.tag article.post.format-link .link-wrap:hover p, body.archive.tag article.post.format-link .link-wrap:hover i {
+      color: #fff; }
+body.archive.tag article.post {
+  margin-bottom: 60px; }
+  body.archive.tag article.post .post-text {
     padding: 23px 23px 35px 23px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-    body.tag .archive-meta article.post.format-quote .quote-wrap:hover {
-      background-color: #5AD8A3; }
-      body.tag .archive-meta article.post.format-quote .quote-wrap:hover span, body.tag .archive-meta article.post.format-quote .quote-wrap:hover a, body.tag .archive-meta article.post.format-quote .quote-wrap:hover p, body.tag .archive-meta article.post.format-quote .quote-wrap:hover i {
-        color: #fff; }
-  body.tag .archive-meta article.post {
-    margin-bottom: 60px; }
-    body.tag .archive-meta article.post h2.entry-title {
-      text-transform: uppercase;
-      margin-bottom: 0; }
-    body.tag .archive-meta article.post .p-meta {
-      margin-right: 8px;
-      margin-bottom: 0; }
-    body.tag .archive-meta article.post .post-info {
-      margin-bottom: 10px; }
-    body.tag .archive-meta article.post .post-text {
-      padding: 23px 23px 35px 23px;
-      background-color: #fff; }
+    background-color: #fff; }
 
 .tags, .tagcloud {
   max-width: 700px; }
@@ -1800,6 +1803,19 @@ body.category .page {
       background-color: #5AD8A3; }
       body.category .page article.post.format-quote .quote-wrap:hover span, body.category .page article.post.format-quote .quote-wrap:hover a, body.category .page article.post.format-quote .quote-wrap:hover p, body.category .page article.post.format-quote .quote-wrap:hover i {
         color: #fff; }
+  body.category .page article.post.format-link .post-text {
+    padding: 0; }
+  body.category .page article.post.format-link .link-wrap {
+    padding: 23px 23px 35px 23px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    body.category .page article.post.format-link .link-wrap:hover {
+      background-color: #5AD8A3; }
+      body.category .page article.post.format-link .link-wrap:hover span, body.category .page article.post.format-link .link-wrap:hover a, body.category .page article.post.format-link .link-wrap:hover p, body.category .page article.post.format-link .link-wrap:hover i {
+        color: #fff; }
   body.category .page article.post {
     margin-bottom: 60px; }
     body.category .page article.post h2.entry-title {
@@ -1839,15 +1855,21 @@ body.search .page {
       background-color: #5AD8A3; }
       body.search .page article.post.format-quote .quote-wrap:hover span, body.search .page article.post.format-quote .quote-wrap:hover a, body.search .page article.post.format-quote .quote-wrap:hover p, body.search .page article.post.format-quote .quote-wrap:hover i {
         color: #fff; }
+  body.search .page article.post.format-link .post-text {
+    padding: 0; }
+  body.search .page article.post.format-link .link-wrap {
+    padding: 23px 23px 35px 23px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    body.search .page article.post.format-link .link-wrap:hover {
+      background-color: #5AD8A3; }
+      body.search .page article.post.format-link .link-wrap:hover span, body.search .page article.post.format-link .link-wrap:hover a, body.search .page article.post.format-link .link-wrap:hover p, body.search .page article.post.format-link .link-wrap:hover i {
+        color: #fff; }
   body.search .page article.post {
     margin-bottom: 60px; }
-    body.search .page article.post h2.entry-title {
-      margin-bottom: 0; }
-    body.search .page article.post .p-meta {
-      margin-right: 8px;
-      margin-bottom: 0; }
-    body.search .page article.post .post-info {
-      margin-bottom: 10px; }
     body.search .page article.post .post-text {
       padding: 23px 23px 35px 23px;
       background-color: #fff; }
@@ -2008,7 +2030,7 @@ nav.mobile-menu {
     padding: 0; }
     #sidebar-main h2.widget-title, #sidebar-blog h2.widget-title {
       font-size: 130%; } }
-.button, .jumbo-btn {
+.button, .button-border-white {
   display: inline-block;
   text-decoration: none;
   color: #fff;
@@ -2024,44 +2046,56 @@ nav.mobile-menu {
   transition: all 150ms linear; }
 
 .button {
-  border: 2px solid #5AD8A3;
+  border: 1px solid #5AD8A3;
   color: #5AD8A3; }
   .button:hover {
     color: #20C47F;
     border-color: #20C47F; }
 
-.jumbo-btn {
-  border: 2px solid #fff; }
-  .jumbo-btn:hover {
-    color: #fff; }
+.button-border-white {
+  border: 1px solid #fff; }
+  .button-border-white:hover {
+    color: #303030;
+    background-color: #fff; }
 
-@media all and (max-width: 993px) {
-  .button, .jumbo-btn {
+@media all and (max-width: 769px) {
+  .button, .button-border-white {
     text-align: center;
     display: block; } }
 @media all and (max-width: 430px) {
   .button, .jumbo-btn {
     font-size: 100%; } }
-body.blog .page {
-  background-color: #f6f6f6; }
-  body.blog .page article.post.format-quote .post-text {
-    padding: 0; }
-  body.blog .page article.post.format-quote .quote-wrap {
+body.blog article.post.format-quote .post-text {
+  padding: 0; }
+body.blog article.post.format-quote .quote-wrap {
+  padding: 23px 23px 35px 23px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  body.blog article.post.format-quote .quote-wrap:hover {
+    background-color: #5AD8A3; }
+    body.blog article.post.format-quote .quote-wrap:hover span, body.blog article.post.format-quote .quote-wrap:hover a, body.blog article.post.format-quote .quote-wrap:hover p, body.blog article.post.format-quote .quote-wrap:hover i {
+      color: #fff; }
+body.blog article.post.format-link .post-text {
+  padding: 0; }
+body.blog article.post.format-link .link-wrap {
+  padding: 23px 23px 35px 23px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  body.blog article.post.format-link .link-wrap:hover {
+    background-color: #5AD8A3; }
+    body.blog article.post.format-link .link-wrap:hover span, body.blog article.post.format-link .link-wrap:hover a, body.blog article.post.format-link .link-wrap:hover p, body.blog article.post.format-link .link-wrap:hover i {
+      color: #fff; }
+body.blog article.post {
+  margin-bottom: 60px; }
+  body.blog article.post .post-text {
     padding: 23px 23px 35px 23px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-    body.blog .page article.post.format-quote .quote-wrap:hover {
-      background-color: #5AD8A3; }
-      body.blog .page article.post.format-quote .quote-wrap:hover span, body.blog .page article.post.format-quote .quote-wrap:hover a, body.blog .page article.post.format-quote .quote-wrap:hover p, body.blog .page article.post.format-quote .quote-wrap:hover i {
-        color: #fff; }
-  body.blog .page article.post {
-    margin-bottom: 60px; }
-    body.blog .page article.post .post-text {
-      padding: 23px 23px 35px 23px;
-      background-color: #fff; }
+    background-color: #fff; }
 
 article.post h2.entry-title {
   text-transform: uppercase;
@@ -2070,7 +2104,7 @@ article.post .p-meta {
   margin-right: 8px;
   margin-bottom: 0; }
 article.post .post-info {
-  margin-bottom: 10px; }
+  margin-bottom: 20px; }
 
 article.format-quote .quote-wrap {
   background-color: #fff;
@@ -2079,15 +2113,32 @@ article.format-quote .quote-wrap {
   article.format-quote .quote-wrap .fa-quote-left {
     font-size: 36px; }
   article.format-quote .quote-wrap .quote-content {
-    font-size: 21px;
+    font-size: 150%;
     padding-left: 60px; }
 article.format-quote div.post-image {
   margin-bottom: 0; }
 
+article.format-link .post-text {
+  padding: 0; }
+article.format-link .link-wrap {
+  background-color: #fff;
+  padding: 23px 23px 35px 23px;
+  margin-bottom: 20px; }
+  article.format-link .link-wrap .fa-link {
+    font-size: 36px;
+    float: left; }
+  article.format-link .link-wrap .link-content {
+    font-size: 150%;
+    padding-left: 60px; }
+article.format-link div.post-image {
+  margin-bottom: 0; }
+
 .mejs-audio {
   margin-bottom: 20px; }
-  .mejs-audio .mejs-controls .mejs-time-rail .mejs-time-current {
-    background-color: #5AD8A3; }
+  .mejs-audio .mejs-controls {
+    background-color: #303030 !important; }
+    .mejs-audio .mejs-controls .mejs-time-rail .mejs-time-current {
+      background-color: #5AD8A3; }
 
 .video-content {
   background-color: #fff; }
@@ -2124,6 +2175,10 @@ body.single-post .post-image {
     font-size: 135%; } }
 #comments {
   margin-top: 30px; }
+  #comments .no-comments {
+    margin: 28px 0 38px; }
+  #comments .comment-reply-title {
+    margin-bottom: 5px; }
   #comments ol.comment-list {
     list-style: none; }
     #comments ol.comment-list .bypostauthor {
@@ -2479,10 +2534,12 @@ form.search-form {
   .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top {
     display: block;
     position: relative; }
-    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top:hover > i {
-      opacity: 1; }
-    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top:hover::after {
-      opacity: 1; }
+    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top a {
+      display: block; }
+      .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top a::after {
+        content: "";
+        display: block;
+        padding-top: 70%; }
     .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top i {
       position: absolute;
       top: 50%;

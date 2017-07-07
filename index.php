@@ -5,8 +5,8 @@ get_header();
 $class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($class); ?>">
   <main id="main" class="site-main" role="main">
     <header class="title-holder">
-      <h1 class="header-title"><?php wp_title(''); ?></h1>
-      <span class="underline left"></span>
+      <h1 class="header-title"><?php esc_html_e(wp_title('')); ?></h1>
+      <span class="underline"></span>
     </header>
     <?php
       if(have_posts()):

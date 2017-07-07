@@ -14,6 +14,16 @@ body.category
           background-color: $button
           span, a, p, i
             color: $wh
+    article.post.format-link
+      .post-text
+        padding: 0
+      .link-wrap
+        padding: 23px 23px 35px 23px
+        @include transition(all, 0.3s, ease-in-out)
+        &:hover
+          background-color: $button
+          span, a, p, i
+            color: $wh
     article.post
       margin-bottom: 60px
       h2.entry-title

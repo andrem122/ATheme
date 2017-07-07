@@ -59,6 +59,8 @@
     <h3 class="no-comments"><?php _e('No Comments', 'atheme'); ?></h3>
   <?php endif;
   //form for replying to posts
-  comment_form();
+  comment_form(array(
+    'title_reply' => 'Post A Comment'
+  ));
   ?>
 </div><!-- #comments -->

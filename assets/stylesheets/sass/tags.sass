@@ -1,37 +1,35 @@
-body.tag
+//tag posts page
+body.archive.tag
   header
     .archive-meta
       max-width: 600px
-  .page
-    background-color: $body-b-c
   .archive-meta
     max-width: 600px
-    article.post.format-quote
-      .post-text
-        padding: 0
-      .quote-wrap
-        padding: 23px 23px 35px 23px
-        @include transition(all, 0.3s, ease-in-out)
-        &:hover
-          background-color: $button
-          span, a, p, i
-            color: $wh
-    article.post
-      margin-bottom: 60px
-      h2.entry-title
-        text-transform: uppercase
-        margin:
-          bottom: 0
-      .p-meta
-        margin:
-          right: 8px
-          bottom: 0
-      .post-info
-        margin:
-          bottom: 10px
-      .post-text
-        padding: 23px 23px 35px 23px
-        background-color: $wh
+  article.post.format-quote
+    .post-text
+      padding: 0
+    .quote-wrap
+      padding: 23px 23px 35px 23px
+      @include transition(all, 0.3s, ease-in-out)
+      &:hover
+        background-color: $button
+        span, a, p, i
+          color: $wh
+  article.post.format-link
+    .post-text
+      padding: 0
+    .link-wrap
+      padding: 23px 23px 35px 23px
+      @include transition(all, 0.3s, ease-in-out)
+      &:hover
+        background-color: $button
+        span, a, p, i
+          color: $wh
+  article.post
+    margin-bottom: 60px
+    .post-text
+      padding: 23px 23px 35px 23px
+      background-color: $wh
 .tags, .tagcloud
   max-width: 700px
   > a

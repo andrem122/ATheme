@@ -7,9 +7,8 @@
       <?php
         //if title is hidden, the margin won't affect the page layout
         //if you put the <h1> tags as arguments into the_title()
-        the_title('<h1 class="header-title">', '</h1>');
+        the_title('<h1 class="header-title">', '</h1><span class="underline"></span>');
       ?>
-    <span class="underline"></span>
   </header>
   <div class="page-content">
     <?php the_content(); ?>
