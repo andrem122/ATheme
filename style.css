@@ -1741,6 +1741,9 @@ a {
   width: 85%;
   margin: 0 auto; }
 
+.center-text {
+  text-align: center; }
+
 div.page {
   padding: 40px 0; }
 
@@ -1840,39 +1843,50 @@ body.front-page .page {
 
 body.search header .archive-meta {
   max-width: 600px; }
-body.search .page {
-  background-color: #f6f6f6; }
-  body.search .page article.post.format-quote .post-text {
-    padding: 0; }
-  body.search .page article.post.format-quote .quote-wrap {
+body.search article.post.format-quote .post-text {
+  padding: 0; }
+body.search article.post.format-quote .quote-wrap {
+  padding: 23px 23px 35px 23px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  body.search article.post.format-quote .quote-wrap:hover {
+    background-color: #5AD8A3; }
+    body.search article.post.format-quote .quote-wrap:hover span, body.search article.post.format-quote .quote-wrap:hover a, body.search article.post.format-quote .quote-wrap:hover p, body.search article.post.format-quote .quote-wrap:hover i {
+      color: #fff; }
+body.search article.post.format-link .post-text {
+  padding: 0; }
+body.search article.post.format-link .link-wrap {
+  padding: 23px 23px 35px 23px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  body.search article.post.format-link .link-wrap:hover {
+    background-color: #5AD8A3; }
+    body.search article.post.format-link .link-wrap:hover span, body.search article.post.format-link .link-wrap:hover a, body.search article.post.format-link .link-wrap:hover p, body.search article.post.format-link .link-wrap:hover i {
+      color: #fff; }
+body.search article.post {
+  margin-bottom: 60px; }
+  body.search article.post .post-text {
     padding: 23px 23px 35px 23px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-    body.search .page article.post.format-quote .quote-wrap:hover {
-      background-color: #5AD8A3; }
-      body.search .page article.post.format-quote .quote-wrap:hover span, body.search .page article.post.format-quote .quote-wrap:hover a, body.search .page article.post.format-quote .quote-wrap:hover p, body.search .page article.post.format-quote .quote-wrap:hover i {
-        color: #fff; }
-  body.search .page article.post.format-link .post-text {
-    padding: 0; }
-  body.search .page article.post.format-link .link-wrap {
+    background-color: #fff; }
+body.search article.type-page {
+  margin-bottom: 60px; }
+  body.search article.type-page h2.entry-title {
+    text-transform: uppercase;
+    margin-bottom: 0; }
+  body.search article.type-page .p-meta {
+    margin-right: 8px;
+    margin-bottom: 0; }
+  body.search article.type-page .post-info {
+    margin-bottom: 20px; }
+  body.search article.type-page .post-text {
     padding: 23px 23px 35px 23px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-    body.search .page article.post.format-link .link-wrap:hover {
-      background-color: #5AD8A3; }
-      body.search .page article.post.format-link .link-wrap:hover span, body.search .page article.post.format-link .link-wrap:hover a, body.search .page article.post.format-link .link-wrap:hover p, body.search .page article.post.format-link .link-wrap:hover i {
-        color: #fff; }
-  body.search .page article.post {
-    margin-bottom: 60px; }
-    body.search .page article.post .post-text {
-      padding: 23px 23px 35px 23px;
-      background-color: #fff; }
+    background-color: #fff; }
 
 body.archive .page {
   background-color: #f6f6f6; }
