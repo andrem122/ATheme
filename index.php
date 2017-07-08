@@ -1,4 +1,5 @@
 <?php
+//the main template file
 get_header();
 ?>
 <div class="wrap clear <?php

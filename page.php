@@ -1,4 +1,5 @@
 <?php
+//template for displaying all pages
 get_header();
 ?>
 <div class="wrap clear <?php

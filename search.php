@@ -16,6 +16,8 @@ $class = (is_active_sidebar('sidebar-main')) ? 'col-md-8' : ''; esc_attr_e($clas
     <?php
       if(have_posts()):
         while(have_posts()): the_post();
+          //if it is a post, get the post format template, else get the excerpt
+          //template for pages
           if($post->post_type === 'post'):
             get_template_part('template-parts/post/content', get_post_format());
           else:

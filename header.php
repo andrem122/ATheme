@@ -1,3 +1,4 @@
+<?php //the header ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <head>

@@ -2305,21 +2305,21 @@ body.single-post .post-image {
       #comments ol.comment-list li.comment.depth-1 .comment-date {
         text-transform: uppercase; }
 
-.icon-square-lg, .icon-circle-lg {
+.icon-lg-square, .icon-lg-circle {
   padding: 30px;
   border: 1px solid #303030; }
 
 .icon-circle-lg {
   border-radius: 50%; }
 
-.icon-square-md, .icon-circle-md {
+.icon-md-square, .icon-md-circle {
   padding: 20px;
   border: 1px solid #303030; }
 
 .icon-circle-md {
   border-radius: 50%; }
 
-.icon-square-sm, .icon-circle-sm {
+.icon-sm-square, .icon-sm-circle {
   padding: 10px;
   border: 1px solid #303030; }
 
@@ -2718,16 +2718,32 @@ form.search-form {
   .recent-post-bottom h3 {
     font-size: 130%; } }
 footer {
+  background-color: #2e2e2e;
   padding: 50px 0;
-  background-color: #2e2e2e; }
-  footer a {
-    color: #787f8c; }
-    footer a:hover {
-      color: #fff; }
-  footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+  padding: 50px 0;
+  padding: 50px 0;
+  padding: 50px 0;
+  padding: 50px 0;
+  padding: 50px 0; }
+  footer a, footer i.fa {
+    color: #787f8c;
+    border-color: #787f8c; }
+    footer a:hover, footer i.fa:hover {
+      color: #fff;
+      border-color: #fff; }
+  footer h1 {
+    color: #fff; }
+  footer h2 {
+    color: #fff; }
+  footer h3 {
+    color: #fff; }
+  footer h4 {
+    color: #fff; }
+  footer h5 {
+    color: #fff; }
+  footer h6 {
     color: #fff; }
   footer #menu-bottom {
-    text-align: center;
     list-style: none;
     margin-bottom: 8px; }
     footer #menu-bottom > li {

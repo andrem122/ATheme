@@ -1,5 +1,5 @@
 <?php
-//the main, default sidebar for every page
+//template for the default sidebar
 
 //if the main sidebar does not have widgets (is not in use),
 //then do nothing (terminate the script). Otherwise, retrieve the sidebar

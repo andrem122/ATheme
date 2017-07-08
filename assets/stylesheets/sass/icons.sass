@@ -3,7 +3,7 @@ $sizes: lg md sm
 $paddings: 30px 20px 10px
 $n: 1
 @each $size in $sizes
-  .icon-square-#{$size}, .icon-circle-#{$size}
+  .icon-#{$size}-square, .icon-#{$size}-circle
     padding: nth($paddings, $n)
     border: 1px solid #303030
   .icon-circle-#{$size}

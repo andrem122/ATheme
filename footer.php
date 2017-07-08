@@ -1,14 +1,15 @@
       <?php
+      //the footer
       //close the div with .row if sidebar-main is active
       if(is_active_sidebar('sidebar-main') || is_active_sidebar('sidebar-blog')):
-        echo '</div>';
+        echo '</div><!-- .row -->';
       endif;
       ?>
       <?php
       //close the div with .center-content if the full page template is
       //NOT used
       if(!is_page_template('template-parts/content-full-width.php')):
-        echo '</div>'; //.center-content
+        echo '</div><!-- .center-content -->';
       endif;
       ?>
     </div><!-- .page -->
@@ -29,20 +30,23 @@
                   wp_nav_menu(array(
                     'theme_location' => 'bottom',
                     'container'      =>  false,
+                    'container_class' => 'center-text',
                     'menu' => __( 'The Bottom Menu', 'atheme' ),
                   ));
                 endif;
               ?>
-              <div class="social-media-links">
+              <div class="social-media-links center-text">
                 <?php
-                if(is_active_sidebar('sidebar-footer-social')):
-                  dynamic_sidebar('sidebar-footer-social');
-                endif;
+                  if(is_active_sidebar('sidebar-footer-social')):
+                    dynamic_sidebar('sidebar-footer-social');
+                  endif;
                 ?>
               </div>
             </nav>
-            <?php endif; ?>
-            <?php get_template_part('template-parts/footer/site', 'info'); ?>
+            <?php
+              get_template_part('template-parts/footer/site', 'info');
+              endif; //end is_active_sidebar() check
+            ?>
           </div>
         </div>
       </div>
