@@ -2164,6 +2164,15 @@ article.format-link div.post-image {
 .single-format-video .video-content {
   background-color: #f9f9f9; }
 
+.gallery-content {
+  background-color: #fff; }
+  .gallery-content p:first-child {
+    margin-bottom: 0; }
+    .gallery-content p:first-child iframe {
+      width: 100%; }
+
+body.single-post article .gallery-content {
+  margin: 0 0 15px; }
 body.single-post article .post-content blockquote {
   padding: 14px 14px 14px 10px; }
   body.single-post article .post-content blockquote::before {
