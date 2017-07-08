@@ -1,9 +1,14 @@
-body.category
-  header
-    .archive-meta
-      max-width: 600px
-  .page
-    background-color: #f6f6f6
+//post excerpts on the blog, search, category, and tag post feeds
+$post-pages: blog 'archive.tag' search archive category
+@each $post-page in $post-pages
+  body.#{$post-page}
+    header
+      .archive-meta
+        max-width: 600px
+  body.#{$post-page}
+    article
+      .textwidget
+        padding: 0 23px 0 23px
     article.post.format-quote
       .post-text
         padding: 0
@@ -24,9 +29,18 @@ body.category
           background-color: $button
           span, a, p, i
             color: $wh
+    article.format-gallery
+      .gallery-content
+        background-color: $wh
     article.post
       margin-bottom: 60px
+      .post-text
+        padding: 23px 23px 35px 23px
+        background-color: $wh
+    article.type-page
+      margin-bottom: 60px
       h2.entry-title
+        text-transform: uppercase
         margin:
           bottom: 0
       .p-meta
@@ -35,7 +49,7 @@ body.category
           bottom: 0
       .post-info
         margin:
-          bottom: 10px
+          bottom: 20px
       .post-text
         padding: 23px 23px 35px 23px
         background-color: $wh

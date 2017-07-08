@@ -29,6 +29,17 @@ img
   width: 100%
   height: auto
   vertical-align: middle
+//blockquotes
+blockquote
+  padding: 14px 20px 14px 20px
+  &::before
+    content: '\f10d'
+    font-family: 'FontAwesome'
+    font-size: 165%
+    float: left
+  > p
+    font-size: 150%
+    padding-left: 40px
 //prevents parent div with floated children from collapsing
 section, div, header, footer, nav
   &::after

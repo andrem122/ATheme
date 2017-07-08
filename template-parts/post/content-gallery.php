@@ -7,34 +7,14 @@
       <?php the_title('<h1 class="header-title">', '</h1>'); ?>
       <span class="underline"></span>
     </header>
-    <div class="gallery-content">
-      <?php the_content(); ?>
-    </div><!-- .gallery-content -->
-  <?php else: ?>
-    <div class="gallery-content">
-      <?php the_content(); ?>
-    </div><!-- .gallery-content -->
   <?php endif; // end is_single() check ?>
+    <div class="gallery-content">
+      <?php the_content(); ?>
+    </div><!-- .gallery-content -->
   <div class="post-text">
-    <div class="post-title">
-      <h2 class="entry-title">
-        <p class="p-meta left">
-          <span>
-            <time datetime="<?php esc_attr_e(the_time('Y-m-d H:i')); ?>"><?php the_time('d M'); ?></time>
-          </span>
-        </p>
-        <?php if(is_single()):
-                the_title();
-              else: ?>
-                <a href="<?php esc_url(the_permalink()); ?>" title="Permalink to: <?php the_title(); ?>">
-                  <?php
-                    the_title();
-                  ?>
-                </a>
-        <?php endif; ?>
-      </h2>
-    </div>
     <?php
+      //get the title
+      get_template_part('template-parts\post\content', 'title');
       //get the post information
       get_template_part('template-parts\post\content', 'post-info')
     ?>
