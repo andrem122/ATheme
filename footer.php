@@ -20,8 +20,8 @@
             <?php get_template_part('template-parts/footer/footer', 'widgets') ?>
             <!-- bottom menu -->
             <?php
-              if(!is_active_sidebar('sidebar-footer-1') ||
-              !is_active_sidebar('sidebar-footer-2') ||
+              if(!is_active_sidebar('sidebar-footer-1') &&
+              !is_active_sidebar('sidebar-footer-2') &&
               !is_active_sidebar('sidebar-footer-3')):
             ?>
             <nav>

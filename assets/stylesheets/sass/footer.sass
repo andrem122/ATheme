@@ -1,5 +1,9 @@
 footer
   background-color: $footer
+  .widget_recent_entries
+    ul
+      span
+        color: #9d9d9d
   a, i.fa
     color: $body-c
     border-color: $body-c
@@ -10,6 +14,14 @@ footer
     h#{$i}
       color: $wh
     padding: 50px 0
+  .widget-column.col-md-4
+    #menu-bottom
+      > li
+        display: block
+        margin-bottom: 7px
+        > a
+          padding: 10px 0
+          display: block
   #menu-bottom
     list-style: none
     margin-bottom: 8px

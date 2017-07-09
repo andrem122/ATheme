@@ -1688,6 +1688,9 @@ blockquote {
     font-size: 150%;
     padding-left: 40px; }
 
+@media all and (max-width: 835px) {
+  blockquote > p {
+    font-size: 135%; } }
 section::after, div::after, header::after, footer::after, nav::after {
   content: "";
   display: block;
@@ -1743,6 +1746,11 @@ div.page {
 .screen-reader-text {
   position: absolute !important;
   left: -999em; }
+
+input[type="search"]::-webkit-search-cancel-button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none; }
 
 .left {
   float: left !important; }
@@ -1969,6 +1977,12 @@ body.blog article.post.format-link .link-wrap {
       color: #fff; }
 body.blog article.format-gallery .gallery-content {
   background-color: #fff; }
+  body.blog article.format-gallery .gallery-content > p:first-child {
+    margin: 0; }
+body.blog article.format-image .image-content {
+  background-color: #fff; }
+  body.blog article.format-image .image-content > p:first-child {
+    margin: 0; }
 body.blog article.post {
   margin-bottom: 60px; }
   body.blog article.post .post-text {
@@ -2021,6 +2035,12 @@ body.archive.tag article.post.format-link .link-wrap {
       color: #fff; }
 body.archive.tag article.format-gallery .gallery-content {
   background-color: #fff; }
+  body.archive.tag article.format-gallery .gallery-content > p:first-child {
+    margin: 0; }
+body.archive.tag article.format-image .image-content {
+  background-color: #fff; }
+  body.archive.tag article.format-image .image-content > p:first-child {
+    margin: 0; }
 body.archive.tag article.post {
   margin-bottom: 60px; }
   body.archive.tag article.post .post-text {
@@ -2073,6 +2093,12 @@ body.search article.post.format-link .link-wrap {
       color: #fff; }
 body.search article.format-gallery .gallery-content {
   background-color: #fff; }
+  body.search article.format-gallery .gallery-content > p:first-child {
+    margin: 0; }
+body.search article.format-image .image-content {
+  background-color: #fff; }
+  body.search article.format-image .image-content > p:first-child {
+    margin: 0; }
 body.search article.post {
   margin-bottom: 60px; }
   body.search article.post .post-text {
@@ -2125,6 +2151,12 @@ body.archive article.post.format-link .link-wrap {
       color: #fff; }
 body.archive article.format-gallery .gallery-content {
   background-color: #fff; }
+  body.archive article.format-gallery .gallery-content > p:first-child {
+    margin: 0; }
+body.archive article.format-image .image-content {
+  background-color: #fff; }
+  body.archive article.format-image .image-content > p:first-child {
+    margin: 0; }
 body.archive article.post {
   margin-bottom: 60px; }
   body.archive article.post .post-text {
@@ -2177,6 +2209,12 @@ body.category article.post.format-link .link-wrap {
       color: #fff; }
 body.category article.format-gallery .gallery-content {
   background-color: #fff; }
+  body.category article.format-gallery .gallery-content > p:first-child {
+    margin: 0; }
+body.category article.format-image .image-content {
+  background-color: #fff; }
+  body.category article.format-image .image-content > p:first-child {
+    margin: 0; }
 body.category article.post {
   margin-bottom: 60px; }
   body.category article.post .post-text {
@@ -2256,10 +2294,6 @@ article.format-link div.post-image {
 
 body.single-post article .gallery-content {
   margin: 0 0 15px; }
-body.single-post article blockquote {
-  background-color: #fff;
-  margin-bottom: 20px;
-  border: 1px solid #ccc; }
 body.single-post article .post-title h2.entry-title {
   margin-bottom: 0; }
 body.single-post article .post-title .p-meta {
@@ -2270,9 +2304,6 @@ body.single-post .post-image {
   body.single-post .post-image > img {
     width: 100%; }
 
-@media all and (max-width: 835px) {
-  body.single-post article .post-content blockquote > p {
-    font-size: 135%; } }
 #comments {
   margin-top: 30px; }
   #comments .no-comments {
@@ -2629,17 +2660,25 @@ form.search-form {
   form.search-form input.search-field {
     padding-left: 35px; }
 
+.widget_recent_entries ul {
+  list-style: none; }
+  .widget_recent_entries ul li {
+    margin-bottom: 17px; }
+  .widget_recent_entries ul a {
+    display: block;
+    padding: 10px 0; }
+
+.widget-recent-posts a {
+  display: block; }
 .widget-recent-posts .atheme-recent-post {
   margin-bottom: 20px; }
   .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top {
     display: block;
     position: relative; }
-    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top a {
-      display: block; }
-      .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top a::after {
-        content: "";
-        display: block;
-        padding-top: 70%; }
+    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top a::after {
+      content: "";
+      display: block;
+      padding-top: 70%; }
     .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top i {
       position: absolute;
       top: 50%;
@@ -2725,6 +2764,8 @@ footer {
   padding: 50px 0;
   padding: 50px 0;
   padding: 50px 0; }
+  footer .widget_recent_entries ul span {
+    color: #9d9d9d; }
   footer a, footer i.fa {
     color: #787f8c;
     border-color: #787f8c; }
@@ -2743,6 +2784,12 @@ footer {
     color: #fff; }
   footer h6 {
     color: #fff; }
+  footer .widget-column.col-md-4 #menu-bottom > li {
+    display: block;
+    margin-bottom: 7px; }
+    footer .widget-column.col-md-4 #menu-bottom > li > a {
+      padding: 10px 0;
+      display: block; }
   footer #menu-bottom {
     list-style: none;
     margin-bottom: 8px; }
