@@ -1,20 +1,36 @@
 header.top
-  padding: 20px 0
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: 112px
+  min-height: 60px
   background-color: $wh
+  @include transition(all, 500ms, ease-in-out)
   h1
+    line-height: 112px
     font-size: 220%
     margin:
-      top: 10px
       bottom: 0
 #menu-top
   float: right
-  min-height: 60px
-  padding-top: 10px
   transition: 0.3s ease-in-out
   z-index: 9999
   > li
-    display: inline-block
+    display: block
+    float: left
     list-style: none
+    line-height: 112px
+    &::after
+      content: ''
+      color: $logo
+      display: block
+      border-bottom: 1px solid $logo
+      width: 0
+      @include transition(all, 150ms, ease-in-out)
+      @include transform(translateY, -30px)
+    &:hover::after
+      width: 75%
     > a
       font-size: 14px
       display: inline-block
@@ -27,19 +43,36 @@ header.top
       margin-right: 50px
       &:hover
         color: $logo
-      &::after
-        content: ''
-        color: $logo
+  > li.menu-item-has-children
+    position: relative
+    ul
+      display: none
+    &:hover
+      ul
+        background-color: $footer
+        width: 225px
+        list-style: none
         display: block
-        border-bottom: 1px solid $logo
-        width: 0
-        @include transition(all, 150ms, ease-in-out)
-        @include transform(translateY, -13px)
-      &:hover::after
-        width: 130%
+        padding: 7px 20px 7px 0
+        position: absolute
+        top: 112px
+        z-index: 999
+        li
+          line-height: 26px
+          a
+            display: block
+            padding: 8px 15px
+            color: $body-c
+            text:
+              transform: uppercase
+            &:hover
+              color: $wh
 //sticky nav bar when scrolling through page
-#menu-top.sticky
+header.top.sticky
   position: fixed
+  top: -112px
+  left: 0
+  right: 0
   background-color: $wh
   z-index: 9999
   box-shadow: rgba(0,0,0,.117647) 0 1px 3px
