@@ -2,17 +2,16 @@
 //template for displaying archive pages
 get_header();
 ?>
-<div class="wrap clear <?php
-$atheme_class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($atheme_class); ?>">
+<div class="wrap clear <?php (is_active_sidebar('sidebar-blog')) ? esc_attr_e('col-md-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
   <main id="main" class="site-main" role="main">
     <header class="archive-header">
-      <?php esc_html_e(the_archive_title('<h1 class="header-title">', '</h1><span class="underline"></span>')); ?>
+      <?php esc_html_e(the_archive_title('<h1 class="header-title">', '</h1><span class="underline"></span>'), 'atheme'); ?>
       <?php
       //display archive description
       if(the_archive_description()):
       ?>
       <div class="archive-meta">
-        <?php esc_html_e(the_archive_description()); ?>
+        <?php esc_html_e(the_archive_description(), 'atheme'); ?>
       </div>
       <?php endif; ?>
     </header>

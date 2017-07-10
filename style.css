@@ -1740,8 +1740,24 @@ a {
   width: 85%;
   margin: 0 auto; }
 
-.center-text {
+.aligncenter {
   text-align: center; }
+
+.alignleft {
+  text-align: left; }
+
+.alignright {
+  text-align: right; }
+
+.wp-caption {
+  width: 100% !important;
+  background: #fff;
+  line-height: 18px;
+  margin-bottom: 20px;
+  text-align: center; }
+  .wp-caption .wp-caption-text {
+    padding: 10px 0;
+    margin: 5px; }
 
 div.page {
   padding: 40px 0; }
@@ -2305,6 +2321,16 @@ article.format-link div.post-image {
   margin-bottom: 0; }
   .gallery-content p:first-child iframe {
     width: 100%; }
+
+.gallery-caption {
+  width: 100% !important;
+  background: #fff;
+  line-height: 18px;
+  margin-bottom: 20px;
+  text-align: center; }
+  .gallery-caption .gallery-caption-text {
+    padding: 10px 0;
+    margin: 5px; }
 
 body.single-post article .gallery-content {
   margin: 0 0 15px; }

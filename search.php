@@ -2,10 +2,9 @@
 //template for displaying search results
 get_header();
 ?>
-<div class="wrap clear <?php
-$atheme_class = (is_active_sidebar('sidebar-main')) ? 'col-md-8' : ''; esc_attr_e($atheme_class); ?>">
+<div class="wrap clear <?php (is_active_sidebar('sidebar-main')) ? esc_attr_e('col-md-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
   <main id="main" class="site-main" role="main">
-    <header class="title-holder <?php $title_class = (have_posts()) ? '' : 'title-center'; esc_attr_e($title_class); ?>">
+    <header class="title-holder <?php $title_class = (have_posts()) ? esc_attr_e('', 'atheme') : esc_attr_e('title-center', 'atheme'); ?>">
       <?php if(have_posts()): ?>
         <h1 class="header-title"><?php printf(__('Search Results For %s', 'atheme'), '<span>' . get_search_query() . '</span>'); ?></h1>
       <?php else: ?>

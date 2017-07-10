@@ -2,14 +2,13 @@
 //template for displaying tag posts
 get_header();
 ?>
-<div class="wrap clear <?php
-$atheme_class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($atheme_class); ?>">
+<div class="wrap clear <?php (is_active_sidebar('sidebar-blog')) ? esc_attr_e('col-md-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
   <main id="main" class="site-main" role="main">
     <header class="tag-header">
-      <?php single_tag_title('<h1 class="header-title">Tag: ','</h1><span class="underline"></span>'); ?></h1>
+      <h1 class="header-title"><?php esc_html_e(single_tag_title('Tag: '), 'atheme'); ?></h1>
       <?php
-      //display tag description
-      if(tag_description()):
+        //display tag description
+        if(tag_description()):
       ?>
       <div class="archive-meta">
         <?php echo tag_description(); ?>

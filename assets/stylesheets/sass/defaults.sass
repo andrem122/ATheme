@@ -65,8 +65,19 @@ a
   max-width: 1400px
   width: 85%
   margin: 0 auto
-.center-text
+$positions: center left right
+@each $position in $positions
+  .align#{$position}
+    text-align: $position
+.wp-caption
+  width: 100% !important
+  background: $wh
+  line-height: 18px
+  margin-bottom: 20px
   text-align: center
+  .wp-caption-text
+    padding: 10px 0
+    margin: 5px
 //page
 div.page
   padding: 40px 0

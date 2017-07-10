@@ -2,8 +2,7 @@
 //template for displaying all pages
 get_header();
 ?>
-<div class="wrap clear <?php
-$atheme_class = (is_active_sidebar('sidebar-main')) ? 'col-md-8' : ''; esc_attr_e($atheme_class); ?>">
+<div class="wrap clear <?php (is_active_sidebar('sidebar-main')) ? esc_attr_e('col-md-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
   <main id="main" class="site-main" role="main">
     <?php
         while(have_posts()): the_post();
