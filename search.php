@@ -3,7 +3,7 @@
 get_header();
 ?>
 <div class="wrap clear <?php
-$class = (is_active_sidebar('sidebar-main')) ? 'col-md-8' : ''; esc_attr_e($class); ?>">
+$atheme_class = (is_active_sidebar('sidebar-main')) ? 'col-md-8' : ''; esc_attr_e($atheme_class); ?>">
   <main id="main" class="site-main" role="main">
     <header class="title-holder <?php $title_class = (have_posts()) ? '' : 'title-center'; esc_attr_e($title_class); ?>">
       <?php if(have_posts()): ?>

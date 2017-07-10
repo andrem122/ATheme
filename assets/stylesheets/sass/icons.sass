@@ -9,17 +9,6 @@ $n: 1
   .icon-circle-#{$size}
     border-radius: 50%
     $n: $n + 1
-.social-icon
-  @include icon(rgba(255, 255, 255, 0.8), transparent, 50px, inherit)
-  &::before
-    line-height: 50px
-  &:hover
-    transform: scale(1.2)
-    color: $wh
-  @include transform(rotate, 360deg)
-  @include transition(all, 0.3s, linear)
-.fa.icon-round
-  @include icon($wh, $twitter-c, 70px, 30px)
 
 //social icon background colors
 $social-media: facebook twitter g-plus linkedin github
@@ -27,32 +16,27 @@ $colors: $facebook-c $twitter-c $g-plus-c $linkedin-c $github-c
 $i: 1
 @each $social in $social-media
   .#{$social}
-    background-color: nth($colors, $i)
+    border-color: nth(nth($colors, $i), 1) !important
+    color: nth(nth($colors, $i), 1) !important
+    @include transition(all, 0.3s, ease-in-out)
+    &:hover
+      color: nth(nth($colors, $i), 2) !important
+      border-color: nth(nth($colors, $i), 2) !important
   $i: $i + 1
 
-//Navigation Mobile Menu Icons
-.mobile-icons
-  @include icon($wh, transparent, 30px, inherit)
-
-$mobile-icons: home briefcase envelope pencil gamepad
-$colors: $canary $light-moss-green $dark-pastel-blue $wild-blue-yonder $ash-grey
-$i: 1
-@each $icon in $mobile-icons
-  .#{$icon}-b-color
-    background-color: nth($colors, $i)
-  $i: $i + 1
-//icon margins
-.icon-m-btn-right
-  margin-right: 0.26em
-.icon-m-right
-  margin-right: 4%
-//footer icons
-.footer-icons
+.social-sharing-icons
+  padding: 35px 0
+  margin: 35px 0 35px
   text-align: center
-  font-size: 200%
-@media all and (max-width: 430px)
-  .social-icon
-    height: 45px
-    width: 45px
-    &::before
-      line-height: 45px
+  border:
+    top: 1px solid #e0e0e0
+    bottom: 1px solid #e0e0e0
+  a
+    display: inline-block
+    margin-right: 15px
+    &:last-child
+      margin: 0
+    @include transition(all, 0.2s, ease-in-out)
+    > i
+      display: inline-block
+      font-size: 30px

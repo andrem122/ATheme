@@ -51,6 +51,8 @@ function a_theme_setup() {
   add_theme_support( 'custom-background', array(
   	'default-color' => '#f6f6f6',
   ));
+  //automatic feed links
+  add_theme_support('automatic-feed-links');
   //menus
   register_nav_menus(array(
     'top' => 'Top Menu',
@@ -188,7 +190,7 @@ function atheme_recent_posts() {
 //custom comment markup
 function atheme_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment;
-  $comment_id = $comment->comment_ID;
+  $atheme_comment_id = $comment->comment_ID;
   $user_id = get_the_author_meta('ID', true);
   ?>
   <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
@@ -199,8 +201,8 @@ function atheme_comments($comment, $args, $depth) {
         ?>
       </div>
       <div class="text">
-        <h5 class="name"><?php esc_html_e(get_comment_author($comment_id)); ?></h5>
-        <span class="comment-date"><?php esc_html_e(get_comment_date('m.d.Y \a\t h:i A', $comment_id)); ?></span>
+        <h5 class="name"><?php esc_html_e(get_comment_author($atheme_comment_id)); ?></h5>
+        <span class="comment-date"><?php esc_html_e(get_comment_date('m.d.Y \a\t h:i A', $atheme_comment_id)); ?></span>
         <?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply', 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
         <div class="comment-content">
           <?php comment_text(); ?>

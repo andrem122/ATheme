@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <div class="wrap clear <?php
-$class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($class); ?>">
+$atheme_class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($atheme_class); ?>">
   <main id="main" class="site-main" role="main">
     <?php
     //dont need if(have_posts()) because if we are on this page,

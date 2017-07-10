@@ -3,7 +3,7 @@
 get_header();
 ?>
 <div class="wrap clear <?php
-$class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($class); ?>">
+$atheme_class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($atheme_class); ?>">
   <main id="main" class="site-main" role="main">
     <header class="tag-header">
       <?php single_tag_title('<h1 class="header-title">Tag: ','</h1><span class="underline"></span>'); ?></h1>

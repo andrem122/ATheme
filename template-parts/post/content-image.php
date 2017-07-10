@@ -25,4 +25,8 @@
       get_template_part('template-parts/post/content', 'tags')
     ?>
   </div><!-- .post-text -->
+  <?php
+    //social sharing
+    get_template_part('template-parts/post/content', 'social');
+  ?>
 </article><!-- #post-## -->

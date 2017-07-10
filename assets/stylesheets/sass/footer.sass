@@ -10,6 +10,10 @@ footer
     &:hover
       color: $wh
       border-color: $wh
+  .widget_calendar
+    tr
+      td > a
+        color: $wh
   @for $i from 1 through 6
     h#{$i}
       color: $wh
@@ -42,49 +46,3 @@ footer
     > a
       font-size: 85%
       letter-spacing: 1px
-  .footer-content-wrapper
-    &::after
-      @include clearfix
-  .footer-content
-    &::after
-      @include clearfix
-    span
-      display: block
-      white-space: nowrap
-    h3
-      font-size: 115%
-      display: inline-block
-      cursor: pointer
-      &::after
-        @include hover-border
-        @include transition(all, 150ms, ease-in-out)
-      &:hover::after
-        width: 110%
-    .col-md-10, .col-md-2
-      margin-bottom: 0
-@media all and (max-width: 1165px)
-  footer
-    .footer-content
-      h3
-        font-size: 100%
-@media all and (max-width: 993px)
-  footer
-    .footer-icons
-      font-size: 200%
-    .footer-content
-      span
-        font-size: 110%
-      h3
-        font-size: 120%
-        &::after
-          display: none
-@media all and (max-width: 430px)
-  footer
-    .footer-icons
-      font-size: 160%
-    .footer-content
-      text-align: center
-      span
-        font-size: 90%
-      h3
-        font-size: 100%

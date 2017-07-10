@@ -3,7 +3,7 @@
 get_header();
 ?>
 <div class="wrap clear <?php
-$class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($class); ?>">
+$atheme_class = (is_active_sidebar('sidebar-blog')) ? 'col-md-8' : ''; esc_attr_e($atheme_class); ?>">
   <main id="main" class="site-main" role="main">
     <header class="category-header">
       <h1 class="header-title"><?php esc_html_e(single_cat_title()); ?></h1>
