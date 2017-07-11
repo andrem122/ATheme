@@ -88,10 +88,10 @@ header.top.sticky
 .mobile-menu-button
   font-size: 1.5em
   font-weight: 100
+  line-height: 90px
   color: $logo
   float: right
   padding: 10px 20px
-  margin-top: 15px
   background-color: transparent
   border: none
   cursor: pointer
@@ -121,6 +121,11 @@ nav.mobile-menu
         font-size: 75%
         font-weight: 600
         letter-spacing: 1px
+    > li.menu-item-has-children
+      position: relative
+      ul
+        display: none
+        background-color: $wh
 @media all and (max-width: 993px)
   nav.mobile-menu
     padding-top: 20px

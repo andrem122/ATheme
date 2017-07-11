@@ -1,5 +1,6 @@
 <section class="widget widget-recent-posts">
   <ul class="atheme-recent-posts">
+    <?php while(have_posts()): the_post(); ?>
       <li>
         <article class="atheme-recent-post">
           <?php if(has_post_thumbnail()): ?>
@@ -23,5 +24,6 @@
           </div>
         </article>
       </li>
+    <?php endwhile; ?>
   </ul>
 </section>

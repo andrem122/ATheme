@@ -13,5 +13,4 @@ if(!is_active_sidebar('sidebar-blog')) {
   //through the admin screen to here
   dynamic_sidebar('sidebar-blog');
   ?>
-  <?php echo atheme_recent_posts(); ?>
 </aside>

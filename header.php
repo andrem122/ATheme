@@ -47,16 +47,17 @@
               <button class="mobile-menu-button" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
             <?php endif; ?>
           </div>
-          <nav style="display: none" class="mobile-menu">
-            <?php
-              wp_nav_menu(array(
-                'theme_location' => 'top',
-                'container'      => false,
-                'menu' => __( 'The Top Menu', 'atheme' ),
-              ));
-            ?>
-          </nav>
         </div>
+        <!-- mobile menu -->
+        <nav style="display: none" class="mobile-menu">
+          <?php
+            wp_nav_menu(array(
+              'theme_location' => 'top',
+              'container'      => false,
+              'menu' => __( 'The Top Menu', 'atheme' ),
+            ));
+          ?>
+        </nav>
       </header>
       <div class="page">
         <?php
