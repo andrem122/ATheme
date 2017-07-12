@@ -21,6 +21,7 @@ header.top
     float: left
     list-style: none
     line-height: 112px
+    margin-right: 50px
     &::after
       content: ''
       color: $logo
@@ -30,7 +31,7 @@ header.top
       @include transition(all, 150ms, ease-in-out)
       @include transform(translateY, -30px)
     &:hover::after
-      width: 75%
+      width: 115%
     > a
       font-size: 14px
       display: inline-block
@@ -40,33 +41,44 @@ header.top
         transform: uppercase
       letter-spacing: 2px
       line-height: 60px
-      margin-right: 50px
+      margin-right: 8px
       &:hover
         color: $logo
-  > li.menu-item-has-children
+  li.menu-item-has-children
     position: relative
-    ul
+    i.fa-angle-left
+      position: absolute
+      top: 18px
+      left: 25px
+      font-size: 19px
+    > ul.sub-menu
       display: none
     &:hover
-      ul
+      > ul.sub-menu
+        position: absolute
         background-color: $footer
         width: 225px
         list-style: none
         display: block
-        padding: 7px 20px 7px 0
         position: absolute
         top: 112px
         z-index: 999
         li
           line-height: 26px
+          text-align: right
           a
             display: block
-            padding: 8px 15px
+            padding: 15px 10px
             color: $body-c
             text:
               transform: uppercase
             &:hover
               color: $wh
+    li.menu-item-has-children
+      &:hover
+        > ul.sub-menu
+          top: 0
+          right: 225px
 //sticky nav bar when scrolling through page
 header.top.sticky
   position: fixed

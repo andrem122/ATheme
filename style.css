@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* Theme Name: ATheme
- * Theme URI: http://andremashraghi.com
  * Author: Andre Mashraghi
  * Author URI: http://andremashraghi.com
  * Description: The A Theme is the best theme you'll ever use
@@ -1860,7 +1859,8 @@ header.top {
     display: block;
     float: left;
     list-style: none;
-    line-height: 112px; }
+    line-height: 112px;
+    margin-right: 50px; }
     #menu-top > li::after {
       content: "";
       color: #211f1f;
@@ -1878,7 +1878,7 @@ header.top {
       -o-transform: translateY(-30px);
       transform: translateY(-30px); }
     #menu-top > li:hover::after {
-      width: 75%; }
+      width: 115%; }
     #menu-top > li > a {
       font-size: 14px;
       display: inline-block;
@@ -1887,31 +1887,40 @@ header.top {
       text-transform: uppercase;
       letter-spacing: 2px;
       line-height: 60px;
-      margin-right: 50px; }
+      margin-right: 8px; }
       #menu-top > li > a:hover {
         color: #211f1f; }
-  #menu-top > li.menu-item-has-children {
+  #menu-top li.menu-item-has-children {
     position: relative; }
-    #menu-top > li.menu-item-has-children ul {
+    #menu-top li.menu-item-has-children i.fa-angle-left {
+      position: absolute;
+      top: 18px;
+      left: 25px;
+      font-size: 19px; }
+    #menu-top li.menu-item-has-children > ul.sub-menu {
       display: none; }
-    #menu-top > li.menu-item-has-children:hover ul {
+    #menu-top li.menu-item-has-children:hover > ul.sub-menu {
+      position: absolute;
       background-color: #2e2e2e;
       width: 225px;
       list-style: none;
       display: block;
-      padding: 7px 20px 7px 0;
       position: absolute;
       top: 112px;
       z-index: 999; }
-      #menu-top > li.menu-item-has-children:hover ul li {
-        line-height: 26px; }
-        #menu-top > li.menu-item-has-children:hover ul li a {
+      #menu-top li.menu-item-has-children:hover > ul.sub-menu li {
+        line-height: 26px;
+        text-align: right; }
+        #menu-top li.menu-item-has-children:hover > ul.sub-menu li a {
           display: block;
-          padding: 8px 15px;
+          padding: 15px 10px;
           color: #787f8c;
           text-transform: uppercase; }
-          #menu-top > li.menu-item-has-children:hover ul li a:hover {
+          #menu-top li.menu-item-has-children:hover > ul.sub-menu li a:hover {
             color: #fff; }
+    #menu-top li.menu-item-has-children li.menu-item-has-children:hover > ul.sub-menu {
+      top: 0;
+      right: 225px; }
 
 header.top.sticky {
   position: fixed;

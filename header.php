@@ -38,6 +38,7 @@
                     'theme_location' => 'top',
                     'container'      => false,
                     'menu' => __( 'The Top Menu', 'atheme' ),
+                    'walker' => new atheme_walker_nav_menu()
                   ));
                 endif;
               ?>
@@ -56,7 +57,7 @@
                 'theme_location' => 'top',
                 'container'      => false,
                 'menu' => __( 'The Top Menu', 'atheme' ),
-                'walker' => new atheme_walker_nav_menu(),
+                'walker' => new atheme_walker_mobile_nav_menu(),
               ));
             ?>
           </div>
