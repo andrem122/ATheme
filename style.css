@@ -1947,7 +1947,9 @@ header.top.sticky {
     outline: none; }
 
 button.mobile-submenu-button {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
   background-color: transparent;
   border: none;
   padding: 10px 15px;
@@ -1964,21 +1966,21 @@ nav.mobile-menu {
   z-index: 999; }
   nav.mobile-menu .center-content > ul {
     display: none; }
-    nav.mobile-menu .center-content > ul > li.menu-item-has-children {
-      position: relative; }
-      nav.mobile-menu .center-content > ul > li.menu-item-has-children ul {
-        display: none;
-        padding-left: 30px;
-        background-color: #fff; }
-  nav.mobile-menu .center-content li {
-    list-style: none;
-    border-bottom: 1px solid #ddd; }
-    nav.mobile-menu .center-content li:last-child {
+    nav.mobile-menu .center-content > ul > li:last-child a {
       border-bottom: none; }
+  nav.mobile-menu .center-content li.menu-item-has-children {
+    position: relative; }
+    nav.mobile-menu .center-content li.menu-item-has-children ul {
+      display: none;
+      padding-left: 30px;
+      background-color: #fff; }
+  nav.mobile-menu .center-content li {
+    list-style: none; }
     nav.mobile-menu .center-content li > a {
       display: block;
       padding: 1em;
       color: #2d2323;
+      border-bottom: 1px solid #ddd;
       text-transform: uppercase;
       font-size: 75%;
       font-weight: 600;

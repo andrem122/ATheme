@@ -14,7 +14,7 @@
     });
     //submenus
     $subButton.click(function() {
-      var $submenu = $(this).parent().find('ul.sub-menu');
+      var $submenu = $(this).parent().find('> ul.sub-menu');
       $submenu.slideToggle(200);
     });
     //loop through body classes

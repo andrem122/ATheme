@@ -101,7 +101,9 @@ header.top.sticky
   &:focus
     outline: none
 button.mobile-submenu-button
-  float: right
+  position: absolute
+  top: 0
+  right: 0
   background-color: transparent
   border: none
   padding: 10px 15px
@@ -118,21 +120,21 @@ nav.mobile-menu
   .center-content
     > ul
       display: none
-      > li.menu-item-has-children
-        position: relative
-        ul
-          display: none
-          padding-left: 30px
-          background-color: $wh
+      > li:last-child a
+        border-bottom: none
+    li.menu-item-has-children
+      position: relative
+      ul
+        display: none
+        padding-left: 30px
+        background-color: $wh
     li
       list-style: none
-      border-bottom: 1px solid #ddd
-      &:last-child
-        border-bottom: none
       > a
         display: block
         padding: 1em
         color: #2d2323
+        border-bottom: 1px solid #ddd
         text-transform: uppercase
         font-size: 75%
         font-weight: 600
