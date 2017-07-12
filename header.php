@@ -50,13 +50,16 @@
         </div>
         <!-- mobile menu -->
         <nav style="display: none" class="mobile-menu">
-          <?php
-            wp_nav_menu(array(
-              'theme_location' => 'top',
-              'container'      => false,
-              'menu' => __( 'The Top Menu', 'atheme' ),
-            ));
-          ?>
+          <div class="center-content">
+            <?php
+              wp_nav_menu(array(
+                'theme_location' => 'top',
+                'container'      => false,
+                'menu' => __( 'The Top Menu', 'atheme' ),
+                'walker' => new atheme_walker_nav_menu(),
+              ));
+            ?>
+          </div>
         </nav>
       </header>
       <div class="page">

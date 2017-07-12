@@ -5,11 +5,17 @@
     var $nav = $body.find('header.top');
     var $headerTop = $('header.top');
     var $mobileMenuButton = $headerTop.find('.mobile-menu-button');
+    var $subButton = $nav.find('button.mobile-submenu-button');
     var $mobileMenu = $headerTop.find('.mobile-menu');
     var i;
     //mobile menu
     $mobileMenuButton.click(function(){
       $mobileMenu.slideToggle(200);
+    });
+    //submenus
+    $subButton.click(function() {
+      var $submenu = $(this).parent().find('ul.sub-menu');
+      $submenu.slideToggle(200);
     });
     //loop through body classes
     var bodyClasses = $body.attr('class').split(' ');
@@ -25,7 +31,8 @@
     }
     //header animation
     $window.scroll(function() {
-      if($(this).scrollTop() >= 500) {
+      //scrollTop takes the position from the TOP of the element relative to another element
+      if($(this).scrollTop() >= ($(document).height() - $(window).height()) * 0.50) {
         $nav.addClass('sticky ' + athemeClass);
       } else {
         $nav.removeClass('sticky ' + athemeClass);

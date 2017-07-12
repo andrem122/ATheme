@@ -100,15 +100,31 @@ header.top.sticky
     color: $logo
   &:focus
     outline: none
+button.mobile-submenu-button
+  float: right
+  background-color: transparent
+  border: none
+  padding: 10px 15px
+  cursor: pointer
+  font-size: 18px
+  &:focus
+    outline: 0
 nav.mobile-menu
   width: 100%
   background-color: $wh
   position: relative
   float: left
   z-index: 999
-  > ul
-    display: none
-    > li
+  .center-content
+    > ul
+      display: none
+      > li.menu-item-has-children
+        position: relative
+        ul
+          display: none
+          padding-left: 30px
+          background-color: $wh
+    li
       list-style: none
       border-bottom: 1px solid #ddd
       &:last-child
@@ -121,16 +137,12 @@ nav.mobile-menu
         font-size: 75%
         font-weight: 600
         letter-spacing: 1px
-    > li.menu-item-has-children
-      position: relative
-      ul
-        display: none
-        background-color: $wh
 @media all and (max-width: 993px)
   nav.mobile-menu
     padding-top: 20px
-    > ul
-      display: block
+    .center-content
+      > ul
+        display: block
   .mobile-menu-button
     display: block
   nav.main-menu
