@@ -1810,6 +1810,14 @@ input[type="search"]::-webkit-search-cancel-button {
 .header-top-in-admin-a {
   animation: header-top-in-admin 500ms forwards; }
 
+@keyframes header-top-in-admin-mobile {
+  0% {
+    top: -112px; }
+  100% {
+    top: 46px; } }
+.header-top-in-admin-mobile-a {
+  animation: header-top-in-admin-mobile 500ms forwards; }
+
 nav.navigation.pagination .nav-links .current {
   background-color: #ccc; }
 nav.navigation.pagination .nav-links a.page-numbers {
@@ -2425,6 +2433,12 @@ body.single-post .post-image {
 body.logged-in.admin-bar header.top {
   top: 32px; }
 
+@media all and (max-width: 782px) {
+  body.logged-in.admin-bar header.top {
+    top: 46px; } }
+@media all and (max-width: 600px) {
+  body.logged-in.admin-bar header.top.sticky {
+    top: 0; } }
 #comments {
   margin-top: 30px; }
   #comments .no-comments {

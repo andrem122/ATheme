@@ -20,15 +20,32 @@
     //loop through body classes
     var bodyClasses = $body.attr('class').split(' ');
     var athemeClass;
+    var bool = false;
     var l = bodyClasses.length;
     for(i = 0; i < l; i++) {
       //search array for admin-bar class
-      athemeClass= 'header-top-in-a';
+      athemeClass = 'header-top-in-a';
       if(bodyClasses[i] === 'admin-bar') {
+        bool = true;
         athemeClass = 'header-top-in-admin-a';
+        //mobile menu animation adjusted for fixed wp-admin bar
+        if($window.width() <= 782 && $window.width() > 600) {
+          athemeClass = 'header-top-in-admin-mobile-a';
+        } else if($window.width() <= 600) {
+          athemeClass = 'header-top-in-a';
+        }
         break;
       }
     }
+    $window.resize(function() {
+      if(bool === true) {
+        if($window.width() <= 782 && $window.width() > 600) {
+          athemeClass = 'header-top-in-admin-mobile-a';
+        } else if($window.width() <= 600) {
+          athemeClass = 'header-top-in-a';
+        }
+      }
+    });
     //header animation
     $window.scroll(function() {
       //scrollTop takes the position from the TOP of the element relative to another element
