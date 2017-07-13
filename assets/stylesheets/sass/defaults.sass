@@ -26,7 +26,6 @@ p
   color: $body-c
 img
   max-width: 100%
-  width: 100%
   height: auto
   vertical-align: middle
 //blockquotes
@@ -63,12 +62,17 @@ a
 //center Content
 .center-content
   max-width: 1400px
-  width: 85%
+  width: 75%
   margin: 0 auto
+.inline-block
+  display: inline-block !important
 $positions: center left right
 @each $position in $positions
   .align#{$position}
     text-align: $position
+.size-auto, .size-full, .size-large, .size-medium, .size-thumbnail
+  max-width: 100%
+  height: auto
 .wp-caption
   width: 100% !important
   background: $wh
@@ -78,6 +82,8 @@ $positions: center left right
   .wp-caption-text
     padding: 10px 0
     margin: 5px
+  img
+    width: 100%
 //page
 div.page
   padding: 152px 0 40px 0

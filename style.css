@@ -1693,7 +1693,6 @@ p {
 
 img {
   max-width: 100%;
-  width: 100%;
   height: auto;
   vertical-align: middle; }
 
@@ -1736,8 +1735,11 @@ a {
 
 .center-content {
   max-width: 1400px;
-  width: 85%;
+  width: 75%;
   margin: 0 auto; }
+
+.inline-block {
+  display: inline-block !important; }
 
 .aligncenter {
   text-align: center; }
@@ -1748,6 +1750,10 @@ a {
 .alignright {
   text-align: right; }
 
+.size-auto, .size-full, .size-large, .size-medium, .size-thumbnail {
+  max-width: 100%;
+  height: auto; }
+
 .wp-caption {
   width: 100% !important;
   background: #fff;
@@ -1757,6 +1763,8 @@ a {
   .wp-caption .wp-caption-text {
     padding: 10px 0;
     margin: 5px; }
+  .wp-caption img {
+    width: 100%; }
 
 div.page {
   padding: 152px 0 40px 0; }
@@ -2097,10 +2105,14 @@ body.blog article.format-gallery .gallery-content {
     margin: 0; }
 body.blog article.format-image .image-content {
   background-color: #fff; }
+  body.blog article.format-image .image-content img {
+    width: 100%; }
   body.blog article.format-image .image-content > p:first-child {
     margin: 0; }
 body.blog article.post {
   margin-bottom: 60px; }
+  body.blog article.post .post-image img {
+    width: 100%; }
   body.blog article.post .post-text {
     padding: 23px 23px 35px 23px;
     background-color: #fff; }
@@ -2155,10 +2167,14 @@ body.archive.tag article.format-gallery .gallery-content {
     margin: 0; }
 body.archive.tag article.format-image .image-content {
   background-color: #fff; }
+  body.archive.tag article.format-image .image-content img {
+    width: 100%; }
   body.archive.tag article.format-image .image-content > p:first-child {
     margin: 0; }
 body.archive.tag article.post {
   margin-bottom: 60px; }
+  body.archive.tag article.post .post-image img {
+    width: 100%; }
   body.archive.tag article.post .post-text {
     padding: 23px 23px 35px 23px;
     background-color: #fff; }
@@ -2213,10 +2229,14 @@ body.search article.format-gallery .gallery-content {
     margin: 0; }
 body.search article.format-image .image-content {
   background-color: #fff; }
+  body.search article.format-image .image-content img {
+    width: 100%; }
   body.search article.format-image .image-content > p:first-child {
     margin: 0; }
 body.search article.post {
   margin-bottom: 60px; }
+  body.search article.post .post-image img {
+    width: 100%; }
   body.search article.post .post-text {
     padding: 23px 23px 35px 23px;
     background-color: #fff; }
@@ -2271,10 +2291,14 @@ body.archive article.format-gallery .gallery-content {
     margin: 0; }
 body.archive article.format-image .image-content {
   background-color: #fff; }
+  body.archive article.format-image .image-content img {
+    width: 100%; }
   body.archive article.format-image .image-content > p:first-child {
     margin: 0; }
 body.archive article.post {
   margin-bottom: 60px; }
+  body.archive article.post .post-image img {
+    width: 100%; }
   body.archive article.post .post-text {
     padding: 23px 23px 35px 23px;
     background-color: #fff; }
@@ -2329,10 +2353,14 @@ body.category article.format-gallery .gallery-content {
     margin: 0; }
 body.category article.format-image .image-content {
   background-color: #fff; }
+  body.category article.format-image .image-content img {
+    width: 100%; }
   body.category article.format-image .image-content > p:first-child {
     margin: 0; }
 body.category article.post {
   margin-bottom: 60px; }
+  body.category article.post .post-image img {
+    width: 100%; }
   body.category article.post .post-text {
     padding: 23px 23px 35px 23px;
     background-color: #fff; }
@@ -2418,6 +2446,8 @@ article.format-link div.post-image {
     padding: 10px 0;
     margin: 5px; }
 
+body.single-post img {
+  width: 100%; }
 body.single-post article .gallery-content {
   margin: 0 0 15px; }
 body.single-post article .post-title h2.entry-title {
@@ -2475,21 +2505,21 @@ body.logged-in.admin-bar header.top {
   padding: 30px;
   border: 1px solid #303030; }
 
-.icon-circle-lg {
+.icon-lg-circle {
   border-radius: 50%; }
 
 .icon-md-square, .icon-md-circle {
   padding: 20px;
   border: 1px solid #303030; }
 
-.icon-circle-md {
+.icon-md-circle {
   border-radius: 50%; }
 
 .icon-sm-square, .icon-sm-circle {
   padding: 10px;
   border: 1px solid #303030; }
 
-.icon-circle-sm {
+.icon-sm-circle {
   border-radius: 50%; }
 
 .facebook {

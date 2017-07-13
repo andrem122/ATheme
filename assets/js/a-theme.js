@@ -29,9 +29,9 @@
         bool = true;
         athemeClass = 'header-top-in-admin-a';
         //mobile menu animation adjusted for fixed wp-admin bar
-        if($window.width() <= 782 && $window.width() > 600) {
+        if(window.innerWidth > 600 && window.innerWidth <= 782) {
           athemeClass = 'header-top-in-admin-mobile-a';
-        } else if($window.width() <= 600) {
+        } else if(window.innerWidth <= 600) {
           athemeClass = 'header-top-in-a';
         }
         break;
@@ -39,9 +39,11 @@
     }
     $window.resize(function() {
       if(bool === true) {
-        if($window.width() <= 782 && $window.width() > 600) {
+        $nav.removeClass('sticky header-top-in-a header-top-in-admin-a header-top-in-admin-mobile-a');
+        athemeClass = 'header-top-in-admin-a';
+        if(window.innerWidth > 600 && window.innerWidth <= 782) {
           athemeClass = 'header-top-in-admin-mobile-a';
-        } else if($window.width() <= 600) {
+        } else if(window.innerWidth <= 600) {
           athemeClass = 'header-top-in-a';
         }
       }
@@ -52,7 +54,7 @@
       if($(this).scrollTop() >= ($(document).height() - $(window).height()) * 0.50) {
         $nav.addClass('sticky ' + athemeClass);
       } else {
-        $nav.removeClass('sticky ' + athemeClass);
+        $nav.removeClass('sticky header-top-in-a header-top-in-admin-a header-top-in-admin-mobile-a');
       }
     });
   });
