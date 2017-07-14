@@ -8,7 +8,13 @@
     </header>
   <?php endif; // end is_single() check ?>
     <div class="image-content">
-      <?php the_content(); ?>
+      <?php if(!is_single()): ?>
+      <a href="<?php esc_url(the_permalink()); ?>">
+        <?php the_content(); ?>
+      </a>
+      <?php else:
+        the_content();
+      endif; ?>
     </div><!-- .image-content -->
   <div class="post-text">
     <?php
