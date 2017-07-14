@@ -10,7 +10,11 @@
   </head>
   <?php $front_page_class = (is_front_page()) ? 'front-page' : ''; ?>
   <body <?php body_class($front_page_class); ?>>
-    <div class="body-container">
+    <?php
+      //get the loading screen loader
+      get_template_part('template-parts/page/content', 'loader');
+    ?>
+    <div style="opacity: 0;" class="body-container">
       <header class="top">
         <div class="center-content">
           <!-- logo -->

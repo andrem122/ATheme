@@ -1826,6 +1826,14 @@ input[type="search"]::-webkit-search-cancel-button {
 .header-top-in-admin-mobile-a {
   animation: header-top-in-admin-mobile 500ms forwards; }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.fade-in {
+  animation: fade-in 500ms forwards; }
+
 nav.navigation.pagination .nav-links .current {
   background-color: #ccc; }
 nav.navigation.pagination .nav-links a.page-numbers {
@@ -2022,6 +2030,36 @@ nav.mobile-menu {
 
   nav.main-menu #menu-top {
     display: none; } }
+.ball-loader {
+  width: 80px;
+  height: 16.66667px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); }
+
+.ball-loader-ball {
+  will-change: transform;
+  height: 16.66667px;
+  width: 16.66667px;
+  border-radius: 50%;
+  background-color: #5AD8A3;
+  position: absolute;
+  animation: grow 1s ease-in-out infinite alternate; }
+  .ball-loader-ball.ball1 {
+    left: 0;
+    transform-origin: 100% 50%; }
+  .ball-loader-ball.ball2 {
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    animation-delay: 0.33s; }
+  .ball-loader-ball.ball3 {
+    right: 0;
+    animation-delay: 0.66s; }
+
+@keyframes grow {
+  to {
+    transform: translateX(-50%) scale(0); } }
 #sidebar-main, #sidebar-blog {
   z-index: 100;
   padding: 20px 20px; }

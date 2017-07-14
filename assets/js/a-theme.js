@@ -2,12 +2,25 @@
   $(function() {
     var $window = $(window);
     var $body = $('body');
+    var $bodyContainer = $body.find('.body-container');
+    var $loader = $body.find('div.loader');
     var $nav = $body.find('header.top');
     var $headerTop = $('header.top');
     var $mobileMenuButton = $headerTop.find('.mobile-menu-button');
     var $subButton = $nav.find('button.mobile-submenu-button');
     var $mobileMenu = $headerTop.find('.mobile-menu');
     var i;
+    //loading screen
+    $window.on('load', function() {
+      $loader.css('opacity', 0);
+      $bodyContainer.addClass('fade-in')
+      .css('opacity', 1);
+      //set loader to display none to prevent
+      //interference with other elements
+      setTimeout(function() {
+        $loader.css('display', 'none');
+      }, 200);
+    });
     //mobile menu
     $mobileMenuButton.click(function(){
       $mobileMenu.slideToggle(200);
