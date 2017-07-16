@@ -87,6 +87,11 @@ $positions: center left right
 //page
 div.page
   padding: 152px 0 40px 0
+//jumbotron
+.jumbotron
+  position: relative
+  &::before
+    @include overlay(rgba(0, 0, 0, 0.3))
 //max width
 .max-width
   max-width: 1400px

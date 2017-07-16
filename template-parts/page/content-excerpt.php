@@ -30,6 +30,6 @@
       get_template_part('template-parts\post\content', 'post-info');
       the_excerpt();
     ?>
-    <a class="button" href="<?php esc_url(the_permalink()); ?>">Read More</a>
+    <a class="button-md" href="<?php esc_url(the_permalink()); ?>">Read More</a>
   </div><!-- .post-text -->
 </article><!-- #post-## -->

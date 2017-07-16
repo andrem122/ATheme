@@ -1,30 +1,34 @@
 //buttons
-.button, .button-border-white
-  display: inline-block
-  text-decoration: none
-  color: $wh
-  cursor: pointer
-  padding: 10px 20px
-  font-size: 100%
-  text-transform: uppercase
-  margin-bottom: 20px
-  @include transition(all, 150ms, linear)
-.button
-  border: 1px solid $button
-  color: $button
-  &:hover
-    color: $button-hover
-    border-color: $button-hover
+$sizes: lg md sm
+$paddings: 20px 15px 10px
+$i: 1
+@function buttonSize($padding)
+  @return $padding * 2
+@each $size in $sizes
+  .button-#{$size}
+    display: inline-block
+    text-decoration: none
+    cursor: pointer
+    padding: nth($paddings, $i) buttonSize(nth($paddings, $i))
+    font-size: 100%
+    text-transform: uppercase
+    margin-bottom: 20px
+    border: 1px solid $button
+    color: $button
+    @include transition(all, 150ms, linear)
+    &:hover
+      color: $button-hover
+      border-color: $button-hover
+  @media all and (max-width: 769px)
+    //buttons
+    .button-lg, .button-md, .button-sm, .button-border-white
+      text-align: center
+      display: block
+  $i: $i + 1
 .button-border-white
   border: 1px solid $wh
+  color: $wh
   &:hover
     color: $headings-c
     background-color: $wh
-@media all and (max-width: 769px)
-  //buttons
-  .button, .button-border-white
-    text-align: center
-    display: block
-@media all and (max-width: 430px)
-  .button, .jumbo-btn
-    font-size: 100%
+    border-color: $wh

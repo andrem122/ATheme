@@ -18,7 +18,7 @@
       get_template_part('template-parts\post\content', 'post-info')
     ?>
     <?php if(!is_single()): ?>
-      <a class="button" href="<?php esc_url(the_permalink()); ?>"><?php _e('Read More', 'atheme')  ?></a>
+      <a class="button-md" href="<?php esc_url(the_permalink()); ?>"><?php _e('Read More', 'atheme')  ?></a>
     <?php endif; ?>
     <?php
       //display tags

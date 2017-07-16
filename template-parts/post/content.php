@@ -37,7 +37,7 @@
         //if it's not a single page, display an excerpt
       else: ?>
         <?php the_excerpt(); ?>
-        <a class="button" href="<?php esc_url(the_permalink()); ?>">Read More</a>
+        <a class="button-md" href="<?php esc_url(the_permalink()); ?>">Read More</a>
       <?php
         endif; ?>
     </div><!-- .post-content -->
