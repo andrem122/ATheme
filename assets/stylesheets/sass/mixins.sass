@@ -26,7 +26,7 @@
   -ms-overflow: $value
   overflow: $value
 
-@mixin transition($property, $time, $easing)
+@mixin transition($property, $time, $easing: ease-in-out)
   -webkit-transition: $property $time $easing
   -moz-transition: $property $time $easing
   -ms-transition: $property $time $easing

@@ -152,54 +152,6 @@ function atheme_content_width() {
 
 add_action('template_redirect', 'atheme_content_width', 0);
 
-?>
-
-
-<?php
-//displays 3 recent posts with featured images
-
-function atheme_recent_posts() {
-  $atheme_recent_posts = new WP_Query();
-  $atheme_recent_posts->query('showposts=3');
-  if($atheme_recent_posts->have_posts()): ?>
-    <section class="widget widget-recent-posts">
-      <h2 class="widget-title">Recent Posts</h2>
-      <ul class="atheme-recent-posts">
-        <?php while($atheme_recent_posts->have_posts()): $atheme_recent_posts->the_post(); ?>
-          <li>
-            <article class="atheme-recent-post">
-              <?php if(has_post_thumbnail()): ?>
-              <div style="background-image: url('<?php esc_url(the_post_thumbnail_url()); ?>');" class="atheme-recent-posts-top">
-                <a href="<?php esc_url(the_permalink()); ?>"></a>
-              </div>
-              <?php endif; ?>
-              <div class="atheme-recent-posts-bottom">
-                <div class="post-title">
-                  <h4>
-                    <a href="<?php esc_url(the_permalink()); ?>">
-                      <?php esc_html(the_title()); ?>
-                    </a>
-                  </h4>
-                </div>
-                <div class="post-info">
-                  <p class="p-meta">
-                    <span><time datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('F j, Y'); ?></time></span>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </li>
-        <?php endwhile;
-        wp_reset_postdata();
-        ?>
-      </ul>
-    </section>
-<?php
-  endif;
-}
-?>
-
-<?php
 //custom comment markup
 function atheme_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment;

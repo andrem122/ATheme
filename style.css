@@ -1766,6 +1766,24 @@ a {
   .wp-caption img {
     width: 100%; }
 
+.image-zoom-parent {
+  overflow: hidden; }
+  .image-zoom-parent:hover .image-zoom-child {
+    transform: scale(1.2); }
+  .image-zoom-parent:focus .image-zoom-child {
+    transform: scale(1.2); }
+  .image-zoom-parent .image-zoom-child {
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9;
+    background-position: center;
+    background-size: cover;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+
 div.page {
   padding: 152px 0 40px 0; }
 
@@ -2921,78 +2939,80 @@ form.search-form {
     display: block;
     padding: 10px 0; }
 
-.widget-recent-posts a {
-  display: block; }
-.widget-recent-posts .atheme-recent-post {
-  margin-bottom: 20px; }
-  .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top {
-    display: block;
-    position: relative; }
-    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top a::after {
-      content: "";
+.atheme-recent-posts {
+  list-style: none; }
+  .atheme-recent-posts a {
+    display: block; }
+  .atheme-recent-posts .atheme-recent-post {
+    margin-bottom: 20px; }
+    .atheme-recent-posts .atheme-recent-post .atheme-recent-posts-top {
       display: block;
-      padding-top: 70%; }
-    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top i {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      z-index: 15;
+      position: relative; }
+      .atheme-recent-posts .atheme-recent-post .atheme-recent-posts-top a::after {
+        content: "";
+        display: block;
+        padding-top: 50%; }
+      .atheme-recent-posts .atheme-recent-post .atheme-recent-posts-top i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        z-index: 15;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        color: #fff;
+        background-color: rgba(90, 216, 163, 0.6);
+        height: 50px;
+        width: 50px;
+        font-size: 25px;
+        border-radius: 50%;
+        text-align: center; }
+        .atheme-recent-posts .atheme-recent-post .atheme-recent-posts-top i::before {
+          line-height: 50px; }
+      .atheme-recent-posts .atheme-recent-post .atheme-recent-posts-top::after {
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.6); }
+  .atheme-recent-posts .atheme-recent-posts-bottom {
+    background-color: #fff;
+    padding: 8px 20px;
+    border-top: 0; }
+    .atheme-recent-posts .atheme-recent-posts-bottom .p-meta {
+      margin-bottom: 0; }
+    .atheme-recent-posts .atheme-recent-posts-bottom h4 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0;
+      font-size: 120%;
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -ms-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-      color: #fff;
-      background-color: rgba(90, 216, 163, 0.6);
-      height: 50px;
-      width: 50px;
-      font-size: 25px;
-      border-radius: 50%;
-      text-align: center; }
-      .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top i::before {
-        line-height: 50px; }
-    .widget-recent-posts .atheme-recent-post .atheme-recent-posts-top::after {
-      opacity: 0;
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -ms-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: 10;
-      background-color: rgba(0, 0, 0, 0.6); }
-.widget-recent-posts .atheme-recent-posts-bottom {
-  background-color: #fff;
-  padding: 8px 20px;
-  border-top: 0; }
-  .widget-recent-posts .atheme-recent-posts-bottom .p-meta {
-    margin-bottom: 0; }
-  .widget-recent-posts .atheme-recent-posts-bottom h4 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 0;
-    font-size: 120%;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-    .widget-recent-posts .atheme-recent-posts-bottom h4:hover {
-      color: #5AD8A3; }
-  .widget-recent-posts .atheme-recent-posts-bottom span {
-    display: block;
-    margin-bottom: 10px; }
-  .widget-recent-posts .atheme-recent-posts-bottom i {
-    font-size: 130%;
-    margin-left: 5px; }
+      transition: all 0.3s ease-in-out; }
+      .atheme-recent-posts .atheme-recent-posts-bottom h4:hover {
+        color: #5AD8A3; }
+    .atheme-recent-posts .atheme-recent-posts-bottom span {
+      display: block;
+      margin-bottom: 10px; }
+    .atheme-recent-posts .atheme-recent-posts-bottom i {
+      font-size: 130%;
+      margin-left: 5px; }
 
 @media all and (max-width: 1195px) {
   .recent-post-bottom h3 {
