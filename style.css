@@ -2946,6 +2946,8 @@ form.search-form {
   .atheme-recent-posts .atheme-recent-post {
     margin-bottom: 20px; }
     .atheme-recent-posts .atheme-recent-post .atheme-recent-posts-top {
+      background-size: cover;
+      background-position: center;
       display: block;
       position: relative; }
       .atheme-recent-posts .atheme-recent-post .atheme-recent-posts-top a::after {
