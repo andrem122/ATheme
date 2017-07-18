@@ -1,25 +1,32 @@
 <?php
    /*
-   Plugin Name: Atheme Recent Posts
-   Description: A plugin to display recent posts
+   Plugin Name: Atheme Shortcodes
+   Description: A plugin for Atheme shortcodes
    Version: 1.0
    Author: Andre Mashraghi
    Author URI: http://andremashraghi.com/
    License: GPL2
    */
 
+function atheme_shortcodes_init() {
+  add_shortcode('recent-posts', 'atheme_recent_posts');
+  add_shortcode('price-table-column', 'atheme_pricing_table_column');
+}
+
+add_action('init', 'atheme_shortcodes_init');
+
 //displays recent posts
 //shortcode [recent-posts number_posts="3"]
 function atheme_recent_posts($atts){
-  $a = shortcode_atts( array(
+  extract(shortcode_atts( array(
         'number_posts' => '3',
         'horizontal'   => false
-  ), $atts);
+  ), $atts));
   $q = new WP_Query(
     array( 'orderby' => 'date', 'posts_per_page' => $a['number_posts'])
   );
-  $grid_number = ceil(12 / (int)$a['number_posts']);
-  $atheme_class = $a['horizontal'] ? array('row', 'col-md-' . $grid_number) : '';
+  $grid_number = ceil(12 / (int)$number_posts);
+  $atheme_class = ($horizontal === 'true') ? array('row', 'col-md-' . $grid_number) : '';
   $list = '<ul class="atheme-recent-posts ' . $atheme_class[0] . '">';
 
   while($q->have_posts()) : $q->the_post();
@@ -62,7 +69,6 @@ function atheme_recent_posts($atts){
   return $list . '</ul>';
 
 }
-add_shortcode('recent-posts', 'atheme_recent_posts');
 
 $atheme_columns = null;
 function atheme_pricing_table($atts, $content = null) {
@@ -71,13 +77,11 @@ function atheme_pricing_table($atts, $content = null) {
   ), $atts));
   global $atheme_columns;
   $atheme_columns = $columns;
-  return '<div class="atheme-pricing-table ' . $columns . '-columns">' .
-             do_shortcode($content) .
-         '</div>';
+  return '<div class="atheme-pricing-table row ' . esc_attr($columns) . '-columns">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('price-table', 'atheme_pricing_table');
 
-function atheme_pricing_table_column($atts) {
+function atheme_pricing_table_column($atts, $content = null) {
   extract(shortcode_atts(array(
     'title'    => 'Title',
     'featured' => false,
@@ -89,19 +93,22 @@ function atheme_pricing_table_column($atts) {
   ), $atts));
   global $atheme_columns;
   $grid_number = !is_null($atheme_columns) ? ceil(12 / (int)$atheme_columns) : '';
-  $featured_class = $featured === true ? 'featured' : '';
-  $price_column = '<div class="atheme-pricing-table col-md-' . $grid_number . ' ' . $featured_class . '">' .
-            '<h2 class="atheme-pricing-table-title">' . $title . '</h2>' .
-            '<div class="atheme-pricing-column-info">' .
-              '<h3 class="atheme-price">' . $price . '</h3>' .
-              '<span class="atheme-interval">' . $interval . '</span>' .
-              '<ul class="atheme-price-list row">
-                <li>' . $item1 . '</li>' .
-               '<li>' . $item2 . '</li>' .
-               '<li>' . $item3 . '</li>' .
-              '</ul>' .
-              '<a class="button-md">Join Now</a>' .
-         '</div>';
+  $featured_class = ($featured === 'true') ? 'featured' : '';
+  $price_column =
+          '<div class="col-md-' . esc_attr($grid_number) . '">' .
+            '<div class="atheme-pricing-table-column ' . esc_attr($featured_class) . '">' .
+              '<h2 class="atheme-pricing-table-title">' . esc_html($title) . '</h2>' .
+              '<div class="atheme-pricing-column-info">' .
+                '<h3 class="atheme-price">' . esc_html($price) . '</h3>' .
+                '<span class="atheme-interval">' . esc_html($interval) . '</span>' .
+                '<ul class="atheme-price-list">' .
+                 '<li>' . esc_html($item1) . '</li>' .
+                 '<li>' . esc_html($item2) . '</li>' .
+                 '<li>' . esc_html($item3) . '</li>' .
+                '</ul>' .
+                '<a class="button-md">Join Now</a>' .
+              '</div>
+            </div>
+          </div>';
   return $price_column;
 }
-add_shortcode('price-table-column', 'atheme_pricing_table_column');
