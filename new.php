@@ -11,6 +11,10 @@
 function atheme_shortcodes_init() {
   add_shortcode('recent-posts', 'atheme_recent_posts');
   add_shortcode('price-table-column', 'atheme_pricing_table_column');
+  add_shortcode('icon-list', 'atheme_icon_list');
+  add_shortcode('icon-list-item', 'atheme_icon_list_item');
+  add_shortcode('button', 'atheme_button');
+  add_shortcode('title', 'atheme_title');
 }
 
 add_action('init', 'atheme_shortcodes_init');
@@ -18,6 +22,9 @@ add_action('init', 'atheme_shortcodes_init');
 //displays recent posts
 //shortcode [recent-posts number_posts="3"]
 function atheme_recent_posts($atts){
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
   extract(shortcode_atts( array(
         'number_posts' => '3',
         'horizontal'   => false
@@ -72,6 +79,9 @@ function atheme_recent_posts($atts){
 
 $atheme_columns = null;
 function atheme_pricing_table($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
   extract(shortcode_atts(array(
     'columns' => '3',
   ), $atts));
@@ -82,15 +92,14 @@ function atheme_pricing_table($atts, $content = null) {
 add_shortcode('price-table', 'atheme_pricing_table');
 
 function atheme_pricing_table_column($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
   extract(shortcode_atts(array(
     'title'    => 'Title',
     'featured' => false,
     'price'    => 0,
     'interval' => 'Per Month',
-    'item1'     => 'Item 1',
-    'item2'     => 'Item 2',
-    'item3'     => 'Item 3',
-    'href'       =>  '#',
   ), $atts));
   global $atheme_columns;
   $grid_number = !is_null($atheme_columns) ? ceil(12 / (int)$atheme_columns) : '';
@@ -107,14 +116,118 @@ function atheme_pricing_table_column($atts, $content = null) {
               '<div class="atheme-pricing-column-info">' .
                 '<h3 class="atheme-price">$' . esc_html($price) . '</h3>' .
                 '<span class="atheme-interval">' . esc_html($interval) . '</span>' .
-                '<ul class="atheme-price-list">' .
-                 '<li>' . esc_html($item1) . '</li>' .
-                 '<li>' . esc_html($item2) . '</li>' .
-                 '<li>' . esc_html($item3) . '</li>' .
-                '</ul>' .
-                '<a href="' . esc_attr($href) . '"' . ' class="button-md">Join Now</a>' .
+                do_shortcode($content) .
               '</div>
             </div>
           </div>';
   return $price_column;
+}
+
+function atheme_icon_list($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
+  extract(shortcode_atts(array(
+    'type'    => 'ul',
+    'class'   => '',
+    'style'   => '',
+  ), $atts));
+
+  $list = '';
+  if($type === 'ol') {
+    $list = '<ol class="atheme-icon-list ' . esc_attr($class) . '" style="' . esc_attr($style) . '">' . do_shortcode($content) . '</ol>';
+  } else {
+    $list = '<ul class="atheme-icon-list ' . esc_attr($class) . '" style="' . esc_attr($style) . '">' . do_shortcode($content) . '</ul>';
+  }
+
+  return $list;
+
+}
+
+function atheme_icon_list_item($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
+  extract(shortcode_atts(array(
+    'type'    => 'check',
+    'class'   => '',
+    'style'   => '',
+  ), $atts));
+
+  $list_item =  '<li class="atheme-icon-list-item ' . esc_attr($class) . '" style="' . esc_attr($style) . '">';
+  $list_item .=   '<i class="fa fa-' . esc_attr($type) . '" aria-hidden="true"></i>' . esc_html($content);
+  $list_item .= '</li>';
+
+  return $list_item;
+}
+
+function atheme_button($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
+  extract(shortcode_atts(array(
+    'href'    => '#',
+    'class'   => '',
+    'style'   => '',
+    'target'  => '',
+    'size'    => 'medium',
+  ), $atts));
+
+  switch ($size) {
+    case 'small':
+        $size = 'sm';
+        break;
+    case 'medium':
+        $size = 'md';
+        break;
+    case 'large':
+        $size = 'lg';
+        break;
+    default:
+        $size = 'md';
+  }
+
+  if(in_array($target, array('_blank', '_self', '_parent', '_top' ))) {
+    $link_target = '" target="' . esc_attr($target);
+  } else {
+    $link_target = '';
+  }
+
+  $button =
+  '<a href="' . esc_attr($href) . $link_target . '" class="button-' . esc_attr($size) . ' ' . esc_attr($class) . '" style="' . esc_attr($style) . '">';
+  $button .= esc_html($content) . '</a>';
+  return $button;
+}
+
+function atheme_title($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
+  extract(shortcode_atts(array(
+    'position'    => 'left',
+    'class'   => '',
+    'style'   => '',
+  ), $atts));
+
+  switch ($position) {
+    case 'left':
+        $position_class = 'alignleft';
+        break;
+    case 'center':
+        $position_class = 'aligncenter';
+        break;
+    case 'right':
+        $position_class = 'alignright';
+        break;
+    default:
+        $position_class = 'alignleft';
+  }
+
+  $title = '<header class="title-holder ' . esc_attr($position_class) . '">';
+    $title .= '<h1 class="header-title ' . esc_attr($class) . '" style="' . esc_attr($style) . '">' . esc_html($content) . '</h1>';
+    $title .= '<span class="underline ' . esc_attr($class) . '" style="' . esc_attr($style) . '"></span>';
+    $title .= '</header>';
+
+  return $title;
+
 }

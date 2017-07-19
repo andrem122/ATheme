@@ -6,7 +6,7 @@ get_header();
 <div class="wrap">
   <main id="main" class="site-main" role="main">
     <section class="error-404 not-found">
-      <header class="title-holder title-center">
+      <header class="title-holder aligncenter">
         <h1 class="header-title"><?php _e('404 - Page not found', 'atheme'); ?></h1>
         <span class="underline"></span>
       </header>

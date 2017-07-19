@@ -1,3 +1,10 @@
+//styling for shortcodes
+//pricing table
+.atheme-pricing-table-column.featured
+  margin:
+    top: -20px
+  padding:
+    bottom: 70px
 .atheme-pricing-table-column
   text-align: center
   padding: 50px
@@ -21,13 +28,20 @@
       font-size: 97%
       text-transform: uppercase
       letter-spacing: 2px
-    ul.atheme-price-list
-      margin-bottom: 30px
-      > li
-        &::before
-          content: '\f00c'
-          font-family: 'FontAwesome'
-          display: inline-block
-          margin-right: 8px
-    .button-md
-      margin-bottom: 0
+    $button-sizes: lg md sm
+    @each $size in $button-sizes
+      .button-#{$size}
+        margin-bottom: 0
+@media all and (max-width: 993px)
+  .atheme-pricing-table-column.featured
+    margin:
+      top: 0
+    padding:
+      bottom: 50px
+//icon list
+.atheme-icon-list
+  margin-bottom: 30px
+  > li
+    > i
+      display: inline-block
+      margin-right: 8px

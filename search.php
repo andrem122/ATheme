@@ -33,7 +33,7 @@ get_header();
       else:
       //if there are no results, display a message and the search form
     ?>
-      <p class="center-text"><?php _e('Sorry, nothing matched your search terms. Please try again with different keywords.', 'atheme') ?></p>
+      <p class="aligncenter"><?php _e('Sorry, nothing matched your search terms. Please try again with different keywords.', 'atheme') ?></p>
     <?php
       get_search_form();
       endif;
