@@ -90,23 +90,29 @@ function atheme_pricing_table_column($atts, $content = null) {
     'item1'     => 'Item 1',
     'item2'     => 'Item 2',
     'item3'     => 'Item 3',
+    'href'       =>  '#',
   ), $atts));
   global $atheme_columns;
   $grid_number = !is_null($atheme_columns) ? ceil(12 / (int)$atheme_columns) : '';
   $featured_class = ($featured === 'true') ? 'featured' : '';
   $price_column =
-          '<div class="col-md-' . esc_attr($grid_number) . '">' .
+          '<div class="col-lg-' . esc_attr($grid_number) . '">' .
             '<div class="atheme-pricing-table-column ' . esc_attr($featured_class) . '">' .
-              '<h2 class="atheme-pricing-table-title">' . esc_html($title) . '</h2>' .
+              '<h2 class="atheme-pricing-table-title">' . esc_html($title);
+              if($featured === 'true') {
+                $price_column .= '<span class="atheme-featured-sub">Featured</span>';
+              }
+              $price_column .=
+              '</h2>' .
               '<div class="atheme-pricing-column-info">' .
-                '<h3 class="atheme-price">' . esc_html($price) . '</h3>' .
+                '<h3 class="atheme-price">$' . esc_html($price) . '</h3>' .
                 '<span class="atheme-interval">' . esc_html($interval) . '</span>' .
                 '<ul class="atheme-price-list">' .
                  '<li>' . esc_html($item1) . '</li>' .
                  '<li>' . esc_html($item2) . '</li>' .
                  '<li>' . esc_html($item3) . '</li>' .
                 '</ul>' .
-                '<a class="button-md">Join Now</a>' .
+                '<a href="' . esc_attr($href) . '"' . ' class="button-md">Join Now</a>' .
               '</div>
             </div>
           </div>';

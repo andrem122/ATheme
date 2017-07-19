@@ -1,3 +1,33 @@
-.atheme-pricing-table-column 
+.atheme-pricing-table-column
+  text-align: center
   padding: 50px
   background-color: $wh
+  h2.atheme-pricing-table-title
+    margin-bottom: 9px
+    > span
+      display: block
+      font-size: 65%
+      letter-spacing: 2px
+      color: $button
+  div.atheme-pricing-column-info
+    h3.atheme-price
+      font-size: 260%
+    span.atheme-interval
+      margin: 0 -50px 20px -50px
+      display: block
+      padding: 10px 0
+      background-color: $button
+      color: $wh
+      font-size: 97%
+      text-transform: uppercase
+      letter-spacing: 2px
+    ul.atheme-price-list
+      margin-bottom: 30px
+      > li
+        &::before
+          content: '\f00c'
+          font-family: 'FontAwesome'
+          display: inline-block
+          margin-right: 8px
+    .button-md
+      margin-bottom: 0

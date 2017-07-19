@@ -1879,8 +1879,36 @@ nav.navigation.pagination .nav-links .current, nav.navigation.pagination .nav-li
     font-size: 130%; }
 
 .atheme-pricing-table-column {
+  text-align: center;
   padding: 50px;
   background-color: #fff; }
+  .atheme-pricing-table-column h2.atheme-pricing-table-title {
+    margin-bottom: 9px; }
+    .atheme-pricing-table-column h2.atheme-pricing-table-title > span {
+      display: block;
+      font-size: 65%;
+      letter-spacing: 2px;
+      color: #5AD8A3; }
+  .atheme-pricing-table-column div.atheme-pricing-column-info h3.atheme-price {
+    font-size: 260%; }
+  .atheme-pricing-table-column div.atheme-pricing-column-info span.atheme-interval {
+    margin: 0 -50px 20px -50px;
+    display: block;
+    padding: 10px 0;
+    background-color: #5AD8A3;
+    color: #fff;
+    font-size: 97%;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  .atheme-pricing-table-column div.atheme-pricing-column-info ul.atheme-price-list {
+    margin-bottom: 30px; }
+    .atheme-pricing-table-column div.atheme-pricing-column-info ul.atheme-price-list > li::before {
+      content: "";
+      font-family: "FontAwesome";
+      display: inline-block;
+      margin-right: 8px; }
+  .atheme-pricing-table-column div.atheme-pricing-column-info .button-md {
+    margin-bottom: 0; }
 
 body.front-page div.page {
   padding: 112px 0 0 0; }
