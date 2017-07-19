@@ -15,6 +15,7 @@ function atheme_shortcodes_init() {
   add_shortcode('icon-list-item', 'atheme_icon_list_item');
   add_shortcode('button', 'atheme_button');
   add_shortcode('title', 'atheme_title');
+  add_shortcode('blockquote', 'atheme_blockquote');
 }
 
 add_action('init', 'atheme_shortcodes_init');
@@ -133,11 +134,13 @@ function atheme_icon_list($atts, $content = null) {
     'style'   => '',
   ), $atts));
 
-  $list = '';
+  $class_attr = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
+  $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
+
   if($type === 'ol') {
-    $list = '<ol class="atheme-icon-list ' . esc_attr($class) . '" style="' . esc_attr($style) . '">' . do_shortcode($content) . '</ol>';
+    $list = '<ol class="atheme-icon-list' . $class_attr . $style_attr . '>' . do_shortcode($content) . '</ol>';
   } else {
-    $list = '<ul class="atheme-icon-list ' . esc_attr($class) . '" style="' . esc_attr($style) . '">' . do_shortcode($content) . '</ul>';
+    $list = '<ul class="atheme-icon-list' . $class_attr . $style_attr . '>' . do_shortcode($content) . '</ul>';
   }
 
   return $list;
@@ -154,13 +157,17 @@ function atheme_icon_list_item($atts, $content = null) {
     'style'   => '',
   ), $atts));
 
-  $list_item =  '<li class="atheme-icon-list-item ' . esc_attr($class) . '" style="' . esc_attr($style) . '">';
+  $class_attr = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
+  $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
+
+  $list_item =  '<li class="atheme-icon-list-item' . $class_attr . $style_attr . '>';
   $list_item .=   '<i class="fa fa-' . esc_attr($type) . '" aria-hidden="true"></i>' . esc_html($content);
   $list_item .= '</li>';
 
   return $list_item;
 }
 
+//buttons
 function atheme_button($atts, $content = null) {
   // normalize attribute keys, lowercase
   $atts = array_change_key_case( (array)$atts, CASE_LOWER );
@@ -172,6 +179,9 @@ function atheme_button($atts, $content = null) {
     'target'  => '',
     'size'    => 'medium',
   ), $atts));
+
+  $class_attr = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
+  $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
 
   switch ($size) {
     case 'small':
@@ -194,11 +204,12 @@ function atheme_button($atts, $content = null) {
   }
 
   $button =
-  '<a href="' . esc_attr($href) . $link_target . '" class="button-' . esc_attr($size) . ' ' . esc_attr($class) . '" style="' . esc_attr($style) . '">';
+  '<a href="' . esc_attr($href) . $link_target . '" class="button-' . esc_attr($size) . $class_attr . $style_attr . '>';
   $button .= esc_html($content) . '</a>';
   return $button;
 }
 
+//titles
 function atheme_title($atts, $content = null) {
   // normalize attribute keys, lowercase
   $atts = array_change_key_case( (array)$atts, CASE_LOWER );
@@ -208,6 +219,10 @@ function atheme_title($atts, $content = null) {
     'class'   => '',
     'style'   => '',
   ), $atts));
+
+  //set class and style attributes
+  $class_attr = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
+  $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
 
   switch ($position) {
     case 'left':
@@ -224,10 +239,45 @@ function atheme_title($atts, $content = null) {
   }
 
   $title = '<header class="title-holder ' . esc_attr($position_class) . '">';
-    $title .= '<h1 class="header-title ' . esc_attr($class) . '" style="' . esc_attr($style) . '">' . esc_html($content) . '</h1>';
-    $title .= '<span class="underline ' . esc_attr($class) . '" style="' . esc_attr($style) . '"></span>';
+    $title .= '<h1 class="header-title' . $class_attr . $style_attr . '>' . esc_html($content) . '</h1>';
+    $title .= '<span class="underline' . $class_attr . $style_attr . '></span>';
     $title .= '</header>';
 
   return $title;
 
+}
+
+//blockquotes
+function atheme_blockquote($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
+  extract(shortcode_atts(array(
+    'cite'       => '',
+    'type'       => 'center',
+    'class'      => '',
+    'style'      => '',
+  ), $atts));
+
+  switch ($type) {
+    case 'left':
+        $type_class = 'alignleft';
+        break;
+    case 'center':
+        $type_class = 'aligncenter';
+        break;
+    case 'right':
+        $type_class = 'alignright';
+        break;
+    default:
+        $type_class = 'alignleft';
+  }
+  $type_class_attr = ' ' . esc_attr($type_class) . '"';
+  $class_attr = (!empty($class)) ? ' ' . esc_attr($class) : '';
+  $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
+
+  $bquote = '<blockquote class="atheme-blockquote' . $class_attr . $type_class_attr . $style_attr . '>';
+  $bquote .= $content . '<cite class="atheme-cite"' . $style_attr . '>' . esc_html($cite) . '</cite>' .
+  '</blockquote>';
+  return $bquote;
 }

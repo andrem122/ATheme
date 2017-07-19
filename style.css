@@ -1702,10 +1702,12 @@ blockquote {
     content: "";
     font-family: "FontAwesome";
     font-size: 165%;
-    float: left; }
+    float: left;
+    padding-top: 10px; }
   blockquote > p {
     font-size: 150%;
-    padding-left: 40px; }
+    padding: 10px 0 10px 40px;
+    margin-bottom: 0; }
 
 @media all and (max-width: 835px) {
   blockquote > p {
@@ -1920,6 +1922,13 @@ nav.navigation.pagination .nav-links .current, nav.navigation.pagination .nav-li
   .atheme-icon-list > li > i {
     display: inline-block;
     margin-right: 8px; }
+
+blockquote.atheme_blockquote {
+  font-size: 165%; }
+  blockquote.atheme_blockquote::before {
+    float: none; }
+  blockquote.atheme_blockquote .atheme-cite::before {
+    content: "– "; }
 
 body.front-page div.page {
   padding: 112px 0 0 0; }

@@ -45,3 +45,11 @@
     > i
       display: inline-block
       margin-right: 8px
+//blockquotes
+blockquote.atheme_blockquote
+  font-size: 165%
+  &::before
+    float: none
+  .atheme-cite
+    &::before
+      content: '\2013\00A0'
