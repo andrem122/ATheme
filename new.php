@@ -16,6 +16,7 @@ function atheme_shortcodes_init() {
   add_shortcode('button', 'atheme_button');
   add_shortcode('title', 'atheme_title');
   add_shortcode('blockquote', 'atheme_blockquote');
+  add_shortcode('skill-bar', 'atheme_skill_bar');
 }
 
 add_action('init', 'atheme_shortcodes_init');
@@ -161,7 +162,7 @@ function atheme_icon_list_item($atts, $content = null) {
   $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
 
   $list_item =  '<li class="atheme-icon-list-item' . $class_attr . $style_attr . '>';
-  $list_item .=   '<i class="fa fa-' . esc_attr($type) . '" aria-hidden="true"></i>' . esc_html($content);
+  $list_item .=   '<i class="fa fa-' . esc_attr($type) . '" aria-hidden="true"></i>' . do_shortcode($content);
   $list_item .= '</li>';
 
   return $list_item;
@@ -239,7 +240,7 @@ function atheme_title($atts, $content = null) {
   }
 
   $title = '<header class="title-holder ' . esc_attr($position_class) . '">';
-    $title .= '<h1 class="header-title' . $class_attr . $style_attr . '>' . esc_html($content) . '</h1>';
+    $title .= '<h1 class="header-title' . $class_attr . $style_attr . '>' . do_shortcode($content) . '</h1>';
     $title .= '<span class="underline' . $class_attr . $style_attr . '></span>';
     $title .= '</header>';
 
@@ -282,7 +283,7 @@ function atheme_blockquote($atts, $content = null) {
 
   $bquote  = '<div class="atheme-blockquote-wrap' . $image_center . '>';
   $bquote .= '<blockquote class="atheme-blockquote' . $class_attr . $type_class_attr . $style_attr . '>';
-  $bquote .= $content . '<cite class="atheme-cite"' . $style_attr . '>' . esc_html($cite) . '</cite>' .
+  $bquote .= do_shortcode($content) . '<cite class="atheme-cite"' . $style_attr . '>' . esc_html($cite) . '</cite>' .
   '</blockquote>';
 
   if(!empty($image_src)) {
@@ -291,4 +292,30 @@ function atheme_blockquote($atts, $content = null) {
   $bquote .= '</div>';
 
   return $bquote;
+}
+
+//skill bars
+function atheme_skill_bar($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
+  extract(shortcode_atts(array(
+    'heading'    => 'Skillbar Heading',
+    'percent'    => '100',
+    'class'      => '',
+    'style'      => 'background-color: #303030;',
+  ), $atts));
+
+  $class_attr  = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
+  $style_attr  = (!empty($style)) ? ' ' . esc_attr($style) . '"' : '"';
+  $params_attr = 'data-atheme-params="{"percent":"' . esc_attr($percent) . '%"}" ';
+
+  $skillbar  = '<h6 class="h-skill-bar">' . esc_html($heading) . '</h6>';
+  $skillbar .= '<div data-atheme-element="skill-bar"' . $params_attr . 'class="atheme-skill-bar' . $class_attr . '>' .
+                  '<div class="bar"' . ' style="width: ' . esc_attr($percent) . '%;' . $style_attr . '>' .
+                    '<div class="percent">' . esc_html($percent) . '%' . '</div>' .
+                  '</div>
+                </div>';
+
+  return $skillbar;
 }

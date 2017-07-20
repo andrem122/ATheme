@@ -1786,6 +1786,25 @@ a {
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
 
+.overlay {
+  position: relative; }
+  .overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.4); }
+
+.overflow-visible {
+  -webkit-overflow: visible;
+  -moz-overflow: visible;
+  -o-overflow: visible;
+  -ms-overflow: visible;
+  overflow: visible; }
+
 div.page {
   padding: 152px 0 40px 0; }
 
@@ -1954,6 +1973,22 @@ nav.navigation.pagination .nav-links .current, nav.navigation.pagination .nav-li
   top: 35px;
   left: 4px; }
 
+h6.h-skill-bar {
+  margin-bottom: 0; }
+
+.atheme-skill-bar {
+  height: 25px;
+  margin-bottom: 25px;
+  background-color: #fff; }
+  .atheme-skill-bar .bar {
+    height: 100%;
+    position: relative; }
+    .atheme-skill-bar .bar .percent {
+      color: #fff;
+      position: absolute;
+      top: 0;
+      right: 5px; }
+
 @media all and (max-width: 385px) {
   .atheme-blockquote-wrap blockquote.atheme-blockquote {
     font-size: 125%; }
@@ -1990,6 +2025,8 @@ header.top {
   float: right;
   transition: 0.3s ease-in-out;
   z-index: 9999; }
+  #menu-top > li.current-menu-item::after {
+    width: 115%; }
   #menu-top > li {
     display: block;
     float: left;

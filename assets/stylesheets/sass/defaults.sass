@@ -103,6 +103,14 @@ $positions: center left right
     background-position: center
     background-size: cover
     @include transition(all, 0.5s)
+//overlay
+.overlay
+  position: relative
+  &::before
+    @include overlay(rgba(0, 0, 0, 0.4))
+//overflow
+.overflow-visible
+  @include overflow(visible)
 //page
 div.page
   padding: 152px 0 40px 0
