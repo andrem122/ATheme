@@ -46,10 +46,40 @@
       display: inline-block
       margin-right: 8px
 //blockquotes
-blockquote.atheme_blockquote
-  font-size: 165%
-  &::before
-    float: none
-  .atheme-cite
+.atheme-blockquote-wrap
+  blockquote.atheme-blockquote
+    background-color: $wh
+    font-size: 140%
+    position: relative
     &::before
-      content: '\2013\00A0'
+      float: none
+      font-size: 140%
+      margin-right: 12px
+    .atheme-cite
+      color: $button
+      font-size: 90%
+      display: block
+      font-style: normal
+      &::before
+        content: '\2013\00A0'
+    &::after
+      content: ''
+      position: absolute
+      top: 100%
+      left: 50%
+      border: solid transparent
+      border-top-color: $wh
+      border-width: 23px
+      transform: translate(-50%, 0)
+  img.atheme-blockquote-image
+    max-width: 90px
+    border-radius: 50%
+    position: relative
+    top: 35px
+    left: 4px
+@media all and (max-width:385px)
+  .atheme-blockquote-wrap
+    blockquote.atheme-blockquote
+      font-size: 125%
+      &::before
+        font-size: 133%

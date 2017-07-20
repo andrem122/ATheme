@@ -1923,13 +1923,42 @@ nav.navigation.pagination .nav-links .current, nav.navigation.pagination .nav-li
     display: inline-block;
     margin-right: 8px; }
 
-blockquote.atheme_blockquote {
-  font-size: 165%; }
-  blockquote.atheme_blockquote::before {
-    float: none; }
-  blockquote.atheme_blockquote .atheme-cite::before {
-    content: "– "; }
+.atheme-blockquote-wrap blockquote.atheme-blockquote {
+  background-color: #fff;
+  font-size: 140%;
+  position: relative; }
+  .atheme-blockquote-wrap blockquote.atheme-blockquote::before {
+    float: none;
+    font-size: 140%;
+    margin-right: 12px; }
+  .atheme-blockquote-wrap blockquote.atheme-blockquote .atheme-cite {
+    color: #5AD8A3;
+    font-size: 90%;
+    display: block;
+    font-style: normal; }
+    .atheme-blockquote-wrap blockquote.atheme-blockquote .atheme-cite::before {
+      content: "– "; }
+  .atheme-blockquote-wrap blockquote.atheme-blockquote::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    border-top-color: #fff;
+    border-width: 23px;
+    transform: translate(-50%, 0); }
+.atheme-blockquote-wrap img.atheme-blockquote-image {
+  max-width: 90px;
+  border-radius: 50%;
+  position: relative;
+  top: 35px;
+  left: 4px; }
 
+@media all and (max-width: 385px) {
+  .atheme-blockquote-wrap blockquote.atheme-blockquote {
+    font-size: 125%; }
+    .atheme-blockquote-wrap blockquote.atheme-blockquote::before {
+      font-size: 133%; } }
 body.front-page div.page {
   padding: 112px 0 0 0; }
 

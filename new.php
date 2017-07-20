@@ -204,7 +204,7 @@ function atheme_button($atts, $content = null) {
   }
 
   $button =
-  '<a href="' . esc_attr($href) . $link_target . '" class="button-' . esc_attr($size) . $class_attr . $style_attr . '>';
+  '<a href="' . esc_url($href) . $link_target . '" class="button-' . esc_attr($size) . $class_attr . $style_attr . '>';
   $button .= esc_html($content) . '</a>';
   return $button;
 }
@@ -257,6 +257,8 @@ function atheme_blockquote($atts, $content = null) {
     'type'       => 'center',
     'class'      => '',
     'style'      => '',
+    'image_src'  => '',
+    'alt'        => 'blockquote-image',
   ), $atts));
 
   switch ($type) {
@@ -272,12 +274,21 @@ function atheme_blockquote($atts, $content = null) {
     default:
         $type_class = 'alignleft';
   }
-  $type_class_attr = ' ' . esc_attr($type_class) . '"';
-  $class_attr = (!empty($class)) ? ' ' . esc_attr($class) : '';
-  $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
 
-  $bquote = '<blockquote class="atheme-blockquote' . $class_attr . $type_class_attr . $style_attr . '>';
+  $type_class_attr = ' ' . esc_attr($type_class) . '"';
+  $class_attr      = (!empty($class)) ? ' ' . esc_attr($class) : '';
+  $style_attr      = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
+  $image_center    = (!empty($image_src)) ? ' ' . esc_attr('aligncenter') . '"' : '"';
+
+  $bquote  = '<div class="atheme-blockquote-wrap' . $image_center . '>';
+  $bquote .= '<blockquote class="atheme-blockquote' . $class_attr . $type_class_attr . $style_attr . '>';
   $bquote .= $content . '<cite class="atheme-cite"' . $style_attr . '>' . esc_html($cite) . '</cite>' .
   '</blockquote>';
+
+  if(!empty($image_src)) {
+    $bquote .= '<img class="atheme-blockquote-image" src="' . esc_url($image_src) . '" alt="' . esc_attr($alt) . '" />';
+  }
+  $bquote .= '</div>';
+
   return $bquote;
 }
