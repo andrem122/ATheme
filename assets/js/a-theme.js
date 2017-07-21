@@ -10,6 +10,59 @@
     var $subButton = $nav.find('button.mobile-submenu-button');
     var $mobileMenu = $headerTop.find('.mobile-menu');
     var i;
+    //check if elememts to be animated are in the viewport
+    function isInViewport(ele) {
+      //get the element to be checked
+      var $ele = $(ele);
+      //get the scroll position of the page
+      var scrollEle = (navigator.userAgent.toLowerCase().indexOf('webkit') !== -1) ? 'body' : 'html';
+      var viewportTop = $(scrollEle).scrollTop();
+      var viewportBottom = viewportTop + $window.height();
+
+      //get the position of the element
+      var eleTop = Math.round($ele.offset().top);
+      var eleBottom = eleTop + $ele.height();
+
+
+      //compare values and return true or false
+      return ((eleTop < viewportBottom) && (eleBottom > viewportTop));
+    }
+
+    function skillBarAnimation(ele, children, attr) {
+      //get the element
+      var $ele = $(ele);
+      var $children = (children) ? $ele.children(children) : '';
+
+      //if the animation has finished,
+      //then stop any further animation
+      if($children.hasClass('animation-finish') || $ele.hasClass('animation-finish')) {
+        return;
+      }
+
+      //check if the element is in the viewport,
+      //then add the animation class
+      if(isInViewport($ele)) {
+        if(children) {
+          $children.each(function(i) {
+            //grab the data-atheme-params attribute value and parse it
+            //since it is a JSON string
+            var params = JSON.parse($ele.eq(i).attr(attr));
+            $children.eq(i).addClass('animation-finish');
+            $children.eq(i).animate({width: params.percent}, 400);
+          });
+        } else {
+          $ele.each(function(i) {
+            var params = JSON.parse($ele.eq(i).attr(attr));
+            $ele.eq(i).addClass('animation-finish');
+            $ele.eq(i).animate({width: params.percent}, 700);
+          });
+        }
+      }
+    }
+    //call the addAnimation function as soon as the user scrolls
+    $window.scroll(function() {
+      skillBarAnimation('.atheme-skill-bar', '.bar', 'data-atheme-params');
+    });
     //loading screen
     $window.on('load', function() {
       $loader.css('opacity', 0);

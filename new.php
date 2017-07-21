@@ -308,11 +308,11 @@ function atheme_skill_bar($atts, $content = null) {
 
   $class_attr  = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
   $style_attr  = (!empty($style)) ? ' ' . esc_attr($style) . '"' : '"';
-  $params_attr = 'data-atheme-params="{"percent":"' . esc_attr($percent) . '%"}" ';
+  $params_attr = 'data-atheme-params="{&quot;percent&quot;:&quot;' . esc_attr($percent) . '%&quot;}" ';
 
   $skillbar  = '<h6 class="h-skill-bar">' . esc_html($heading) . '</h6>';
   $skillbar .= '<div data-atheme-element="skill-bar"' . $params_attr . 'class="atheme-skill-bar' . $class_attr . '>' .
-                  '<div class="bar"' . ' style="width: ' . esc_attr($percent) . '%;' . $style_attr . '>' .
+                  '<div class="bar"' . ' style="width: 0%;' . $style_attr . '>' .
                     '<div class="percent">' . esc_html($percent) . '%' . '</div>' .
                   '</div>
                 </div>';
