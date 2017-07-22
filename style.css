@@ -1993,8 +1993,7 @@ h6.h-skill-bar {
       right: 5px; }
 
 .atheme-card {
-  max-width: 340px;
-  height: 340px;
+  height: 335px;
   position: relative;
   -webkit-perspective: 1200px;
   perspective: 1200px; }
@@ -2010,20 +2009,21 @@ h6.h-skill-bar {
     -webkit-transition: 0.5s; }
     .atheme-card .atheme-card-inner .face {
       width: 100%;
-      height: 100%;
+      height: auto;
       position: absolute;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       text-align: center;
-      background: #fff;
       cursor: pointer; }
       .atheme-card .atheme-card-inner .face.back {
         -webkit-transform: rotatey(-180deg);
         transform: rotatey(-180deg); }
       .atheme-card .atheme-card-inner .face .card-content {
         width: 100%;
-        height: 100%;
-        padding: 10%; }
+        height: auto;
+        min-height: 280px;
+        padding: 10%;
+        background: #fff; }
         .atheme-card .atheme-card-inner .face .card-content.back-content {
           border: 8px solid #303030; }
 

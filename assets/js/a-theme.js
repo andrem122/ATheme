@@ -20,12 +20,36 @@
       var viewportBottom = viewportTop + $window.height();
 
       //get the position of the element
-      var eleTop = Math.round($ele.offset().top);
-      var eleBottom = eleTop + $ele.height();
+      var eleTop;
+      var eleBottom;
+      if($ele.offset() !== undefined) {
+        eleTop = Math.round($ele.offset().top);
+        eleBottom = eleTop + $ele.height();
+      }
 
 
       //compare values and return true or false
       return ((eleTop < viewportBottom) && (eleBottom > viewportTop));
+    }
+
+    function changeHeightOnResize(ele, child) {
+      //get the elements
+      var $ele = $(ele);
+      var $child = $(child);
+
+      //get the height of the child initially
+      var lastHeight = $child.height();
+
+      //if the height of the child changes,
+      //increase the height of the parent by 1px for each change
+      $(window).on('resize', function(){
+        if($child.height() !== lastHeight && $child.height() > lastHeight) {
+          $ele.height($child.height() + 1);
+
+          //reset the last height of the child
+          lastHeight = $child.height();
+        }
+      });
     }
 
     function skillBarAnimation(ele, children, attr) {
@@ -37,8 +61,7 @@
       //then stop any further animation
       if($children.hasClass('animation-finish') || $ele.hasClass('animation-finish')) {
         return;
-      }
-
+    }
       //check if the element is in the viewport,
       //then add the animation class
       if(isInViewport($ele)) {
@@ -59,6 +82,7 @@
         }
       }
     }
+    changeHeightOnResize('.atheme-card', '.card-content');
     //loading screen
     $window.on('load', function() {
       $loader.css('opacity', 0);
@@ -114,6 +138,7 @@
     $window.on('scroll load', function() {
       //call the addAnimation function as soon as the user scrolls
       skillBarAnimation('.atheme-skill-bar', '.bar', 'data-atheme-params');
+
       //scrollTop takes the position from the TOP of the element relative to another element
       if($(this).scrollTop() >= ($(document).height() - $(window).height()) * 0.50) {
         $nav.addClass('sticky ' + athemeClass);
