@@ -1797,6 +1797,9 @@ a {
     width: 100%;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.4); }
+  .overlay .overlay-children {
+    position: relative;
+    z-index: 11; }
 
 .overflow-visible {
   -webkit-overflow: visible;
@@ -1988,6 +1991,41 @@ h6.h-skill-bar {
       position: absolute;
       top: 0;
       right: 5px; }
+
+.atheme-card {
+  max-width: 340px;
+  height: 340px;
+  position: relative;
+  -webkit-perspective: 1200px;
+  perspective: 1200px; }
+  .atheme-card:hover .atheme-card-inner {
+    -webkit-transform: rotatey(-180deg);
+    transform: rotatey(-180deg); }
+  .atheme-card .atheme-card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s; }
+    .atheme-card .atheme-card-inner .face {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      text-align: center;
+      background: #fff;
+      cursor: pointer; }
+      .atheme-card .atheme-card-inner .face.back {
+        -webkit-transform: rotatey(-180deg);
+        transform: rotatey(-180deg); }
+      .atheme-card .atheme-card-inner .face .card-content {
+        width: 100%;
+        height: 100%;
+        padding: 10%; }
+        .atheme-card .atheme-card-inner .face .card-content.back-content {
+          border: 8px solid #303030; }
 
 @media all and (max-width: 385px) {
   .atheme-blockquote-wrap blockquote.atheme-blockquote {
@@ -2759,6 +2797,15 @@ body.logged-in.admin-bar header.top {
 
 .icon-sm-circle {
   border-radius: 50%; }
+
+i.icon-lg {
+  font-size: 50px; }
+
+i.icon-md {
+  font-size: 30px; }
+
+i.icon-sm {
+  font-size: 20px; }
 
 .facebook {
   border-color: #3C599F !important;

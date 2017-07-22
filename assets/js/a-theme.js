@@ -59,10 +59,6 @@
         }
       }
     }
-    //call the addAnimation function as soon as the user scrolls
-    $window.scroll(function() {
-      skillBarAnimation('.atheme-skill-bar', '.bar', 'data-atheme-params');
-    });
     //loading screen
     $window.on('load', function() {
       $loader.css('opacity', 0);
@@ -115,7 +111,9 @@
       }
     });
     //header animation
-    $window.scroll(function() {
+    $window.on('scroll load', function() {
+      //call the addAnimation function as soon as the user scrolls
+      skillBarAnimation('.atheme-skill-bar', '.bar', 'data-atheme-params');
       //scrollTop takes the position from the TOP of the element relative to another element
       if($(this).scrollTop() >= ($(document).height() - $(window).height()) * 0.50) {
         $nav.addClass('sticky ' + athemeClass);

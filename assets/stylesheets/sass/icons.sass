@@ -9,6 +9,13 @@ $n: 1
   .icon-#{$size}-circle
     border-radius: 50%
   $n: $n + 1
+//Icons
+$fontSizes: 50px 30px 20px
+$n: 1
+@each $size in $sizes
+  i.icon-#{$size}
+    font-size: nth($fontSizes, $n)
+  $n: $n + 1
 
 //social icon background colors
 $social-media: facebook twitter g-plus linkedin github

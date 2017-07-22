@@ -108,6 +108,9 @@ $positions: center left right
   position: relative
   &::before
     @include overlay(rgba(0, 0, 0, 0.4))
+  .overlay-children
+    position: relative
+    z-index: 11
 //overflow
 .overflow-visible
   @include overflow(visible)

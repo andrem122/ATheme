@@ -9,14 +9,18 @@
    */
 
 function atheme_shortcodes_init() {
-  add_shortcode('recent-posts', 'atheme_recent_posts');
-  add_shortcode('price-table-column', 'atheme_pricing_table_column');
-  add_shortcode('icon-list', 'atheme_icon_list');
-  add_shortcode('icon-list-item', 'atheme_icon_list_item');
+  add_shortcode('recent_posts', 'atheme_recent_posts');
+  add_shortcode('price_table', 'atheme_pricing_table');
+  add_shortcode('price_table_column', 'atheme_pricing_table_column');
+  add_shortcode('icon_list', 'atheme_icon_list');
+  add_shortcode('icon_list_item', 'atheme_icon_list_item');
   add_shortcode('button', 'atheme_button');
   add_shortcode('title', 'atheme_title');
   add_shortcode('blockquote', 'atheme_blockquote');
-  add_shortcode('skill-bar', 'atheme_skill_bar');
+  add_shortcode('skill_bar', 'atheme_skill_bar');
+  add_shortcode('flip_card', 'atheme_flip_card');
+  add_shortcode('flip_card_front', 'atheme_flip_card_front');
+  add_shortcode('flip_card_back', 'atheme_flip_card_back');
 }
 
 add_action('init', 'atheme_shortcodes_init');
@@ -91,7 +95,6 @@ function atheme_pricing_table($atts, $content = null) {
   $atheme_columns = $columns;
   return '<div class="atheme-pricing-table row ' . esc_attr($columns) . '-columns">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('price-table', 'atheme_pricing_table');
 
 function atheme_pricing_table_column($atts, $content = null) {
   // normalize attribute keys, lowercase
@@ -216,14 +219,38 @@ function atheme_title($atts, $content = null) {
   $atts = array_change_key_case( (array)$atts, CASE_LOWER );
 
   extract(shortcode_atts(array(
-    'position'    => 'left',
-    'class'   => '',
-    'style'   => '',
+    'level'    => 'h1',
+    'position' => 'left',
+    'class'    => '',
+    'style'    => '',
   ), $atts));
 
   //set class and style attributes
   $class_attr = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
   $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
+
+  switch ($level) {
+    case 'h1':
+        $level_heading = '1';
+        break;
+    case 'h2':
+        $level_heading = '2';
+        break;
+    case 'h3':
+        $level_heading = '3';
+        break;
+    case 'h4':
+        $level_heading = '4';
+        break;
+    case 'h5':
+        $level_heading = '5';
+        break;
+    case 'h6':
+        $level_heading = '6';
+        break;
+    default:
+        $level_heading = '1';
+  }
 
   switch ($position) {
     case 'left':
@@ -239,8 +266,8 @@ function atheme_title($atts, $content = null) {
         $position_class = 'alignleft';
   }
 
-  $title = '<header class="title-holder ' . esc_attr($position_class) . '">';
-    $title .= '<h1 class="header-title' . $class_attr . $style_attr . '>' . do_shortcode($content) . '</h1>';
+    $title = '<header class="title-holder ' . esc_attr($position_class) . '">';
+    $title .= '<h' . $level_heading . ' class="header-title' . $class_attr . $style_attr . '>' . do_shortcode($content) . '</h' . $level_heading .'>';
     $title .= '<span class="underline' . $class_attr . $style_attr . '></span>';
     $title .= '</header>';
 
@@ -318,4 +345,71 @@ function atheme_skill_bar($atts, $content = null) {
                 </div>';
 
   return $skillbar;
+}
+
+//flip card
+function atheme_flip_card($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
+  extract(shortcode_atts(array(
+    'class'      => '',
+    'style'      => '',
+  ), $atts));
+
+  //set class and style attributes
+  $class_attr = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
+  $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
+
+  $card  = '<div class="atheme-card' . $class_attr . $style_attr . '>';
+  $card .=   '<div class="atheme-card-inner">' .
+                do_shortcode($content) .
+             '</div>
+            </div>';
+  return $card;
+}
+//flip card front
+function atheme_flip_card_front($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
+  extract(shortcode_atts(array(
+    'class'      => '',
+    'style'      => '',
+  ), $atts));
+
+  //set class and style attributes
+  $class_attr = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
+  $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
+
+  $card_front = '<div class="face front">' .
+                  '<div class="card-content front-content' . $class_attr . $style_attr . '>' .
+                      do_shortcode($content) .
+                  '</div>
+                 </div>';
+
+  return $card_front;
+}
+
+//flip card back
+function atheme_flip_card_back($atts, $content = null) {
+  // normalize attribute keys, lowercase
+  $atts = array_change_key_case( (array)$atts, CASE_LOWER );
+
+  extract(shortcode_atts(array(
+    'class'      => '',
+    'style'      => '',
+  ), $atts));
+
+  //set class and style attributes
+  $class_attr = (!empty($class)) ? ' ' . esc_attr($class) . '"' : '"';
+  $style_attr = (!empty($style)) ? ' style="' . esc_attr($style) . '"' : '';
+
+  $card_back = '<div class="face back">' .
+                  '<div class="card-content back-content' . $class_attr . $style_attr . '>' .
+                      do_shortcode($content) .
+                  '</div>
+                 </div>';
+
+  return $card_back;
 }
