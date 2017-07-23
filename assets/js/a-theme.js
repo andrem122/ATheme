@@ -79,7 +79,12 @@
       //set height to be 20px larger than children height
       l = cards.length;
       for(i = 0; i < l; i++) {
+        //if the height of the children is within 20px of
+        //the card height, set the height of the card to
+        //20px larger than the children height
         if(cards[i].offsetHeight - 20 < maxHeightsCard[i]) {
+          cards[i].style.height = maxHeightsCard[i] + 20 + 'px';
+        } else if (cards[i].offsetHeight - maxHeightsCard[i] > 20) {
           cards[i].style.height = maxHeightsCard[i] + 20 + 'px';
         }
       }
