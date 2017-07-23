@@ -94,7 +94,10 @@ h6.h-skill-bar
       right: 5px
 //flipping cards
 .atheme-card
-  height: 335px
+  height: 310px
+  min-height: 280px
+  max-width: 340px
+  margin: 0 auto
   position: relative
   -webkit-perspective: 1200px
   perspective: 1200px
@@ -111,7 +114,7 @@ h6.h-skill-bar
     -webkit-transition: 0.5s
     .face
       width: 100%
-      height: auto
+      height: 100%
       position: absolute
       -webkit-backface-visibility: hidden
       backface-visibility: hidden
@@ -122,8 +125,7 @@ h6.h-skill-bar
         transform: rotatey(-180deg)
       .card-content
         width: 100%
-        height: auto
-        min-height: 280px
+        height: 100%
         padding: 10%
         background: $wh
         &.back-content

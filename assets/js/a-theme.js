@@ -32,24 +32,57 @@
       return ((eleTop < viewportBottom) && (eleBottom > viewportTop));
     }
 
-    function changeHeightOnResize(ele, child) {
+    function resizeWithChildren(cards, front, back) {
       //get the elements
-      var $ele = $(ele);
-      var $child = $(child);
+      cards = document.getElementsByClassName(cards);
+      var faces = [document.getElementsByClassName(front), document.getElementsByClassName(back)];
+      var heights = [];
+      var totalHeight = 0;
 
-      //get the height of the child initially
-      var lastHeight = $child.height();
-
-      //if the height of the child changes,
-      //increase the height of the parent by 1px for each change
-      $(window).on('resize', function(){
-        if($child.height() !== lastHeight && $child.height() > lastHeight) {
-          $ele.height($child.height() + 1);
-
-          //reset the last height of the child
-          lastHeight = $child.height();
+      //get the height of children for each card
+      //get height with largest value
+      var i;
+      var j;
+      var x;
+      var l = faces.length;
+      for(x = 0; x < l; x++) {
+        var face = faces[x];
+        for(i = 0; i < face.length; i++) {
+          var y = face[i].children.length;
+          for(j = 0; j < y; j++) {
+            //get margins in addition to height
+            var currentChild = face[i].children[j];
+            var style = currentChild.currentStyle || window.getComputedStyle(currentChild);
+            var totalMargin = parseFloat(style.marginTop.replace(/px/gi, '')) + parseFloat(style.marginBottom.replace(/px/gi, ''));
+  	        totalHeight += totalMargin + currentChild.offsetHeight;
+            totalMargin = 0;
+          }
+          heights.push(totalHeight);
+          totalHeight = 0;
         }
-      });
+      }
+      //split heights into two arrays: front and back
+      var backHeights = heights.splice(heights.length / 2);
+      var frontHeights = heights;
+      //compare front and back height values
+      //get the larger of the two for each card
+      l = frontHeights.length;
+      var maxHeightsCard = [];
+      var maxHeight = 0;
+      for(i = 0; i < l; i++) {
+        maxHeight = (frontHeights[i] > backHeights[i]) ? frontHeights[i] : backHeights[i];
+        maxHeightsCard.push(maxHeight);
+      }
+
+      //compare with card height
+      //if children height within 20px of card height
+      //set height to be 20px larger than children height
+      l = cards.length;
+      for(i = 0; i < l; i++) {
+        if(cards[i].offsetHeight - 20 < maxHeightsCard[i]) {
+          cards[i].style.height = maxHeightsCard[i] + 20 + 'px';
+        }
+      }
     }
 
     function skillBarAnimation(ele, children, attr) {
@@ -82,7 +115,9 @@
         }
       }
     }
-    changeHeightOnResize('.atheme-card', '.card-content');
+    $window.on('load resize', function() {
+      resizeWithChildren('atheme-card', 'front-content', 'back-content');
+    });
     //loading screen
     $window.on('load', function() {
       $loader.css('opacity', 0);
