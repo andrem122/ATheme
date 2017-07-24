@@ -1993,8 +1993,8 @@ h6.h-skill-bar {
       right: 5px; }
 
 .atheme-card {
-  height: 310px;
-  min-height: 280px;
+  height: 330px;
+  min-height: 250px;
   max-width: 340px;
   margin: 0 auto;
   position: relative;
@@ -3164,9 +3164,6 @@ form.search-form {
     .atheme-recent-posts .atheme-recent-posts-bottom .p-meta {
       margin-bottom: 0; }
     .atheme-recent-posts .atheme-recent-posts-bottom h4 {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       margin-bottom: 0;
       font-size: 120%;
       -webkit-transition: all 0.3s ease-in-out;
@@ -3174,6 +3171,10 @@ form.search-form {
       -ms-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
+      .atheme-recent-posts .atheme-recent-posts-bottom h4 a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
       .atheme-recent-posts .atheme-recent-posts-bottom h4:hover {
         color: #5AD8A3; }
     .atheme-recent-posts .atheme-recent-posts-bottom span {
