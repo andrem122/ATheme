@@ -33,10 +33,10 @@ function atheme_recent_posts($atts){
 
   extract(shortcode_atts( array(
         'number_posts' => '3',
-        'horizontal'   => false
+        'horizontal'   => false,
   ), $atts));
   $q = new WP_Query(
-    array( 'orderby' => 'date', 'posts_per_page' => $a['number_posts'])
+    array( 'orderby' => 'date', 'posts_per_page' => $number_posts)
   );
   $grid_number = ceil(12 / (int)$number_posts);
   $atheme_class = ($horizontal === 'true') ? array('row', 'col-md-' . $grid_number) : '';
@@ -76,7 +76,7 @@ function atheme_recent_posts($atts){
       </article>
     </li>';
   endwhile;
-
+  wp_reset_postdata();
   wp_reset_query();
 
   return $list . '</ul>';

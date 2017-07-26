@@ -2,7 +2,7 @@
 //the main template file
 get_header();
 ?>
-<div class="wrap clear <?php (is_active_sidebar('sidebar-blog')) ? esc_attr_e('col-md-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
+<div class="wrap clear <?php (is_active_sidebar('sidebar-blog')) ? esc_attr_e('col-lg-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
   <main id="main" class="site-main" role="main">
     <header class="title-holder">
       <h1 class="header-title"><?php esc_html_e(wp_title(''), 'atheme'); ?></h1>

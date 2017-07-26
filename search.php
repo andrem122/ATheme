@@ -2,7 +2,7 @@
 //template for displaying search results
 get_header();
 ?>
-<div class="wrap clear <?php (is_active_sidebar('sidebar-main')) ? esc_attr_e('col-md-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
+<div class="wrap clear <?php (is_active_sidebar('sidebar-main')) ? esc_attr_e('col-lg-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
   <main id="main" class="site-main" role="main">
     <header class="title-holder <?php $title_class = (have_posts()) ? esc_attr_e('', 'atheme') : esc_attr_e('title-center', 'atheme'); ?>">
       <?php if(have_posts()): ?>

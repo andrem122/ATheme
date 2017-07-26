@@ -31,7 +31,7 @@
       //compare values and return true or false
       return ((eleTop < viewportBottom) && (eleBottom > viewportTop));
     }
-
+    //resizes the flip card height based on children height
     function resizeWithChildren(cards, front, back) {
       //get the elements
       cards = document.getElementsByClassName(cards);
@@ -54,6 +54,7 @@
             var currentChild = face[i].children[j];
             var style = currentChild.currentStyle || window.getComputedStyle(currentChild);
             var totalMargin = parseFloat(style.marginTop.replace(/px/gi, '')) + parseFloat(style.marginBottom.replace(/px/gi, ''));
+            //add margin to height
   	        totalHeight += totalMargin + currentChild.offsetHeight;
             totalMargin = 0;
           }
@@ -73,10 +74,7 @@
         maxHeight = (frontHeights[i] > backHeights[i]) ? frontHeights[i] : backHeights[i];
         maxHeightsCard.push(maxHeight);
       }
-
       //compare with card height
-      //if children height within 20px of card height
-      //set height to be 20px larger than children height
       l = cards.length;
       for(i = 0; i < l; i++) {
         //if the height of the children is within 20px of
@@ -91,35 +89,30 @@
     }
 
     function skillBarAnimation(ele, children, attr) {
-      //get the element
+      //get the elements
       var $ele = $(ele);
       var $children = (children) ? $ele.children(children) : '';
 
-      //if the animation has finished,
-      //then stop any further animation
+      //if the animation has already occurred
+      //stop any further animation
       if($children.hasClass('animation-finish') || $ele.hasClass('animation-finish')) {
         return;
     }
-      //check if the element is in the viewport,
-      //then add the animation class
+      //check if the element is in the viewport
       if(isInViewport($ele)) {
-        if(children) {
-          $children.each(function(i) {
-            //grab the data-atheme-params attribute value and parse it
-            //since it is a JSON string
-            var params = JSON.parse($ele.eq(i).attr(attr));
-            $children.eq(i).addClass('animation-finish');
-            $children.eq(i).animate({width: params.percent}, 400);
-          });
-        } else {
-          $ele.each(function(i) {
-            var params = JSON.parse($ele.eq(i).attr(attr));
-            $ele.eq(i).addClass('animation-finish');
-            $ele.eq(i).animate({width: params.percent}, 700);
-          });
-        }
+        $children.each(function(i) {
+          //grab the data-atheme-params attribute value and parse it
+          //since it is a JSON string
+          var params = JSON.parse($ele.eq(i).attr(attr));
+          //add the class animation-finish to prevent any further animation
+          $children.eq(i).addClass('animation-finish');
+          //animate the skill bar
+          $children.eq(i).animate({width: params.percent}, 400);
+        });
       }
     }
+    //call the function resizeWithChildren when the window
+    //loads or is resized
     $window.on('load resize', function() {
       resizeWithChildren('atheme-card', 'front-content', 'back-content');
     });
@@ -174,12 +167,11 @@
         }
       }
     });
-    //header animation
     $window.on('scroll load', function() {
-      //call the addAnimation function as soon as the user scrolls
+      //call the skillBarAnimation function
       skillBarAnimation('.atheme-skill-bar', '.bar', 'data-atheme-params');
 
-      //scrollTop takes the position from the TOP of the element relative to another element
+      //make the nav bar appear as the user scrolls 50% of the page
       if($(this).scrollTop() >= ($(document).height() - $(window).height()) * 0.50) {
         $nav.addClass('sticky ' + athemeClass);
       } else {

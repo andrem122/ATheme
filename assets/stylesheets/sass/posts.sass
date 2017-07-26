@@ -7,7 +7,6 @@ $post-pages: blog 'archive.tag' search archive category
     header
       .archive-meta
         max-width: 600px
-  body.#{$post-page}
     article
       .textwidget
         padding: 0 23px 0 23px
@@ -17,6 +16,8 @@ $post-pages: blog 'archive.tag' search archive category
       .quote-wrap
         padding: 23px 23px 35px 23px
         @include transition(all, 0.3s, ease-in-out)
+        span, a, p, i
+          transition: none
         &:hover
           background-color: $button
           span, a, p, i
@@ -27,6 +28,8 @@ $post-pages: blog 'archive.tag' search archive category
       .link-wrap
         padding: 23px 23px 35px 23px
         @include transition(all, 0.3s, ease-in-out)
+        span, a, p, i
+          transition: none
         &:hover
           background-color: $button
           span, a, p, i
@@ -69,3 +72,7 @@ $post-pages: blog 'archive.tag' search archive category
       .post-text
         padding: 23px 23px 35px 23px
         background-color: $wh
+  @media all and (max-width: 835px)
+    article.post.format-quote
+      .quote-content
+        font-size: 135%

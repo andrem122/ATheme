@@ -4,9 +4,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php if(is_single()): ?>
   <header class="post-title-holder">
-    <?php the_title('<h1 class="header-title">', '</h1><span class="underline left"></span>'); ?>
+    <?php the_title('<h1 class="header-title">', '</h1><span class="underline"></span>'); ?>
   </header>
-  <?php endif; ?>
   <div class="post-image">
     <?php if(is_single()):
             if(has_post_thumbnail()):
@@ -22,6 +21,7 @@
             </a>
     <?php endif; ?>
   </div><!-- .post-image -->
+  <?php endif; ?>
   <div class="post-text">
     <div class="link-wrap">
       <?php

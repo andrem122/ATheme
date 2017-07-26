@@ -4,6 +4,10 @@
 .row
   width: 100%
   display: block
+  [class*='col']:last-child
+    margin-right: 0
+  [class*='col']:last-child
+    margin-bottom: 0
   //clearfixes for all rows so that it doesn't collapse
   &::after
     @include clearfix
@@ -22,8 +26,6 @@ $column-sizes: xs sm md lg
         width: columnWidth($i, 0%)
       &.no-margin-bottom
         margin-bottom: 0
-      &[class~='col-#{$size}-#{$i}']:last-of-type
-        margin-right: 0
       &::after
         @include clearfix
 //set starting heading size
@@ -43,8 +45,6 @@ $heading-size: 240% 180% 160% 150% 135% 120%
           width: 100%
         &.no-margin-bottom
           margin-bottom: 0
-        &[class~='col-lg-#{$i}']:last-of-type
-          margin-bottom: 0
   $heading-size: 220% 170% 150% 140% 125% 110%
   @for $i from 1 through 6
     h#{$i}
@@ -60,8 +60,6 @@ $heading-size: 240% 180% 160% 150% 135% 120%
         &.marginless
           width: 100%
         &.no-margin-bottom
-          margin-bottom: 0
-        &[class~='col-md-#{$i}']:last-of-type
           margin-bottom: 0
   $heading-size: 210% 160% 140% 130% 115% 108%
   @for $i from 1 through 6
@@ -79,8 +77,6 @@ $heading-size: 240% 180% 160% 150% 135% 120%
           width: 100%
         &.no-margin-bottom
           margin-bottom: 0
-        &[class~='col-sm-#{$i}']:last-of-type
-          margin-bottom: 0
   $heading-size: 200% 150% 130% 120% 110% 105%
   @for $i from 1 through 6
     h#{$i}
@@ -96,6 +92,4 @@ $heading-size: 240% 180% 160% 150% 135% 120%
         &.marginless
           width: 100%
         &.no-margin-bottom
-          margin-bottom: 0
-        &[class~='col-xs-#{$i}']:last-of-type
           margin-bottom: 0

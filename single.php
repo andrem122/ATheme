@@ -3,7 +3,7 @@
 get_header();
 ?>
 
-<div class="wrap clear <?php (is_active_sidebar('sidebar-blog')) ? esc_attr_e('col-md-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
+<div class="wrap clear <?php (is_active_sidebar('sidebar-blog')) ? esc_attr_e('col-lg-8', 'atheme') : esc_attr_e('', 'atheme'); ?>">
   <main id="main" class="site-main" role="main">
     <?php
     //dont need if(have_posts()) because if we are on this page,
