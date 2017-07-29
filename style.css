@@ -1408,8 +1408,10 @@ span.underline {
 
 .widget ul {
   list-style: none; }
-  .widget ul > li {
-    margin-bottom: 17px; }
+  .widget ul > li a {
+    display: block;
+    padding-bottom: 8.5px;
+    padding-top: 8.5px; }
 .widget h2.widget-title {
   margin-bottom: 10px;
   font-size: 140%; }
@@ -1769,9 +1771,11 @@ nav.navigation.pagination .nav-links .current, nav.navigation.pagination .nav-li
     padding-bottom: 50px; } }
 .atheme-icon-list {
   margin-bottom: 30px; }
-  .atheme-icon-list > li > i {
-    display: inline-block;
-    margin-right: 8px; }
+  .atheme-icon-list > li {
+    margin-bottom: 17px; }
+    .atheme-icon-list > li > i {
+      display: inline-block;
+      margin-right: 8px; }
 
 .atheme-blockquote-wrap blockquote.atheme-blockquote {
   background-color: #fff;
@@ -2536,6 +2540,8 @@ article.format-quote div.post-image {
   margin-bottom: 0; }
 
 @media all and (max-width: 835px) {
+  article.format-quote .quote-wrap .fa-quote-left {
+    font-size: 30px; }
   article.format-quote .quote-wrap .quote-content {
     font-size: 135%; } }
 article.format-link .post-text {
@@ -2637,10 +2643,15 @@ body.logged-in.admin-bar header.top {
       padding: 23px;
       margin-bottom: 18px; }
       #comments ol.comment-list li.comment.depth-1 .image {
-        float: left; }
+        float: left;
+        width: 25%;
+        padding-right: 20px; }
+        #comments ol.comment-list li.comment.depth-1 .image > img {
+          max-width: 100%; }
       #comments ol.comment-list li.comment.depth-1 .text {
+        float: left;
         min-height: 80px;
-        padding-left: 100px; }
+        width: 75%; }
       #comments ol.comment-list li.comment.depth-1 h5.name {
         margin-bottom: 0; }
       #comments ol.comment-list li.comment.depth-1 a.comment-reply-link {
