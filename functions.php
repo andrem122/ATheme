@@ -158,7 +158,6 @@ add_action('template_redirect', 'atheme_content_width', 0);
 //custom comment markup
 function atheme_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment;
-  $user_id = get_the_author_meta('ID', true);
   ?>
   <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
     <div class="comment">
@@ -169,7 +168,7 @@ function atheme_comments($comment, $args, $depth) {
       </div>
       <div class="text">
         <h5 class="name"><?php printf(esc_html('%s', 'atheme'), get_comment_author($comment->comment_ID)); ?></h5>
-        <span class="comment-date"><?php printf(esc_html(get_comment_date('m.d.Y \a\t h:i A', '%s'), 'atheme'), $comment->comment_ID); ?></span>
+        <span class="comment-date"><?php printf(esc_html(get_comment_date('m.d.Y \a\t h:i A', (int)'%s'), 'atheme'), (string)$comment->comment_ID); ?></span>
         <?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply', 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
         <div class="comment-content">
           <?php comment_text(); ?>

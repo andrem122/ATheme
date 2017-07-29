@@ -2645,7 +2645,7 @@ body.logged-in.admin-bar header.top {
       #comments ol.comment-list li.comment.depth-1 .image {
         float: left;
         width: 25%;
-        padding-right: 20px; }
+        padding-right: 10px; }
         #comments ol.comment-list li.comment.depth-1 .image > img {
           max-width: 100%; }
       #comments ol.comment-list li.comment.depth-1 .text {
@@ -2657,7 +2657,9 @@ body.logged-in.admin-bar header.top {
       #comments ol.comment-list li.comment.depth-1 a.comment-reply-link {
         text-transform: uppercase; }
       #comments ol.comment-list li.comment.depth-1 .comment-date {
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        display: inline-block;
+        margin-right: 4px; }
 
 .icon-lg-square, .icon-lg-circle {
   padding: 30px;
