@@ -7,6 +7,9 @@ function a_theme_scripts() {
   //scripts
   wp_enqueue_script('a-theme', get_template_directory_uri() . '/assets/js/a-theme.js', array('jquery'), 1.0, true);
   wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/995faad108.js');
+  if(is_singular() && get_option('thread_comments')) {
+    wp_enqueue_script('comment-reply');
+  }
 }
 //puts all stylesheets and scripts in my webpages
 add_action('wp_enqueue_scripts', 'a_theme_scripts');

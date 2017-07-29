@@ -9,7 +9,6 @@
     var $mobileMenuButton = $headerTop.find('.mobile-menu-button');
     var $subButton = $nav.find('button.mobile-submenu-button');
     var $mobileMenu = $headerTop.find('.mobile-menu');
-    var i;
     //check if elememts to be animated are in the viewport
     function isInViewport(ele) {
       //get the element to be checked

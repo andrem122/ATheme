@@ -44,8 +44,7 @@ form#commentform
   .col-sm-4
     margin-bottom: 20px
 form.search-form
-  max-width: 600px
-  margin: 0 auto
+  width: 100%
   position: relative
   &::before
     content: "\f002"
@@ -56,3 +55,10 @@ form.search-form
     left: 9px
   input.search-field
     padding-left: 35px
+
+//search results page form
+body.search-no-results
+  form.search-form
+    width: auto
+    max-width: 600px
+    margin: 0 auto
