@@ -163,7 +163,7 @@ function atheme_comments($comment, $args, $depth) {
     <div class="comment">
       <div class="image">
         <?php
-          echo get_avatar(get_the_author_meta('email'), 83);
+          echo get_avatar(get_comment_author_email(), 83);
         ?>
       </div>
       <div class="text">

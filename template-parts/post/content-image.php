@@ -21,7 +21,7 @@
       //get the title
       get_template_part('template-parts\post\content', 'title');
       //get the post information
-      get_template_part('template-parts\post\content', 'post-info')
+      get_template_part('template-parts\post\content', 'post-info');
     ?>
     <?php if(!is_single()): ?>
       <a class="button-md" href="<?php esc_url(the_permalink()); ?>"><?php _e('Read More', 'atheme')  ?></a>

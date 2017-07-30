@@ -26,7 +26,7 @@
     <div class="link-wrap">
       <?php
         //get the post information
-        get_template_part('template-parts\post\content', 'post-info')
+        get_template_part('template-parts\post\content', 'post-info');
       ?>
       <i class="fa fa-link" aria-hidden="true"></i>
       <div class="link-content">

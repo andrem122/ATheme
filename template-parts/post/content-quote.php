@@ -26,7 +26,7 @@
     <div class="quote-wrap">
       <?php
         //get the post information
-        get_template_part('template-parts\post\content', 'post-info')
+        get_template_part('template-parts\post\content', 'post-info');
       ?>
       <i class="fa fa-quote-left left" aria-hidden="true"></i>
       <div class="quote-content">
